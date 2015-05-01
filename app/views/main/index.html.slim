@@ -16,16 +16,31 @@ nav.navbar.navbar-inverse.navbar-fixed-top
         li
           a href="#" Get Involved
 
+a href="https://github.com/smessmer/cryfs"
+  img.github-ribbon src="#{image_url('github_ribbon.png')}" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"
+
 section.teaser
   .container
     .lead.text-center.title-text
       h1 Keep your data safe in the cloud
-      p CryFS keeps your files secure when synchronizing them over the cloud. It is very simple to use and works together with most cloud storage providers (e.g. Dropbox). Encryption happens on client side and only encrypted versions will be uploaded.
+      p CryFS encrypts your files, so you can safely store them anywhere. It works well together with cloud services like Dropbox, iCloud, OneDrive and others.
       p
+        ' We are currently in development.
+        br
+        ' Get notified when it's ready!
+        form.form-inline style="margin-top: 20px;"
+          .form-group
+            .sr-only for="inputEmail"
+            input.form-control#inputEmail type="email" placeholder="Enter email"
+          button.btn.btn-primary type="submit"
+            ' Get Notified&nbsp;
+            i.fa.fa-angle-double-right
+
+      / p
         a.btn.btn-primary.btn-lg href="#" role="button" Learn more »
 
 .container
-  .row
+  section.row.bulletpoints
     .col-md-4.text-center
       i.fa.fa-check-circle-o.teaser-icon
       h2 Simple
@@ -39,7 +54,7 @@ section.teaser
       p
         a.btn.btn-default href="#" role="button" View details »
     .col-md-4.text-center
-      i.fa.fa-diamond.teaser-icon
+      i.fa.fa-diamond.teaser-icon-smaller
       h2 Free and Open Source
       p
         ' CryFS is released under LGPL and available on
@@ -48,10 +63,21 @@ section.teaser
       p
         a.btn.btn-default href="#" role="button" View details »
 
-  hr
+section style="background: #dbdbdb;"
+  .container.text-center style="padding-top: 50px;"
+    p.h2 Let us notify you when it's ready!
+    form.form-inline style="margin-top: 20px; margin-bottom: 70px;"
+      .form-group
+        .sr-only for="inputEmail"
+        input.form-control#inputEmail type="email" placeholder="Enter email"
+      button.btn.btn-primary type="submit"
+        ' Get Notified&nbsp;
+        i.fa.fa-angle-double-right
 
-  footer
-    p Copyright © 2015 - Sebastian Messmer
+section style="background: black"
+  .container
+    footer
+      p.vertical-center Copyright © 2015 - Sebastian Messmer
 
 
     /

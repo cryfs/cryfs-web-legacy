@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'interested_user/create'
+
   root 'main#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

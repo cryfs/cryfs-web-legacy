@@ -4,7 +4,6 @@
 
 body {
   padding-top: 50px;
-  padding-bottom: 20px;
 }
 
 $teaser_width: 5308px;
@@ -21,18 +20,47 @@ $wanted_teaser_height: 1000px;
 }
 
 .title-text {
-  margin-top: 240px;
+  margin-top: 220px;
   margin-left: 650px;
   width: 600px;
 }
 .title-text h1 {
   color: #9d9d9d;
+  margin-bottom: 50px;
 }
 .title-text p {
-  margin-top: 50px;
+  margin-top: 30px;
   color: #909090;
 }
 
 .teaser-icon {
-  font-size: 16em;
+  font-size: 200px;
+}
+.teaser-icon-smaller {
+  font-size: 200px;
+}
+.github-icon {
+  margin-top: -5px;
+  font-size: 30px;
+}
+.bulletpoints {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+footer {
+  height: 50px;
+  color: white;
+  text-align: right;
+}
+.vertical-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.github-ribbon {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 0;
+  border: 0;
 }
