@@ -6,3 +6,16 @@ body {
   padding-top: 50px;
   padding-bottom: 20px;
 }
+
+$teaser_width: 5308px;
+$teaser_height: 2636px;
+$wanted_teaser_height: 1000px;
+
+.teaser {
+  background-image: image-url('teaser.jpg');
+  background-size: $teaser_width/$teaser_height*$wanted_teaser_height 100%;
+  background-repeat: no-repeat;
+  height: $wanted_teaser_height;
+  width: 100%;
+  background-position: center;
+}
