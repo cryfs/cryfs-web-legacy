@@ -38,10 +38,6 @@ $wanted_teaser_height: 1000px;
 .teaser-icon-smaller {
   font-size: 200px;
 }
-.bulletpoints {
-  margin-top: 60px;
-  margin-bottom: 40px;
-}
 footer {
   height: 50px;
   color: white;
@@ -70,4 +66,22 @@ footer {
   color: red;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+.navbar {
+  margin-bottom: 0;
+}
+
+.section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.section-1 {
+  @extend .section;
+  background: white;
+}
+
+.section-2 {
+  @extend .section;
+  background: #dbdbdb;
 }

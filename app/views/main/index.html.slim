@@ -45,32 +45,33 @@ section.teaser
       / p
         a.btn.btn-primary.btn-lg href="#" role="button" Learn more »
 
-.container
-  section.row.bulletpoints
-    .col-md-4.text-center
-      i.fa.fa-check-circle-o.teaser-icon
-      h2 Simple
-      p CryFS is easy to setup and works with a lot of cloud storage providers. Encryption works transparently, that is, in your daily workflow you won't notice a difference to using (say) Dropbox directly.
-      p
-        a.btn.btn-default href="#" role="button" View details »
-    .col-md-4.text-center
-      i.fa.fa-lock.teaser-icon
-      h2 Secure
-      p Every bit of data leaving your computer will be encrypted. CryFS never gives unencrypted data to the cloud. Not only file contents, but also file metadata and directory structure is encrypted. CryFS also protects you from someone modifying your data without your noticing.
-      p
-        a.btn.btn-default href="#" role="button" View details »
-    .col-md-4.text-center
-      i.fa.fa-diamond.teaser-icon-smaller
-      h2 Free and Open Source
-      p
-        ' CryFS is released under LGPL and available on
-        a target="_blank" href="https://github.com/smessmer/cryfs" github
-        '. Everyone can look at the source code and check that it fulfills the given security promises. If you want, you can take the source code and modify it to your needs. We'd also be happy to include your improvements into CryFS directly.
-      p
-        a.btn.btn-default href="#" role="button" View details »
+section.section-1
+  .container
+    .row
+      .col-md-4.text-center
+        i.fa.fa-check-circle-o.teaser-icon
+        h2 Simple
+        p CryFS is easy to setup and works with a lot of cloud storage providers. Encryption works transparently, that is, in your daily workflow you won't notice a difference to using (say) Dropbox directly.
+        p
+          a.btn.btn-default href="#" role="button" View details »
+      .col-md-4.text-center
+        i.fa.fa-lock.teaser-icon
+        h2 Secure
+        p Every bit of data leaving your computer will be encrypted. CryFS never gives unencrypted data to the cloud. Not only file contents, but also file metadata and directory structure is encrypted. CryFS also protects you from someone modifying your data without your noticing.
+        p
+          a.btn.btn-default href="#" role="button" View details »
+      .col-md-4.text-center
+        i.fa.fa-diamond.teaser-icon-smaller
+        h2 Free and Open Source
+        p
+          ' CryFS is released under LGPL and available on
+          a target="_blank" href="https://github.com/smessmer/cryfs" github
+          '. Everyone can look at the source code and check that it fulfills the given security promises. If you want, you can take the source code and modify it to your needs. We'd also be happy to include your improvements into CryFS directly.
+        p
+          a.btn.btn-default href="#" role="button" View details »
 
-section style="background: #dbdbdb;"
-  .container.text-center style="padding-top: 50px; padding-bottom: 50px;"
+section.section-2
+  .container.text-center
     p.h2 Let us notify you when it's ready!
     div style="margin-top: 20px;"
       =form_for InterestedUser.new, remote: true, html: {id: "interested_user_form_2", class: 'form form-inline'} do |f|
