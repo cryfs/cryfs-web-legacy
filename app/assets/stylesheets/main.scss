@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  padding-top: 50px;
 }
 
 $teaser_width: 5308px;
@@ -54,7 +53,7 @@ footer {
   transform: translateY(-50%);
 }
 .github-ribbon {
-  position: fixed;
+  position: absolute;
   z-index: 2000;
   top: 0;
   right: 0;
