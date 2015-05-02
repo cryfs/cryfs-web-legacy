@@ -95,25 +95,27 @@ section.section-1
       h2 style="margin-top: 0px;" Contact Us
       div style="margin-top: 20px;"
         =form_for Contact.new, remote: true, html: {id: "contact_form", class: 'form col-md-offset-3 col-md-6'} do |f|
-          .form-group
-            label.sr-only for="contact_form_message" Message:
-            =f.text_area :message, id: 'contact_form_message', class: 'form-control', style: 'height: 140px;', placeholder: "Your message to us. We're looking forward to your feedback, ideas and criticism. Please be blunt.", required: true
-          .hidden
-            =f.text_field :nickname, hint: "Leave this field blank!"
-          .form-group
-            label.sr-only for="contact_form_email" Your Email:
-            =f.email_field :email, id: 'contact_form_email', class: 'col-md-8', style: 'margin-top: 2px; height: 30px;', placeholder: 'Your email address (optional)'
-            =button_tag(type: 'submit', class: 'btn btn-primary col-md-offset-1 col-md-3') do ||
-              ' Send&nbsp;
-              i.fa.fa-angle-double-right
-          .clearfix style="margin-top: 30px;"
-            .form-success-small.collapse.form-success Thank you.
-            / TODO: Add info@cryfs.org to error message.
-            / TODO: We show the error message also when the email address was given but is invalid (e.g. "test@test" without TLD). It would be better to show specific error message.
-            .form-error-small.collapse.form-error Sorry, there was an error sending your message.
-          javascript:
-            window.setup_ajax_forms = window.setup_ajax_forms || [];
-            window.setup_ajax_forms.push("#contact_form");
+          .row
+            .form-group.col-md-12
+              label.sr-only for="contact_form_message" Message:
+              =f.text_area :message, id: 'contact_form_message', class: 'form-control', style: 'height: 140px;', placeholder: "Your message to us. We're looking forward to your feedback, ideas and criticism. Please be blunt.", required: true
+            .hidden
+              =f.text_field :nickname, hint: "Leave this field blank!"
+            .form-group.col-md-8
+              label.sr-only for="contact_form_email" Your Email:
+              =f.email_field :email, id: 'contact_form_email', class: 'form-control', style: 'margin-top: 2px; height: 30px;', placeholder: 'Your email address (optional)'
+            .form-group.col-md-offset-1.col-md-3
+              =button_tag(type: 'submit', class: 'btn btn-block btn-primary') do ||
+                ' Send&nbsp;
+                i.fa.fa-angle-double-right
+            .clearfix style="margin-top: 30px;"
+              .form-success-small.collapse.form-success Thank you.
+              / TODO: Add info@cryfs.org to error message.
+              / TODO: We show the error message also when the email address was given but is invalid (e.g. "test@test" without TLD). It would be better to show specific error message.
+              .form-error-small.collapse.form-error Sorry, there was an error sending your message.
+            javascript:
+              window.setup_ajax_forms = window.setup_ajax_forms || [];
+              window.setup_ajax_forms.push("#contact_form");
 
 section.footer
   .container
