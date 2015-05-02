@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'main#index'
 
   resources :interested_users, only: :create
+  resources :contacts, only: :create
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

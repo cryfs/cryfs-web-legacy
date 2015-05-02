@@ -32,7 +32,7 @@ section.teaser
           =form_for InterestedUser.new, remote: true, html: {id: "interested_user_form_1", class: 'form form-inline'} do |f|
             .form-group
               .sr-only for="interested_user_form_1-inputEmail" Email Address:
-              =f.email_field :email, id: 'interested_user_form_1-inputEmail', class: "form-control", placeholder: "Enter email"
+              =f.email_field :email, id: 'interested_user_form_1-inputEmail', class: "form-control", placeholder: "Enter email", required: true
             =button_tag(type: 'submit', class: "btn btn-primary", style: "margin-left: 5px;") do ||
               ' Get Notified&nbsp;
               i.fa.fa-angle-double-right
@@ -72,12 +72,12 @@ section.section-1
 
 section.section-2
   .container.text-center
-    p.h2 Let us notify you when it's ready!
+    h2 Let us notify you when it's ready!
     div style="margin-top: 20px;"
       =form_for InterestedUser.new, remote: true, html: {id: "interested_user_form_2", class: 'form form-inline'} do |f|
         .form-group
-          .sr-only for="interested_user_form_2-inputEmail" Email Address:
-          =f.email_field :email, id: 'interested_user_form_2-inputEmail', class: "form-control", placeholder: "Enter email"
+          label.sr-only for="interested_user_form_2-inputEmail" Email Address:
+          =f.email_field :email, id: 'interested_user_form_2-inputEmail', class: "form-control", placeholder: "Enter email", required: true
         =button_tag(type: 'submit', class: "btn btn-primary", style: "margin-left: 5px;") do ||
           ' Get Notified&nbsp;
           i.fa.fa-angle-double-right
@@ -87,7 +87,31 @@ section.section-2
       javascript:
         window.setup_ajax_form("#interested_user_form_2")
 
-section style="background: black"
+section.section-1
+  .container.text-center
+    .row
+      h2 Contact Us
+      div style="margin-top: 20px;"
+        =form_for Contact.new, remote: true, html: {id: "contact_form", class: 'form-horizontal'} do |f|
+          .form-group
+            label for="contact_form_email" Email Address:
+            =f.email_field :email, id: 'contact_form_email', class: 'form-control', placeholder: 'Enter email (optional)'
+          .form-group
+            label for="contact_form_message" Message:
+            =f.text_area :message, id: 'contact_form_message', class: 'form-control', placeholder: 'Your message', required: true
+          .hidden
+            =f.text_field :nickname, hint: "Leave this field blank!"
+          =button_tag(type: 'submit', class: 'btn btn-primary') do ||
+            ' Send&nbsp;
+            i.fa.fa-angle-double-right
+          div style="margin-top: 30px;"
+            .form-success-small.collapse.form-success Thank you.
+            / TODO: Add info@cryfs.org to error message.
+            .form-error-small.collapse.form-error Sorry, there was an error sending your message.
+          javascript:
+            window.setup_ajax_form("#contact_form")
+
+section.footer
   .container
     footer
       p.vertical-center Copyright © 2015 - Sebastian Messmer
