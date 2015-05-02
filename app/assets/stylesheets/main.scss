@@ -39,10 +39,6 @@ $wanted_teaser_height: 1000px;
 .teaser-icon-smaller {
   font-size: 200px;
 }
-.github-icon {
-  margin-top: -5px;
-  font-size: 30px;
-}
 .bulletpoints {
   margin-top: 60px;
   margin-bottom: 40px;
@@ -63,4 +59,16 @@ footer {
   top: 0;
   right: 0;
   border: 0;
+}
+.form-success-small {
+  @extend .lead;
+  color: green;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.form-error-small {
+  @extend .lead;
+  color: red;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

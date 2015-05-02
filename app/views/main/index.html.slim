@@ -28,13 +28,19 @@ section.teaser
         ' We are currently in development.
         br
         ' Get notified when it's ready!
-        form.form-inline style="margin-top: 20px;"
-          .form-group
-            .sr-only for="inputEmail"
-            input.form-control#inputEmail type="email" placeholder="Enter email"
-          button.btn.btn-primary type="submit"
-            ' Get Notified&nbsp;
-            i.fa.fa-angle-double-right
+        div style="margin-top: 20px;"
+          =form_for InterestedUser.new, remote: true, html: {id: "interested_user_form_1", class: 'form form-inline'} do |f|
+            .form-group
+              .sr-only for="interested_user_form_1-inputEmail" Email Address:
+              =f.email_field :email, id: 'interested_user_form_1-inputEmail', class: "form-control", placeholder: "Enter email"
+            =button_tag(type: 'submit', class: "btn btn-primary", style: "margin-left: 5px;") do ||
+              ' Get Notified&nbsp;
+              i.fa.fa-angle-double-right
+            div
+              .collapse.form-success.form-success-small Thank you. We'll get in touch.
+              .collapse.form-error.form-error-small Invalid email address.
+          javascript:
+            window.setup_ajax_form("#interested_user_form_1")
 
       / p
         a.btn.btn-primary.btn-lg href="#" role="button" Learn more »
@@ -64,15 +70,21 @@ section.teaser
         a.btn.btn-default href="#" role="button" View details »
 
 section style="background: #dbdbdb;"
-  .container.text-center style="padding-top: 50px;"
+  .container.text-center style="padding-top: 50px; padding-bottom: 50px;"
     p.h2 Let us notify you when it's ready!
-    form.form-inline style="margin-top: 20px; margin-bottom: 70px;"
-      .form-group
-        .sr-only for="inputEmail"
-        input.form-control#inputEmail type="email" placeholder="Enter email"
-      button.btn.btn-primary type="submit"
-        ' Get Notified&nbsp;
-        i.fa.fa-angle-double-right
+    div style="margin-top: 20px;"
+      =form_for InterestedUser.new, remote: true, html: {id: "interested_user_form_2", class: 'form form-inline'} do |f|
+        .form-group
+          .sr-only for="interested_user_form_2-inputEmail" Email Address:
+          =f.email_field :email, id: 'interested_user_form_2-inputEmail', class: "form-control", placeholder: "Enter email"
+        =button_tag(type: 'submit', class: "btn btn-primary", style: "margin-left: 5px;") do ||
+          ' Get Notified&nbsp;
+          i.fa.fa-angle-double-right
+        div style="margin-top: 30px;"
+          .form-success-small.collapse.form-success Thank you. We'll get in touch.
+          .form-error-small.collapse.form-error Invalid email address.
+      javascript:
+        window.setup_ajax_form("#interested_user_form_2")
 
 section style="background: black"
   .container

@@ -45,6 +45,7 @@ gem 'slim-rails', '~> 3.0.1'
 gem 'font-awesome-sass', '~> 4.3.0'
 
 gem 'simple_form', '~> 3.1.0'
+gem 'validates_email_format_of' , '~> 1.6.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
