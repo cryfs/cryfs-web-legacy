@@ -18,6 +18,7 @@ gem 'coffee-rails', '~> 4.1.0'
 group :production do
   gem 'rails_12factor'
   gem 'puma'
+  gem 'heroku-deflater'
 end
 
 # Use jquery as the JavaScript library
@@ -47,7 +48,6 @@ gem 'font-awesome-sass', '~> 4.3.0'
 gem 'simple_form', '~> 3.1.0'
 gem 'mail_form', '~> 1.5'
 gem 'validates_email_format_of' , '~> 1.6.2'
-gem 'rack-zippy', '~> 3.0.0'
 
 group :development do
   gem 'guard-livereload', '~> 2.4', require: false
