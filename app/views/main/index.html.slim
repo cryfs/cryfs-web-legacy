@@ -40,7 +40,8 @@ section.teaser
               .collapse.form-success.form-success-small Thank you. We'll get in touch.
               .collapse.form-error.form-error-small Invalid email address.
           javascript:
-            window.setup_ajax_form("#interested_user_form_1")
+            window.setup_ajax_forms = window.setup_ajax_forms || [];
+            window.setup_ajax_forms.push("#interested_user_form_1");
 
       / p
         a.btn.btn-primary.btn-lg href="#" role="button" Learn more »
@@ -85,7 +86,8 @@ section.section-2
           .form-success-small.collapse.form-success Thank you. We'll get in touch.
           .form-error-small.collapse.form-error Invalid email address.
       javascript:
-        window.setup_ajax_form("#interested_user_form_2")
+        window.setup_ajax_forms = window.setup_ajax_forms || [];
+        window.setup_ajax_forms.push("#interested_user_form_2");
 
 section.section-1
   .container.text-center
@@ -109,7 +111,8 @@ section.section-1
             / TODO: Add info@cryfs.org to error message.
             .form-error-small.collapse.form-error Sorry, there was an error sending your message.
           javascript:
-            window.setup_ajax_form("#contact_form")
+            window.setup_ajax_forms = window.setup_ajax_forms || [];
+            window.setup_ajax_forms.push("#contact_form");
 
 section.footer
   .container

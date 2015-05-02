@@ -6,7 +6,7 @@ $ ->
   $.ajaxSetup
     dataType: 'json'
 
-window.setup_ajax_form = (selector) ->
+setup_ajax_form = (selector) ->
   $(selector)
   .bind "ajax:success", (data, status, xhr) ->
     $(selector+' .form-error').hide()
@@ -16,3 +16,7 @@ window.setup_ajax_form = (selector) ->
     $(selector+' .form-success').hide()
     $(selector+' .form-error').show()
     $(selector).removeClass("has-success").addClass("has-error")
+
+if window.setup_ajax_forms?
+  for selector in window.setup_ajax_forms
+    setup_ajax_form(selector)
