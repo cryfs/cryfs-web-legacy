@@ -19,6 +19,8 @@ group :production do
   gem 'rails_12factor'
   gem 'puma'
   gem 'heroku-deflater'
+  gem 'image_optim'
+  gem 'image_optim_pack'
 end
 
 # Use jquery as the JavaScript library
