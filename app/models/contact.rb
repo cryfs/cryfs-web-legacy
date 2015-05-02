@@ -7,10 +7,15 @@ class Contact < MailForm::Base
   # Declare the e-mail headers. It accepts anything the mail method
   # in ActionMailer accepts.
   def headers
+    from = email
+    if from == ""
+      from = "[unknown]"
+    end
     {
-      :subject => "CryFS Contact Form",
-      :to => "mail@smessmer.de",
-      :from => %("CryFS Contact Form" <contactform@cryfs.org>)
+      subject: "CryFS Contact Form (from #{from})",
+      to: "mail@smessmer.de",
+      from: %("CryFS Contact Form" <contactform@cryfs.org>),
+      reply_to: email
     }
   end
 end
