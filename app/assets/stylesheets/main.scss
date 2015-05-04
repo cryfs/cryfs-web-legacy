@@ -9,18 +9,23 @@ $teaser_width: 5308px;
 $teaser_height: 2636px;
 $wanted_teaser_height: 1000px;
 
+$is-xs: "(max-width: $screen-xs-max)";
+$is-sm: "(min-width: $screen-sm-min) and (max-width: $screen-sm-max)";
+$is-md: "(min-width: $screen-md-min) and (max-width: $screen-md-max)";
+$is-lg: "(min-width: $screen-lg-min)";
+
 .teaser {
   background-image: image-url('teaser.jpg');
   background-size: $teaser_width/$teaser_height*$wanted_teaser_height 100%;
   background-repeat: no-repeat;
+  background-position: right;
   height: $wanted_teaser_height;
   width: 100%;
-  background-position: center;
 }
-
 .title-text {
-  margin-top: 220px;
-  margin-left: 650px;
+  position: absolute;
+  margin-top: 200px;
+  right: 330px;
   width: 600px;
 }
 .title-text h1 {
