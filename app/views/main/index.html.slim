@@ -2,7 +2,7 @@ nav.navbar.navbar-inverse.navbar-static-top
   .container
     .navbar-header
       button.navbar-toggle.collapsed.pull-left type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"
-        span.sr-only Toggle navigation
+        span.sr-only =t(:nav_togglenavigation)
         span.icon-bar
         span.icon-bar
         span.icon-bar
@@ -10,83 +10,89 @@ nav.navbar.navbar-inverse.navbar-static-top
     #navbar.navbar-collapse.collapse
       ul.nav.navbar-nav.navbar-right
         li
-          a href="#" Download
+          a href="#" =t(:nav_download)
         li
-          a href="#" Documentation
+          a href="#" =t(:nav_documentation)
         li
-          a href="#" Get Involved
+          a href="#" =t(:nav_getinvolved)
 
 a href="https://github.com/smessmer/cryfs"
-  img.github-ribbon src="#{image_url('github_ribbon.png')}" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"
+  img.github-ribbon src="#{image_url('github_ribbon.png')}" alt="#{t(:github_forkme)}" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"
 
 section.teaser
   .clearfix
     .teaser-content
       .teaser-img
       .lead.text-center.title-text
-        h1 Keep your data safe in the cloud
-        p CryFS encrypts your files, so you can safely store them anywhere. It works well together with cloud services like Dropbox, iCloud, OneDrive and others.
+        h1 =t(:teaser_header)
+        p =t(:teaser_paragraph1)
         p
-          ' We are currently in development.
+          =t(:teaser_paragraph2)
           br
-          ' Get notified when it's ready!
+          =t(:teaser_paragraph3)
           div style="margin-top: 20px;"
             =form_for InterestedUser.new, remote: true, html: {id: "interested_user_form_1", class: 'form form-inline'} do |f|
               .form-group
-                .sr-only for="interested_user_form_1-inputEmail" Email Address:
-                =f.email_field :email, id: 'interested_user_form_1-inputEmail', class: "form-control", placeholder: "Enter email", required: true
+                .sr-only for="interested_user_form_1-inputEmail" =t(:mailform_email_label)
+                =f.email_field :email, id: 'interested_user_form_1-inputEmail', class: "form-control", placeholder: t(:mailform_email_placeholder), required: true
               =button_tag(type: 'submit', class: "btn btn-primary", style: "margin-left: 5px;") do ||
-                ' Get Notified&nbsp;
+                =t(:mailform_buttontext)
+                ' &nbsp;
                 i.fa.fa-angle-double-right
               div
-                .collapse.form-success.form-success-small Thank you. We'll get in touch.
-                .collapse.form-error.form-error-small Invalid email address.
+                .collapse.form-success.form-success-small =t(:mailform_success)
+                .collapse.form-error.form-error-small =t(:mailform_invalid_email)
             javascript:
               window.setup_ajax_forms = window.setup_ajax_forms || [];
               window.setup_ajax_forms.push("#interested_user_form_1");
-
-        / p
-          a.btn.btn-primary.btn-lg href="#" role="button" Learn more »
 
 section.section-1
   .container
     .row
       .col-md-4.text-center
         i.fa.fa-check-circle-o.teaser-icon
-        h2 Simple
-        p CryFS is easy to setup and works with a lot of cloud storage providers. Encryption works transparently, that is, in your daily workflow you won't notice a difference to using (say) Dropbox directly.
+        h2 =t(:bulletpoints_simple_title)
+        p =t(:bulletpoints_simple_text)
         p
-          a.btn.btn-default href="#" role="button" View details »
+          a.btn.btn-default href="#" role="button"
+            =t(:bulletpoints_view_details)
+            ' &nbsp;
+            i.fa.fa-angle-double-right
       .col-md-4.text-center
         i.fa.fa-lock.teaser-icon
-        h2 Secure
-        p Every bit of data leaving your computer will be encrypted. CryFS never gives unencrypted data to the cloud. Not only file contents, but also file metadata and directory structure is encrypted. CryFS also protects you from someone modifying your data without your noticing.
+        h2 =t(:bulletpoints_secure_title)
+        p =t(:bulletpoints_secure_text)
         p
-          a.btn.btn-default href="#" role="button" View details »
+          a.btn.btn-default href="#" role="button"
+            =t(:bulletpoints_view_details)
+            ' &nbsp;
+            i.fa.fa-angle-double-right
       .col-md-4.text-center
         i.fa.fa-diamond.teaser-icon-smaller
-        h2 Free and Open Source
+        h2 =t(:bulletpoints_foss_title)
+        p =t(:bulletpoints_foss_text_html, github_link: link_to(t(:bulletpoints_github), "https://github.com/smessmer/cryfs", target: "_blank"))
         p
-          ' CryFS is released under LGPL and available on
-          a target="_blank" href="https://github.com/smessmer/cryfs" github
-          '. Everyone can look at the source code and check that it fulfills the given security promises. If you want, you can take the source code and modify it to your needs. We'd also be happy to include your improvements into CryFS directly.
-        p
-          a.btn.btn-default href="#" role="button" View details »
+          a.btn.btn-default href="#" role="button"
+            =t(:bulletpoints_view_details)
+            ' &nbsp;
+            i.fa.fa-angle-double-right
 
 section.section-2
   .container.text-center
-    h2 Let us notify you when it's ready!
+    h2 =t(:calltoaction_title)
     div style="margin-top: 20px;"
       =form_for InterestedUser.new, remote: true, html: {id: "interested_user_form_2", class: 'form form-inline'} do |f|
+        / TODO nickname field (simple bot protection) also here and on email field above
         .form-group
-          label.sr-only for="interested_user_form_2-inputEmail" Email Address:
-          =f.email_field :email, id: 'interested_user_form_2-inputEmail', class: "form-control", placeholder: "Enter email", required: true
+          label.sr-only for="interested_user_form_2-inputEmail" =t(:mailform_email_label)
+          =f.email_field :email, id: 'interested_user_form_2-inputEmail', class: "form-control", placeholder: t(:mailform_email_placeholder), required: true
         =button_tag(type: 'submit', class: "btn btn-primary", style: "margin-left: 5px;") do ||
-          ' Get Notified&nbsp;
+          =t(:mailform_buttontext)
+          ' &nbsp;
           i.fa.fa-angle-double-right
         div style="margin-top: 30px;"
-          .form-success-small.collapse.form-success Thank you. We'll get in touch.
-          .form-error-small.collapse.form-error Invalid email address.
+          .form-success-small.collapse.form-success =t(:mailform_success)
+          .form-error-small.collapse.form-error =t(:mailform_invalid_email)
       javascript:
         window.setup_ajax_forms = window.setup_ajax_forms || [];
         window.setup_ajax_forms.push("#interested_user_form_2");
@@ -94,27 +100,28 @@ section.section-2
 section.section-1
   .container.text-center
     .row
-      h2 style="margin-top: 0px;" Contact Us
+      h2 style="margin-top: 0px;" =t(:contactform_title)
       div style="margin-top: 20px;"
         =form_for Contact.new, remote: true, html: {id: "contact_form", class: 'form col-md-offset-3 col-md-6'} do |f|
           .row
             .form-group.col-md-12
-              label.sr-only for="contact_form_message" Message:
-              =f.text_area :message, id: 'contact_form_message', class: 'form-control', style: 'height: 140px;', placeholder: "Your message to us. We're looking forward to your feedback, ideas and criticism. Please be blunt.", required: true
+              label.sr-only for="contact_form_message" =t(:contactform_message_label)
+              =f.text_area :message, id: 'contact_form_message', class: 'form-control', style: 'height: 140px;', placeholder: t(:contactform_message_placeholder), required: true
             .hidden
-              =f.text_field :nickname, hint: "Leave this field blank!"
+              =f.text_field :nickname, hint: t(:form_leaveblank)
             .form-group.col-md-8
-              label.sr-only for="contact_form_email" Your Email:
-              =f.email_field :email, id: 'contact_form_email', class: 'form-control', style: 'margin-top: 2px; height: 30px;', placeholder: 'Your email address (optional)'
+              label.sr-only for="contact_form_email" =t(:contactform_email_label)
+              =f.email_field :email, id: 'contact_form_email', class: 'form-control', style: 'margin-top: 2px; height: 30px;', placeholder: t(:contactform_email_placeholder)
             .form-group.col-md-offset-1.col-md-3
               =button_tag(type: 'submit', class: 'btn btn-block btn-primary') do ||
-                ' Send&nbsp;
+                =t(:contactform_send)
+                ' &nbsp;
                 i.fa.fa-angle-double-right
             .clearfix style="margin-top: 30px;"
-              .form-success-small.collapse.form-success Thank you.
+              .form-success-small.collapse.form-success =t(:contactform_success)
               / TODO: Add info@cryfs.org to error message.
               / TODO: We show the error message also when the email address was given but is invalid (e.g. "test@test" without TLD). It would be better to show specific error message.
-              .form-error-small.collapse.form-error Sorry, there was an error sending your message.
+              .form-error-small.collapse.form-error =t(:contactform_error)
             javascript:
               window.setup_ajax_forms = window.setup_ajax_forms || [];
               window.setup_ajax_forms.push("#contact_form");
