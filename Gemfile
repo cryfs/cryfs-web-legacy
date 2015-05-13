@@ -47,7 +47,6 @@ gem 'slim-rails', '~> 3.0.1'
 
 gem 'font-awesome-sass', '~> 4.3.0'
 
-gem 'simple_form', '~> 3.1.0'
 gem 'mail_form', '~> 1.5'
 gem 'validates_email_format_of' , '~> 1.6.2'
 

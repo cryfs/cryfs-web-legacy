@@ -9,23 +9,44 @@ $teaser_width: 5308px;
 $teaser_height: 2636px;
 $wanted_teaser_height: 1000px;
 
-$is-xs: "(max-width: $screen-xs-max)";
-$is-sm: "(min-width: $screen-sm-min) and (max-width: $screen-sm-max)";
-$is-md: "(min-width: $screen-md-min) and (max-width: $screen-md-max)";
-$is-lg: "(min-width: $screen-lg-min)";
+$is-xs: "(max-width: #{$screen-xs-max})";
+$is-min-sm: "(min-width: #{$screen-sm-min})";
+$is-max-sm: "(max-width: #{$screen-sm-max})";
+$is-sm: "#{$is-min-sm} and #{$is-max-sm}";
+$is-min-md: "(min-width: #{$screen-md-min})";
+$is-max-md: "(max-width: #{$screen-md-max})";
+$is-md: "#{$is-min-md} and #{$is-max-md}";
+$is-lg: "(min-width: #{$screen-lg-min})";
 
 .teaser {
-  background-image: image-url('teaser.jpg');
-  background-size: $teaser_width/$teaser_height*$wanted_teaser_height 100%;
-  background-repeat: no-repeat;
-  background-position: right;
+  position: relative;
   height: $wanted_teaser_height;
   width: 100%;
+  overflow-x: hidden;
+}
+.teaser-content {
+  position: absolute;
+  height: $wanted_teaser_height;
+  width: $teaser_width/$teaser_height*$wanted_teaser_height;
+  @media #{$is-min-md} {
+    right: 0px;
+  }
+  @media #{$is-max-sm} {
+    right: -400px;
+  }
+}
+.teaser-img {
+  position: absolute;
+  width: $teaser_width/$teaser_height*$wanted_teaser_height;
+  height: $wanted_teaser_height;
+  background-image: image-url('teaser.jpg');
+  background-size: $teaser_width/$teaser_height*$wanted_teaser_height $wanted_teaser_height;
+  background-repeat: no-repeat;
 }
 .title-text {
   position: absolute;
   margin-top: 200px;
-  right: 330px;
+  margin-left: 1075px;
   width: 600px;
 }
 .title-text h1 {

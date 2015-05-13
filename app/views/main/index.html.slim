@@ -21,30 +21,32 @@ a href="https://github.com/smessmer/cryfs"
 
 section.teaser
   .clearfix
-    .lead.text-center.title-text
-      h1 Keep your data safe in the cloud
-      p CryFS encrypts your files, so you can safely store them anywhere. It works well together with cloud services like Dropbox, iCloud, OneDrive and others.
-      p
-        ' We are currently in development.
-        br
-        ' Get notified when it's ready!
-        div style="margin-top: 20px;"
-          =form_for InterestedUser.new, remote: true, html: {id: "interested_user_form_1", class: 'form form-inline'} do |f|
-            .form-group
-              .sr-only for="interested_user_form_1-inputEmail" Email Address:
-              =f.email_field :email, id: 'interested_user_form_1-inputEmail', class: "form-control", placeholder: "Enter email", required: true
-            =button_tag(type: 'submit', class: "btn btn-primary", style: "margin-left: 5px;") do ||
-              ' Get Notified&nbsp;
-              i.fa.fa-angle-double-right
-            div
-              .collapse.form-success.form-success-small Thank you. We'll get in touch.
-              .collapse.form-error.form-error-small Invalid email address.
-          javascript:
-            window.setup_ajax_forms = window.setup_ajax_forms || [];
-            window.setup_ajax_forms.push("#interested_user_form_1");
+    .teaser-content
+      .teaser-img
+      .lead.text-center.title-text
+        h1 Keep your data safe in the cloud
+        p CryFS encrypts your files, so you can safely store them anywhere. It works well together with cloud services like Dropbox, iCloud, OneDrive and others.
+        p
+          ' We are currently in development.
+          br
+          ' Get notified when it's ready!
+          div style="margin-top: 20px;"
+            =form_for InterestedUser.new, remote: true, html: {id: "interested_user_form_1", class: 'form form-inline'} do |f|
+              .form-group
+                .sr-only for="interested_user_form_1-inputEmail" Email Address:
+                =f.email_field :email, id: 'interested_user_form_1-inputEmail', class: "form-control", placeholder: "Enter email", required: true
+              =button_tag(type: 'submit', class: "btn btn-primary", style: "margin-left: 5px;") do ||
+                ' Get Notified&nbsp;
+                i.fa.fa-angle-double-right
+              div
+                .collapse.form-success.form-success-small Thank you. We'll get in touch.
+                .collapse.form-error.form-error-small Invalid email address.
+            javascript:
+              window.setup_ajax_forms = window.setup_ajax_forms || [];
+              window.setup_ajax_forms.push("#interested_user_form_1");
 
-      / p
-        a.btn.btn-primary.btn-lg href="#" role="button" Learn more »
+        / p
+          a.btn.btn-primary.btn-lg href="#" role="button" Learn more »
 
 section.section-1
   .container
