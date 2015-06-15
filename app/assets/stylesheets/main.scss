@@ -7,7 +7,8 @@ body {
 
 $teaser_width: 5308px;
 $teaser_height: 2636px;
-$wanted_teaser_height: 1000px;
+$wanted_teaser_height_md: 1000px;
+$wanted_teaser_height_sm: 200px;
 
 $is-xs: "(max-width: #{$screen-xs-max})";
 $is-min-sm: "(min-width: #{$screen-sm-min})";
@@ -20,42 +21,75 @@ $is-lg: "(min-width: #{$screen-lg-min})";
 
 .teaser {
   position: relative;
-  height: $wanted_teaser_height;
+  @media #{$is-min-md} {
+    height: $wanted_teaser_height_md;
+  }
+  @media #{$is-max-sm} {
+    height: $wanted_teaser_height_sm;
+  }
   width: 100%;
   overflow-x: hidden;
 }
 .teaser-content {
   position: absolute;
-  height: $wanted_teaser_height;
-  width: $teaser_width/$teaser_height*$wanted_teaser_height;
   @media #{$is-min-md} {
     right: 0px;
+    height: $wanted_teaser_height_md;
+    width: $teaser_width/$teaser_height*$wanted_teaser_height_md;
   }
   @media #{$is-max-sm} {
-    right: -400px;
+    height: $wanted_teaser_height_sm;
+    width: 100%;
   }
 }
 .teaser-img {
   position: absolute;
-  width: $teaser_width/$teaser_height*$wanted_teaser_height;
-  height: $wanted_teaser_height;
+  @media #{$is-min-md} {
+    width: $teaser_width/$teaser_height*$wanted_teaser_height_md;
+    height: $wanted_teaser_height_md;
+    background-size: $teaser_width/$teaser_height*$wanted_teaser_height_md $wanted_teaser_height_md;
+  }
+  @media #{$is-max-sm} {
+    width: $teaser_width/$teaser_height*$wanted_teaser_height_sm;
+    height: $wanted_teaser_height_sm;
+    background-size: $teaser_width/$teaser_height*$wanted_teaser_height_sm $wanted_teaser_height_sm;
+  }
   background-image: image-url('teaser.jpg');
-  background-size: $teaser_width/$teaser_height*$wanted_teaser_height $wanted_teaser_height;
   background-repeat: no-repeat;
 }
 .title-text {
   position: absolute;
-  margin-top: 200px;
-  margin-left: 1075px;
-  width: 600px;
+  @media #{$is-min-md} {
+    margin-top: 200px;
+    margin-left: 1075px;
+    width: 600px;
+  }
+  @media #{$is-max-sm} {
+    margin: 10px;
+  }
 }
 .title-text h1 {
-  color: #9d9d9d;
-  margin-bottom: 50px;
+  @media #{$is-max-sm} {
+    color: black;
+    font-size: large;
+    width: 180px;
+    margin-top: 10px;
+  }
+  @media #{$is-min-md} {
+    color: #9d9d9d;
+    margin-bottom: 50px;
+  }
 }
 .title-text p {
-  margin-top: 30px;
-  color: #909090;
+  @media #{$is-min-md} {
+    margin-top: 30px;
+    color: #909090;
+  }
+  @media #{$is-max-sm} {
+    font-size: small;
+    width: 180px;
+    color: black;
+  }
 }
 
 .teaser-icon {

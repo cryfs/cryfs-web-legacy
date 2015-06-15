@@ -26,10 +26,11 @@ section.teaser
       .lead.text-center.title-text
         h1 =t(:teaser_header)
         p =t(:teaser_paragraph1)
-        p
-          =t(:teaser_paragraph2)
-          br
-          =t(:teaser_paragraph3)
+        .visible-md-inline-block.visible-lg-inline-block
+          p
+            =t(:teaser_paragraph2)
+            br
+            =t(:teaser_paragraph3)
           div style="margin-top: 20px;"
             =form_for InterestedUser.new, remote: true, html: {id: "interested_user_form_1", class: 'form form-inline'} do |f|
               .form-group
@@ -45,6 +46,7 @@ section.teaser
             javascript:
               window.setup_ajax_forms = window.setup_ajax_forms || [];
               window.setup_ajax_forms.push("#interested_user_form_1");
+
 
 section.section-1
   .container
