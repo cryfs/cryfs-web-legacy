@@ -13,16 +13,19 @@ setup_ajax_form = (selector) ->
     $(selector+' .form-success').hide()
     $(selector+' .form-error').hide()
     $(selector+' .form-spinner').show()
+    $(selector+' .form-notification-area').show()
   .bind "ajax:success", (data, status, xhr) ->
+    $(selector).removeClass("has-error").addClass("has-success")
     $(selector+' .form-spinner').hide()
     $(selector+' .form-error').hide()
     $(selector+' .form-success').show()
-    $(selector).removeClass("has-error").addClass("has-success")
+    $(selector+' .form-notification-area').show()
   .bind "ajax:error", (xhr, status, error) ->
+    $(selector).removeClass("has-success").addClass("has-error")
     $(selector+' .form-spinner').hide()
     $(selector+' .form-success').hide()
     $(selector+' .form-error').show()
-    $(selector).removeClass("has-success").addClass("has-error")
+    $(selector+' .form-notification-area').show()
 
 if window.setup_ajax_forms?
   for selector in window.setup_ajax_forms

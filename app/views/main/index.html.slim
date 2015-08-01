@@ -19,42 +19,75 @@ nav.navbar.navbar-inverse.navbar-static-top
 a href="https://github.com/smessmer/cryfs"
   img.github-ribbon src="#{image_url('github_ribbon.png')}" alt="#{t(:github_forkme)}" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"
 
-section.teaser
+section.teaser-md.visible-md.visible-lg
   .clearfix
     .teaser-content
       .teaser-img
       .lead.text-center.title-text
         h1 =t(:teaser_header)
         p =t(:teaser_paragraph1)
-        .visible-md-inline-block.visible-lg-inline-block
-          p
-            =t(:teaser_paragraph2)
-            br
-            =t(:teaser_paragraph3)
-          div style="margin-top: 20px;"
-            =form_for InterestedUser.new, remote: true, html: {id: "interested_user_form_1", class: 'form form-inline'} do |f|
-              .form-group
-                .sr-only for="interested_user_form_1-inputEmail" =t(:mailform_email_label)
-                =f.email_field :email, id: 'interested_user_form_1-inputEmail', class: "form-control", placeholder: t(:mailform_email_placeholder), required: true
-              =button_tag(type: 'submit', class: "btn btn-primary", style: "margin-left: 5px;") do ||
-                =t(:mailform_buttontext)
-                ' &nbsp;
-                i.fa.fa-angle-double-right
-              div
-                .collapse.form-success.form-success-small =t(:mailform_success)
-                .collapse.form-error.form-error-small =t(:mailform_invalid_email)
-                .collapse.form-spinner.form-spinner-small
-                  i.fa.fa-spinner.fa-pulse
-            javascript:
-              window.setup_ajax_forms = window.setup_ajax_forms || [];
-              window.setup_ajax_forms.push("#interested_user_form_1");
+        p
+          =t(:teaser_paragraph2)
+          br
+          =t(:teaser_paragraph3)
+        div style="margin-top: 20px;"
+          =form_for InterestedUser.new, remote: true, html: {id: "interested_user_form_1", class: 'form form-inline'} do |f|
+            .form-group
+              .sr-only for="interested_user_form_1-inputEmail" =t(:mailform_email_label)
+              =f.email_field :email, id: 'interested_user_form_1-inputEmail', class: "form-control", placeholder: t(:mailform_email_placeholder), required: true
+            =button_tag(type: 'submit', class: "btn btn-primary", style: "margin-left: 5px;") do ||
+              =t(:mailform_buttontext)
+              ' &nbsp;
+              i.fa.fa-angle-double-right
+            .collapse.form-notification-area
+              .collapse.form-success.form-success-small =t(:mailform_success)
+              .collapse.form-error.form-error-small =t(:mailform_invalid_email)
+              .collapse.form-spinner.form-spinner-small
+                i.fa.fa-spinner.fa-pulse
+          javascript:
+            window.setup_ajax_forms = window.setup_ajax_forms || [];
+            window.setup_ajax_forms.push("#interested_user_form_1");
+
+section.teaser-sm.visible-xs.visible-sm
+  .clearfix
+    .teaser-content
+      .text-center.title-logo
+        i.fa.fa-lock
+      .lead.text-center.title-text
+        h1 =t(:teaser_header)
+        p =t(:teaser_paragraph1)
+
+section.section-2.visible-sm.visible-xs
+  .container.text-center
+    p.lead
+      =t(:teaser_paragraph2)
+      br
+      =t(:teaser_paragraph3)
+    div style="margin-top: 20px;"
+      =form_for InterestedUser.new, remote: true, html: {id: "interested_user_form_2", class: 'form form-inline'} do |f|
+        / TODO nickname field (simple bot protection) also here and on email field above
+        .form-group
+          label.sr-only for="interested_user_form_2-inputEmail" =t(:mailform_email_label)
+          =f.email_field :email, id: 'interested_user_form_2-inputEmail', class: "form-control", placeholder: t(:mailform_email_placeholder), required: true
+        =button_tag(type: 'submit', class: "btn btn-primary", style: "margin-left: 5px;") do ||
+          =t(:mailform_buttontext)
+          ' &nbsp;
+          i.fa.fa-angle-double-right
+        .collapse.form-notification-area style="margin-top: 30px;"
+          .form-success-small.collapse.form-success =t(:mailform_success)
+          .form-error-small.collapse.form-error =t(:mailform_invalid_email)
+          .collapse.form-spinner.form-spinner-small
+            i.fa.fa-spinner.fa-pulse
+      javascript:
+        window.setup_ajax_forms = window.setup_ajax_forms || [];
+        window.setup_ajax_forms.push("#interested_user_form_2");
 
 
 section.section-1
   .container
     .row
       .col-md-4.text-center
-        i.fa.fa-check-circle-o.teaser-icon
+        i.fa.fa-check-circle-o.bulletpoint-icon
         h2 =t(:bulletpoints_simple_title)
         p =t(:bulletpoints_simple_text)
         p
@@ -63,7 +96,7 @@ section.section-1
             ' &nbsp;
             i.fa.fa-angle-double-right
       .col-md-4.text-center
-        i.fa.fa-lock.teaser-icon
+        i.fa.fa-lock.bulletpoint-icon
         h2 =t(:bulletpoints_secure_title)
         p =t(:bulletpoints_secure_text)
         p
@@ -72,7 +105,7 @@ section.section-1
             ' &nbsp;
             i.fa.fa-angle-double-right
       .col-md-4.text-center
-        i.fa.fa-diamond.teaser-icon-smaller
+        i.fa.fa-diamond.bulletpoint-icon-smaller
         h2 =t(:bulletpoints_foss_title)
         p =t(:bulletpoints_foss_text_html, github_link: link_to(t(:bulletpoints_github), "https://github.com/smessmer/cryfs", target: "_blank"))
         p
@@ -85,23 +118,23 @@ section.section-2
   .container.text-center
     h2 =t(:calltoaction_title)
     div style="margin-top: 20px;"
-      =form_for InterestedUser.new, remote: true, html: {id: "interested_user_form_2", class: 'form form-inline'} do |f|
+      =form_for InterestedUser.new, remote: true, html: {id: "interested_user_form_3", class: 'form form-inline'} do |f|
         / TODO nickname field (simple bot protection) also here and on email field above
         .form-group
-          label.sr-only for="interested_user_form_2-inputEmail" =t(:mailform_email_label)
-          =f.email_field :email, id: 'interested_user_form_2-inputEmail', class: "form-control", placeholder: t(:mailform_email_placeholder), required: true
+          label.sr-only for="interested_user_form_3-inputEmail" =t(:mailform_email_label)
+          =f.email_field :email, id: 'interested_user_form_3-inputEmail', class: "form-control", placeholder: t(:mailform_email_placeholder), required: true
         =button_tag(type: 'submit', class: "btn btn-primary", style: "margin-left: 5px;") do ||
           =t(:mailform_buttontext)
           ' &nbsp;
           i.fa.fa-angle-double-right
-        div style="margin-top: 30px;"
+        .collapse.form-notification-area style="margin-top: 30px;"
           .form-success-small.collapse.form-success =t(:mailform_success)
           .form-error-small.collapse.form-error =t(:mailform_invalid_email)
           .collapse.form-spinner.form-spinner-small
             i.fa.fa-spinner.fa-pulse
       javascript:
         window.setup_ajax_forms = window.setup_ajax_forms || [];
-        window.setup_ajax_forms.push("#interested_user_form_2");
+        window.setup_ajax_forms.push("#interested_user_form_3");
 
 section.section-1
   .container.text-center
@@ -123,7 +156,8 @@ section.section-1
                 =t(:contactform_send)
                 ' &nbsp;
                 i.fa.fa-angle-double-right
-            .clearfix style="margin-top: 30px;"
+            .clearfix
+            .collapse.form-notification-area style="margin-top: 30px;"
               .form-success-small.collapse.form-success =t(:contactform_success)
               / TODO: Add info@cryfs.org to error message.
               / TODO: We show the error message also when the email address was given but is invalid (e.g. "test@test" without TLD). It would be better to show specific error message.
