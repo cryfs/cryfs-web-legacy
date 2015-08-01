@@ -1,3 +1,5 @@
 == README
 
 This repository holds the cryfs.org website
+
+See http://www.cryfs.org
