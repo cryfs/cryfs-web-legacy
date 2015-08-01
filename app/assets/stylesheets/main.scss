@@ -8,7 +8,6 @@ body {
 $teaser_width: 5308px;
 $teaser_height: 2636px;
 $wanted_teaser_height_md: 1000px;
-$wanted_teaser_height_sm: 200px;
 
 $is-xs: "(max-width: #{$screen-xs-max})";
 $is-min-sm: "(min-width: #{$screen-sm-min})";
@@ -118,6 +117,9 @@ $is-lg: "(min-width: #{$screen-lg-min})";
 }
 .navbar {
   margin-bottom: 0;
+}
+.navbar-container {
+  padding-right: 140px;
 }
 
 .section {
