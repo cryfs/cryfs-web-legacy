@@ -2,13 +2,13 @@ nav.navbar.navbar-inverse.navbar-static-top
   .container
     .navbar-container
       .navbar-header
-        button.navbar-toggle.collapsed.pull-left type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"
+        /button.navbar-toggle.collapsed.pull-left type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"
           span.sr-only =t(:nav_togglenavigation)
           span.icon-bar
           span.icon-bar
           span.icon-bar
         a.navbar-brand href="#" CryFS
-      #navbar.navbar-collapse.collapse
+      /#navbar.navbar-collapse.collapse
         ul.nav.navbar-nav.navbar-right
           li
             a href="#" =t(:nav_download)
@@ -88,7 +88,8 @@ section.section.section-1
   .container
     .row
       .col-md-4.text-center
-        i.fa.fa-check-circle-o.bulletpoint-icon
+        /i.fa.fa-check-circle-o.bulletpoint-icon
+        i.fa.fa-lightbulb-o.bulletpoint-icon
         h2 =t(:bulletpoints_simple_title)
         p =t(:bulletpoints_simple_text)
         p
@@ -106,7 +107,8 @@ section.section.section-1
             ' &nbsp;
             i.fa.fa-angle-double-right
       .col-md-4.text-center
-        i.fa.fa-diamond.bulletpoint-icon-smaller
+        =image_tag "eagle.png", size:"200x200"
+        /i.fa.fa-copyright.bulletpoint-icon-smaller
         h2 =t(:bulletpoints_foss_title)
         p =t(:bulletpoints_foss_text_html, github_link: link_to(t(:bulletpoints_github), "https://github.com/smessmer/cryfs", target: "_blank"))
         p

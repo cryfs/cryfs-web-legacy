@@ -41,11 +41,11 @@ en:
   mailform_invalid_email: "Invalid email address."
 
   bulletpoints_simple_title: "Simple"
-  bulletpoints_simple_text: "CryFS is easy to setup and works with a lot of cloud storage providers. Encryption works transparently, that is, in your daily workflow you won't notice a difference to using (say) Dropbox directly."
+  bulletpoints_simple_text: "Easy to setup and works with a lot of cloud storage providers. You won't notice it when accessing your files in your daily workflow."
   bulletpoints_secure_title: "Secure"
-  bulletpoints_secure_text: "Every bit of data leaving your computer will be encrypted. CryFS never gives unencrypted data to the cloud. Not only file contents, but also file metadata and directory structure is encrypted. CryFS also protects you from someone modifying your data without your noticing."
+  bulletpoints_secure_text: "Data only ever leaves your computer encrypted. File contents and folder structure are not accessible to someone who hacks into your cloud account."
   bulletpoints_foss_title: "Free and Open Source"
-  bulletpoints_foss_text_html: "CryFS is released under LGPL and available on %{github_link}. Everyone can look at the source code and check that it fulfills the given security promises. If you want, you can take the source code and modify it to your needs. We'd also be happy to include your improvements into CryFS directly."
+  bulletpoints_foss_text_html: "Released under LGPL and available on %{github_link}. This makes the security of CryFS verifiable and allows the community to hand in improvements."
   bulletpoints_github: "github"
   bulletpoints_view_details: "View Details"
 
