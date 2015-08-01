@@ -59,9 +59,9 @@ $is-lg: "(min-width: #{$screen-lg-min})";
   background-color: #2E2F30;
 }
 .teaser-sm .title-logo {
+  margin-top: -10px;
   font-size: 100px;
   color: #909090;
-  margin-bottom: -30px;
 }
 .teaser-sm .title-text h1 {
   color: #999999;
