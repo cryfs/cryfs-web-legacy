@@ -43,6 +43,8 @@ section.teaser
               div
                 .collapse.form-success.form-success-small =t(:mailform_success)
                 .collapse.form-error.form-error-small =t(:mailform_invalid_email)
+                .collapse.form-spinner.form-spinner-small
+                  i.fa.fa-spinner.fa-pulse
             javascript:
               window.setup_ajax_forms = window.setup_ajax_forms || [];
               window.setup_ajax_forms.push("#interested_user_form_1");
@@ -95,6 +97,8 @@ section.section-2
         div style="margin-top: 30px;"
           .form-success-small.collapse.form-success =t(:mailform_success)
           .form-error-small.collapse.form-error =t(:mailform_invalid_email)
+          .collapse.form-spinner.form-spinner-small
+            i.fa.fa-spinner.fa-pulse
       javascript:
         window.setup_ajax_forms = window.setup_ajax_forms || [];
         window.setup_ajax_forms.push("#interested_user_form_2");
@@ -124,6 +128,8 @@ section.section-1
               / TODO: Add info@cryfs.org to error message.
               / TODO: We show the error message also when the email address was given but is invalid (e.g. "test@test" without TLD). It would be better to show specific error message.
               .form-error-small.collapse.form-error =t(:contactform_error)
+              .collapse.form-spinner.form-spinner-small
+                i.fa.fa-spinner.fa-pulse
             javascript:
               window.setup_ajax_forms = window.setup_ajax_forms || [];
               window.setup_ajax_forms.push("#contact_form");
