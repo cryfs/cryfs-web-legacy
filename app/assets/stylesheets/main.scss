@@ -121,21 +121,17 @@ $is-lg: "(min-width: #{$screen-lg-min})";
 }
 
 .section {
-  @media #{$is_min_md} {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  @media #{$is_max_sm} {
-    padding-top: 25px;
-    padding-bottom: 25px;
-  }
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.section-small {
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 .section-1 {
-  @extend .section;
   background: white;
 }
 .section-2 {
-  @extend .section;
   background: #dbdbdb;
 }
 
