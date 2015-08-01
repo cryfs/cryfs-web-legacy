@@ -13,7 +13,7 @@ section.teaser-md.visible-md.visible-lg
           =form_for InterestedUser.new, remote: true, html: {id: "interested_user_form_1", class: 'form form-inline'} do |f|
             .form-group
               .sr-only for="interested_user_form_1-inputEmail" =t(:mailform_email_label)
-              =f.email_field :email, id: 'interested_user_form_1-inputEmail', class: "form-control", placeholder: t(:mailform_email_placeholder), required: true
+              =f.email_field :email, id: 'interested_user_form_1-inputEmail', class: "form-control", placeholder: t(:mailform_email_placeholder), required: true, autofocus: true
             =button_tag(type: 'submit', class: "btn btn-primary", style: "margin-left: 5px;") do ||
               =t(:mailform_buttontext)
               ' &nbsp;
