@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
+  background: black;
 }
 
 $teaser_width: 5308px;
@@ -17,6 +18,10 @@ $is-min-md: "(min-width: #{$screen-md-min})";
 $is-max-md: "(max-width: #{$screen-md-max})";
 $is-md: "#{$is-min-md} and #{$is-max-md}";
 $is-lg: "(min-width: #{$screen-lg-min})";
+
+#fb-like {
+  margin-top: 15px;
+}
 
 .teaser-md {
   position: relative;
