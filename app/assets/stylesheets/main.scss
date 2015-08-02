@@ -62,16 +62,22 @@ $is-lg: "(min-width: #{$screen-lg-min})";
   margin-top: 0px;
   background-color: #2E2F30;
 }
+.teaser-sm .teaser-content {
+  margin-left: 15px;
+  margin-right: 15px;
+}
 .teaser-sm .title-logo {
-  margin-top: -10px;
+  margin-top: -20px;
   font-size: 100px;
   color: #909090;
 }
 .teaser-sm .title-text h1 {
-  color: #999999;
+  color: #bababa;
 }
 .teaser-sm .title-text p {
-  color: #909090;
+  margin-top: 30px;
+  margin-bottom: -20px;
+  color: #b0b0b0;
 }
 
 .bulletpoint-icon {
