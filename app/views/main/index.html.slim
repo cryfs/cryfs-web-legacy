@@ -85,8 +85,9 @@ section.section.section-1
             ' &nbsp;
             i.fa.fa-angle-double-right
       .col-md-4.text-center
-        =image_tag "eagle.png", size:"200x200"
-        /i.fa.fa-copyright.bulletpoint-icon-smaller
+        i.fa.fa-comments-o.bulletpoint-icon
+        /i.fa.fa-globe.bulletpoint-icon
+        /i.fa.fa-code.bulletpoint-icon
         h2 =t(:bulletpoints_foss_title)
         p =t(:bulletpoints_foss_text_html, github_link: link_to(t(:bulletpoints_github), "https://github.com/smessmer/cryfs", target: "_blank"))
         p
