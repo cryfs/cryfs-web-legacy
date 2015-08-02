@@ -18,6 +18,7 @@ class InterestedUsersController < ApplicationController
 
 private
   def interested_user_params
+    # TODO Spam protection: reject if << params[:nickname].present? >>
     params.require(:interested_user).permit(:email)
   end
 

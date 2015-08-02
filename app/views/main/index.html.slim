@@ -11,6 +11,10 @@ section.teaser-md.visible-md.visible-lg
           =t(:teaser_paragraph3)
         div style="margin-top: 20px;"
           =form_for InterestedUser.new, remote: true, html: {id: "interested_user_form_1", class: 'form form-inline'} do |f|
+            / TODO
+            / This is a simple bot protection mechanism - if there is data in the nickname field, we discard the form submit.
+            /.hidden
+              =f.text_field :nickname, hint: t(:form_leaveblank)
             .form-group
               .sr-only for="interested_user_form_1-inputEmail" =t(:mailform_email_label)
               =f.email_field :email, id: 'interested_user_form_1-inputEmail', class: "form-control", placeholder: t(:mailform_email_placeholder), required: true, autofocus: true
@@ -44,7 +48,10 @@ section.section-small.section-2.visible-sm.visible-xs
       =t(:teaser_paragraph3)
     div style="margin-top: 20px;"
       =form_for InterestedUser.new, remote: true, html: {id: "interested_user_form_2", class: 'form form-inline'} do |f|
-        / TODO nickname field (simple bot protection) also here and on email field above
+        / TODO
+        / This is a simple bot protection mechanism - if there is data in the nickname field, we discard the form submit.
+        /.hidden
+          =f.text_field :nickname, hint: t(:form_leaveblank)
         .form-group
           label.sr-only for="interested_user_form_2-inputEmail" =t(:mailform_email_label)
           =f.email_field :email, id: 'interested_user_form_2-inputEmail', class: "form-control", placeholder: t(:mailform_email_placeholder), required: true
@@ -101,7 +108,10 @@ section.section.section-2
     h2 =t(:calltoaction_title)
     div style="margin-top: 20px;"
       =form_for InterestedUser.new, remote: true, html: {id: "interested_user_form_3", class: 'form form-inline'} do |f|
-        / TODO nickname field (simple bot protection) also here and on email field above
+        / TODO
+        / This is a simple bot protection mechanism - if there is data in the nickname field, we discard the form submit.
+        /.hidden
+          =f.text_field :nickname, hint: t(:form_leaveblank)
         .form-group
           label.sr-only for="interested_user_form_3-inputEmail" =t(:mailform_email_label)
           =f.email_field :email, id: 'interested_user_form_3-inputEmail', class: "form-control", placeholder: t(:mailform_email_placeholder), required: true
@@ -128,6 +138,7 @@ section.section.section-1
             .form-group.col-md-12
               label.sr-only for="contact_form_message" =t(:contactform_message_label)
               =f.text_area :message, id: 'contact_form_message', class: 'form-control', style: 'height: 140px;', placeholder: t(:contactform_message_placeholder), required: true
+            / This is a simple bot protection mechanism - if there is data in the nickname field, we discard the form submit.
             .hidden
               =f.text_field :nickname, hint: t(:form_leaveblank)
             .form-group.col-md-8

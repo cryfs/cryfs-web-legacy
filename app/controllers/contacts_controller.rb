@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
   def create
+    # TODO Spam protection: reject if << params[:nickname].present? >>
     @contact = Contact.new(params[:contact])
     @contact.request = request
     respond_to do |format|
