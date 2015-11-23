@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :contacts, only: :create
 
   get '/legal_notice' => 'main#legal_notice'
+  get '/version_info' => 'api#version_info'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
