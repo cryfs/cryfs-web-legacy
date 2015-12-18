@@ -37,4 +37,3 @@ if window.setup_ajax_forms?
 $ ->
   $("#download-btn").click ->
     window.ga 'send', 'event', 'download', 'click_download_button'
-  $("#downloadModal").modal("show")
