@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get '/legal_notice' => 'main#legal_notice'
   get '/version_info' => 'api#version_info'
+  get '/install' => 'resource#install_script'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
