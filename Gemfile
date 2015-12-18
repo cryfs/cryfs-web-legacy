@@ -50,6 +50,8 @@ gem 'font-awesome-sass', '~> 4.3.0'
 gem 'mail_form', '~> 1.5'
 gem 'validates_email_format_of' , '~> 1.6.2'
 
+gem 'staccato', '~> 0.4.5'
+
 group :development do
   gem 'guard-livereload', '~> 2.4', require: false
 end
