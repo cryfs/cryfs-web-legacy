@@ -45,7 +45,7 @@ $is-lg: "(min-width: #{$screen-lg-min})";
 }
 .teaser-md .title-text {
   position: absolute;
-  margin-top: 200px;
+  margin-top: 220px;
   margin-left: 1075px;
   width: 600px;
 }
@@ -54,7 +54,7 @@ $is-lg: "(min-width: #{$screen-lg-min})";
   margin-bottom: 50px;
 }
 .teaser-md .title-text p {
-  margin-top: 30px;
+  margin-top: 60px;
   color: #989898;
 }
 
@@ -154,4 +154,22 @@ footer {
 }
 .footer {
   background: black;
+}
+
+#downloadModal .os-box {
+  margin-top: 10px;
+  text-align: center;
+}
+
+#downloadModal .os-box .os-name {
+  vertical-align: middle;
+  font-size: x-large;
+}
+
+#downloadModal .tab-content {
+  margin-top: 20px;
+}
+
+#downloadModal .distribution-table {
+  margin-top: 10px;
 }

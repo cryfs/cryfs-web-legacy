@@ -6,30 +6,10 @@ section.teaser-md.visible-md.visible-lg
         h1 =t(:teaser_header)
         p =t(:teaser_paragraph1)
         p
-          =t(:teaser_paragraph2)
-          br
-          =t(:teaser_paragraph3)
-        div style="margin-top: 20px;"
-          =form_for InterestedUser.new, remote: true, html: {id: "interested_user_form_1", class: 'form form-inline'} do |f|
-            / TODO
-            / This is a simple bot protection mechanism - if there is data in the nickname field, we discard the form submit.
-            /.hidden
-              =f.text_field :nickname, hint: t(:form_leaveblank)
-            .form-group
-              .sr-only for="interested_user_form_1-inputEmail" =t(:mailform_email_label)
-              =f.email_field :email, id: 'interested_user_form_1-inputEmail', class: "form-control", placeholder: t(:mailform_email_placeholder), required: true, autofocus: true
-            =button_tag(type: 'submit', class: "btn btn-primary", style: "margin-left: 5px;") do ||
-              =t(:mailform_buttontext)
-              ' &nbsp;
-              i.fa.fa-angle-double-right
-            .collapse.form-notification-area
-              .collapse.form-success.form-success-small =t(:mailform_success)
-              .collapse.form-error.form-error-small =t(:mailform_invalid_email)
-              .collapse.form-spinner.form-spinner-small
-                i.fa.fa-spinner.fa-pulse
-          javascript:
-            window.setup_ajax_forms = window.setup_ajax_forms || [];
-            window.setup_ajax_forms.push("#interested_user_form_1");
+          =button_tag(id: "download-btn", class: "btn btn-primary btn-lg", type: "button", data: {toggle: "modal", target: "#downloadModal"})
+            =t(:teaser_download_buttontext)
+
+=render 'download_modal'
 
 section.section.teaser-sm.visible-xs.visible-sm
   .clearfix
@@ -39,34 +19,6 @@ section.section.teaser-sm.visible-xs.visible-sm
       .lead.text-center.title-text
         h1 =t(:teaser_header)
         p =t(:teaser_paragraph1)
-
-section.section-small.section-2.visible-sm.visible-xs
-  .container.text-center
-    p.lead
-      =t(:teaser_paragraph2)
-      br
-      =t(:teaser_paragraph3)
-    div style="margin-top: 20px;"
-      =form_for InterestedUser.new, remote: true, html: {id: "interested_user_form_2", class: 'form form-inline'} do |f|
-        / TODO
-        / This is a simple bot protection mechanism - if there is data in the nickname field, we discard the form submit.
-        /.hidden
-          =f.text_field :nickname, hint: t(:form_leaveblank)
-        .form-group
-          label.sr-only for="interested_user_form_2-inputEmail" =t(:mailform_email_label)
-          =f.email_field :email, id: 'interested_user_form_2-inputEmail', class: "form-control", placeholder: t(:mailform_email_placeholder), required: true
-        =button_tag(type: 'submit', class: "btn btn-primary", style: "margin-left: 5px;") do ||
-          =t(:mailform_buttontext)
-          ' &nbsp;
-          i.fa.fa-angle-double-right
-        .collapse.form-notification-area style="margin-top: 30px;"
-          .form-success-small.collapse.form-success =t(:mailform_success)
-          .form-error-small.collapse.form-error =t(:mailform_invalid_email)
-          .collapse.form-spinner.form-spinner-small
-            i.fa.fa-spinner.fa-pulse
-      javascript:
-        window.setup_ajax_forms = window.setup_ajax_forms || [];
-        window.setup_ajax_forms.push("#interested_user_form_2");
 
 
 section.section.section-1
@@ -96,7 +48,7 @@ section.section.section-1
         /i.fa.fa-globe.bulletpoint-icon
         /i.fa.fa-code.bulletpoint-icon
         h2 =t(:bulletpoints_foss_title)
-        p =t(:bulletpoints_foss_text_html, github_link: link_to(t(:bulletpoints_github), "https://github.com/cryfs/cryfs", target: "_blank"))
+        p =t(:bulletpoints_foss_text_html, github_link: link_to(t(:bulletpoints_github), "https://github.com/cryfs/cryfs"))
         /p
           a.btn.btn-default href="#" role="button"
             =t(:bulletpoints_view_details)
@@ -107,14 +59,14 @@ section.section.section-2
   .container.text-center
     h2 =t(:calltoaction_title)
     div style="margin-top: 20px;"
-      =form_for InterestedUser.new, remote: true, html: {id: "interested_user_form_3", class: 'form form-inline'} do |f|
+      =form_for InterestedUser.new, remote: true, html: {id: "interested_user_form", class: 'form form-inline'} do |f|
         / TODO
         / This is a simple bot protection mechanism - if there is data in the nickname field, we discard the form submit.
         /.hidden
           =f.text_field :nickname, hint: t(:form_leaveblank)
         .form-group
-          label.sr-only for="interested_user_form_3-inputEmail" =t(:mailform_email_label)
-          =f.email_field :email, id: 'interested_user_form_3-inputEmail', class: "form-control", placeholder: t(:mailform_email_placeholder), required: true
+          label.sr-only for="interested_user_form-inputEmail" =t(:mailform_email_label)
+          =f.email_field :email, id: 'interested_user_form-inputEmail', class: "form-control", placeholder: t(:mailform_email_placeholder), required: true
         =button_tag(type: 'submit', class: "btn btn-primary", style: "margin-left: 5px;") do ||
           =t(:mailform_buttontext)
           ' &nbsp;
@@ -126,7 +78,7 @@ section.section.section-2
             i.fa.fa-spinner.fa-pulse
       javascript:
         window.setup_ajax_forms = window.setup_ajax_forms || [];
-        window.setup_ajax_forms.push("#interested_user_form_3");
+        window.setup_ajax_forms.push("#interested_user_form");
 
 section.section.section-1
   .container.text-center

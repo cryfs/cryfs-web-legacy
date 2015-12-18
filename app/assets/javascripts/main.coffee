@@ -33,3 +33,8 @@ setup_ajax_form = (selector) ->
 if window.setup_ajax_forms?
   for selector in window.setup_ajax_forms
     setup_ajax_form(selector)
+
+$ ->
+  $("#download-btn").click ->
+    window.ga 'send', 'event', 'download', 'click_download_button'
+  $("#downloadModal").modal("show")

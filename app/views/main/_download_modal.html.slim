@@ -1,0 +1,90 @@
+.modal.fade#downloadModal tabindex="-1" role="dialog" aria-labelledby="downloadModalTitle"
+  .modal-dialog role="document"
+    .modal-content
+      .modal-header
+        button.close type="button" data-dismiss="modal" aria-label=t(:downloadmodal_close)
+          span aria-hidden="true"
+            | &times
+        h4.modal-title#downloadModalTitle
+          =t(:downloadmodal_title)
+      .modal-body
+        .row
+          .col-md-12
+            p =t(:downloadmodal_select_os)
+          .col-md-12
+            ul.nav.nav-tabs role="tablist"
+              li.col-md-4.os-box role="presentation"
+                a href="#tab-ubuntu" aria-controls="tab-ubuntu" role="tab" data-toggle="tab"
+                  .row
+                    .col-md-12
+                      =image_tag("ubuntu.png", alt: "Ubuntu", size: "61x61")
+                    .col-md-12
+                      span.os-name =t(:downloadmodal_ubuntu)
+              li.col-md-4.os-box role="presentation"
+                a href="#tab-debian" aria-controls="tab-debian" role="tab" data-toggle="tab"
+                  .row
+                    .col-md-12
+                      =image_tag("debian.png", alt: "Debian", size: "50x61")
+                    .col-md-12
+                      span.os-name =t(:downloadmodal_debian)
+              li.col-md-4.os-box role="presentation"
+                a href="#tab-other" aria-controls="tab-other" role="tab" data-toggle="tab"
+                  .row
+                    .col-md-12
+                      =image_tag("other_os.png", alt: "Other", size: "61x61")
+                    .col-md-12
+                      span.os-name =t(:downloadmodal_other)
+        .tab-content
+          .tab-pane#tab-ubuntu role="tabpanel"
+            h3 =t(:downloadmodal_easy_install)
+            pre wget -O - https://www.cryfs.org/install.sh | sudo bash
+            h3 =t(:downloadmodal_download_package)
+            table.table.table-striped.distribution-table
+              tr
+                th
+                th i386
+                th amd64
+              tr
+                th Ubuntu 15.10
+                td
+                  a href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/ubuntu/pool/main/c/cryfs/cryfs_0.8.4_ubuntu-15.10-x32.deb" =t(:downloadmodal_download)
+                td
+                  a href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/ubuntu/pool/main/c/cryfs/cryfs_0.8.4_ubuntu-15.10-x64.deb" =t(:downloadmodal_download)
+              tr
+                th Ubuntu 15.04
+                td
+                  a href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/ubuntu/pool/main/c/cryfs/cryfs_0.8.4_ubuntu-15.04-x32.deb" =t(:downloadmodal_download)
+                td
+                  a href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/ubuntu/pool/main/c/cryfs/cryfs_0.8.4_ubuntu-15.04-x64.deb" =t(:downloadmodal_download)
+              tr
+                th Ubuntu 14.04
+                td
+                  a href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/ubuntu/pool/main/c/cryfs/cryfs_0.8.4_ubuntu-14.04-x32.deb" =t(:downloadmodal_download)
+                td
+                  a href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/ubuntu/pool/main/c/cryfs/cryfs_0.8.4_ubuntu-14.04-x64.deb" =t(:downloadmodal_download)
+              tr
+                th Ubuntu 12.04
+                td
+                  =t(:downloadmodal_download_not_supported)
+                td
+                  a href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/ubuntu/pool/main/c/cryfs/cryfs_0.8.4_ubuntu-12.04-x64.deb" =t(:downloadmodal_download)
+
+          .tab-pane#tab-debian
+            h3 =t(:downloadmodal_easy_install)
+            pre wget -O - https://www.cryfs.org/install.sh | sudo bash
+            h3 =t(:downloadmodal_download_package)
+            table.table.table-striped.distribution-table
+              tr
+                th
+                th amd64
+              tr
+                th Debian 8
+                td
+                  a href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/debian/pool/main/c/cryfs/cryfs_0.8.4_debian-8-x64.deb" =t(:downloadmodal_download)
+
+          .tab-pane#tab-other
+            h3 =t(:downloadmodal_build_from_source)
+            p =t(:downloadmodal_other_text_html, instructions_link: link_to("https://github.com/cryfs/cryfs", "https://github.com/cryfs/cryfs"))
+      .modal-footer
+        button.btn.btn-default type="button" data-dismiss="modal"
+          =t(:downloadmodal_close)

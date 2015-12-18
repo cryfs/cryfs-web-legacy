@@ -29,8 +29,21 @@ en:
 
   teaser_header: "Keep your data safe in the cloud"
   teaser_paragraph1: "CryFS encrypts your files, so you can safely store them anywhere. It works well together with cloud services like Dropbox, iCloud, OneDrive and others."
-  teaser_paragraph2: "We are currently in development."
-  teaser_paragraph3: "Get notified when it's ready!"
+  teaser_download_buttontext: "Download"
+
+  downloadmodal_title: "Download CryFS"
+  downloadmodal_close: "Close"
+  downloadmodal_select_os: "Select your operating system"
+  downloadmodal_ubuntu: "Ubuntu"
+  downloadmodal_debian: "Debian"
+  downloadmodal_other: "Other"
+
+  downloadmodal_build_from_source: "Build from source"
+  downloadmodal_other_text_html: "See %{instructions_link} for instructions."
+  downloadmodal_easy_install: "Easy Install"
+  downloadmodal_download_package: "Alternative: Download Package"
+  downloadmodal_download: "Download"
+  downloadmodal_download_not_supported: "not supported"
 
   form_leaveblank: "Leave this field blank!"
 
@@ -49,7 +62,7 @@ en:
   bulletpoints_github: "github"
   bulletpoints_view_details: "View Details"
 
-  calltoaction_title: "Let us notify you when it's ready!"
+  calltoaction_title: "Let us notify you when CryFS is stable!"
 
   contactform_title: "Contact Us"
   contactform_message_label: "Message:"
