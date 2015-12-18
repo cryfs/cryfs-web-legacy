@@ -124,7 +124,7 @@ echo Installing CryFS...
 install_key
 add_repository
 install_cryfs
-echo Installing CryFS...finsihed
+echo Installing CryFS...finished
 
 set +e
 
