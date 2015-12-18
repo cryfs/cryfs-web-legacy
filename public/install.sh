@@ -7,7 +7,7 @@
 set -e
 
 DEBIAN_VERSIONS="jessie"
-UBUNTU_VERSIONS="precise trusty vivid wily"
+UBUNTU_VERSIONS="trusty vivid wily"
 
 DEBIAN_REPO_URL="http://apt.cryfs.org/debian"
 UBUNTU_REPO_URL="http://apt.cryfs.org/ubuntu"
@@ -22,10 +22,6 @@ check_is_amd64 () {
     exit 1
   fi
 }
-
-if [[ "$DISTRIBUTION" == "Ubuntu" ]] && [[ "$DISTRIBUTION_VERSION" == "precise" ]]; then
-  check_is_amd64
-fi
 
 if [[ "$DISTRIBUTION" == "Debian" ]] && [[ "$DISTRIBUTION_VERSION" == "jessie" ]]; then
   check_is_amd64
