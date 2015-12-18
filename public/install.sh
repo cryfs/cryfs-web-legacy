@@ -74,8 +74,8 @@ add_repository () {
 }
 
 install_cryfs () {
-  sudo apt-get update
-  sudo apt-get install cryfs
+  sudo apt-get -y update
+  sudo apt-get install -y cryfs
 }
 
 install_key () {
