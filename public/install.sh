@@ -70,6 +70,7 @@ add_repository () {
 }
 
 install_cryfs () {
+  # Allow apt-get update to fail, because some other packages resources might not be available
   sudo apt-get -y update || true
   sudo apt-get install -y cryfs
 }
