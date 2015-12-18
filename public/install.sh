@@ -70,7 +70,7 @@ add_repository () {
 }
 
 install_cryfs () {
-  sudo apt-get -y update
+  sudo apt-get -y update || true
   sudo apt-get install -y cryfs
 }
 
