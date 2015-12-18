@@ -38,6 +38,12 @@ $ ->
   $("#download-btn").click ->
     window.ga 'send', 'event', 'download', 'click_download_button'
 
+  $("#downloadModal").on 'show.bs.modal', ->
+    window.ga 'send', 'event', 'download', 'show_download_dialog'
+
+  $("#downloadModal").on 'hide.bs.modal', ->
+    window.ga 'send', 'event', 'download', 'hide_download_dialog'
+
   $("#tablink-ubuntu").click ->
     window.ga 'send', 'event', 'download', 'click_ubuntu_tab'
 
