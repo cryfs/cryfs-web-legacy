@@ -37,3 +37,15 @@ if window.setup_ajax_forms?
 $ ->
   $("#download-btn").click ->
     window.ga 'send', 'event', 'download', 'click_download_button'
+
+  $("#tablink-ubuntu").click ->
+    window.ga 'send', 'event', 'download', 'click_ubuntu_tab'
+
+  $("#tablink-debian").click ->
+    window.ga 'send', 'event', 'download', 'click_debian_tab'
+
+  $("#tablink-other").click ->
+    window.ga 'send', 'event', 'download', 'click_other_tab'
+
+  $(".download-package-link").click ->
+    window.ga 'send', 'event', 'download', 'download_package'
