@@ -15,6 +15,22 @@ UBUNTU_REPO_URL="http://apt.cryfs.org/ubuntu"
 DISTRIBUTION=`lsb_release -s -i`
 DISTRIBUTION_VERSION=`lsb_release -s -c`
 
+check_is_amd64 () {
+  ARCH=`uname -m`
+  if [[ "$ARCH" != "x86_64" ]]; then
+    echo We only support amd64 architecture for `lsb_release -d -s`
+    exit 1
+  fi
+}
+
+if [[ "$DISTRIBUTION" == "Ubuntu" ]] && [[ "$DISTRIBUTION_VERSION" == "precise" ]]; then
+  check_is_amd64
+fi
+
+if [[ "$DISTRIBUTION" == "Debian" ]] && [[ "$DISTRIBUTION_VERSION" == "jessie" ]]; then
+  check_is_amd64
+fi
+
 containsElement () {
   local e
   for e in "${@:2}"; do  [[ "$e" == "$1" ]] && return 0; done
