@@ -4,7 +4,7 @@ section.section-1
 
     h2 Install CryFS
     p Easy Install is currently supported on Ubuntu 14.04, 15.04 and 15.10 (32bit and 64bit) and on Debian Jessie 64bit.
-    p On these systems, you can install CryFS with the following command:
+    p On these systems, you can install CryFS with the following command.
     pre wget -O - https://www.cryfs.org/install.sh | sudo bash
     p This command installs CryFS as a debian package and sets up our apt package source for automatic updates.
     p On other Linux operating systems, you can compile CryFS from source by following the instructions on <a href="https://github.com/cryfs/cryfs">github</a>.
@@ -30,30 +30,31 @@ section.section-1
       The unencrypted content of <kbd>mountdir</kbd> will never be stored to the harddisk, so everything on your harddisk is encrypted.
       CryFS uses an encryption scheme that doesn't only encrypt file contents, but also the file sizes, file metadata and directory structure is encrypted.
       Let's take a look.
-    p First, we create a file in <kbd>mountdir</kbd>.
+    p First, we create a file and a directory in <kbd>mountdir</kbd>.
     pre cd mountdir
         echo "My file content" > myfile
-    p Now we check that the file exists and has the content we just added to it
+        mkdir mydirectory
+    p Now we check that the file and the directory exist and that the file has the content we just added to it.
     pre ls
-        # output: myfile
+        # output: mydirectory myfile
         cat myfile
         # output: My file content
     p If we look into the <kbd>basedir</kbd>, we see some cryptic files that contain the encrypted data of the <kbd>mountdir</kbd> directory.
     pre ls ../basedir
         # output: Some encrypted files
-    p Let's go back and unmount the encrypted directory
+    p Let's go back and unmount the encrypted directory.
     pre cd ..
         fusermount -u mountdir
-    p Now, CryFS isn't running anymore, which means we cannot access our data anymore. The <kbd>mountdir</kbd> is empty:
+    p Now, CryFS isn't running anymore, which means we cannot access our data anymore. The <kbd>mountdir</kbd> is empty.
     pre ls mountdir
         # output: [empty]
     p But don't worry, if we look at the <kbd>basedir</kbd>, everything is still there, it is only encrypted.
     pre ls basedir
         # output: Some encrypted files
-    p When we start CryFS again, we can access our files again
+    p When we start CryFS again, we can access our files again.
     pre cryfs basedir mountdir
         ls mountdir
-        # output: myfile
+        # output: mydirectory myfile
         cat mountdir/myfile
         # output: My file content
 
@@ -66,7 +67,7 @@ section.section-1
     p Since we only want to upload the encrypted files, we have to put the <kbd>basedir</kbd> into the <kbd>dropbox</kbd> folder,
       so Dropbox will synchronize it.
     pre mkdir dropbox/basedir
-    p Then, we start CryFS
+    p Then, we start CryFS.
     pre mkdir dropbox/basedir
         cryfs dropbox/basedir mountdir
     .alert.alert-warning
@@ -85,7 +86,7 @@ section.section-1
       You might have to wait some seconds for Dropbox to finish synchronization.
     pre ls dropbox
         # output should contains
-    p Then, we start CryFS:
+    p Then, we start CryFS.
     pre mkdir mountdir
         cryfs dropbox/basedir mountdir
     p If we now look into <kbd>mountdir</kbd> on the second client, we see the file we created on the first computer.
