@@ -55,9 +55,9 @@ en:
   mailform_invalid_email: "Invalid email address."
 
   bulletpoints_simple_title: "Simple"
-  bulletpoints_simple_text: "Easy to setup and works with a lot of cloud storage providers. You won't notice CryFS when accessing your files in your daily workflow."
+  bulletpoints_simple_text: "Easy to setup and works with a lot of cloud storage providers. It runs in the background - you won't notice it when accessing your files in your daily workflow."
   bulletpoints_secure_title: "Secure"
-  bulletpoints_secure_text: "Your data only ever leaves your computer in encrypted form. This is true for both, your file contents and the directory structure."
+  bulletpoints_secure_text: "Your data only leaves your computer in encrypted form. File contents, metadata and directory structure are all secure from someone who hacked your cloud."
   bulletpoints_foss_title: "Free and Open Source"
   bulletpoints_foss_text_html: "Released under LGPL and available on %{github_link}. This makes the security of CryFS verifiable and allows the community to work on improvements."
   bulletpoints_github: "github"
