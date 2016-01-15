@@ -39,11 +39,11 @@ html
           #navbar.navbar-collapse.collapse
             ul.nav.navbar-nav.navbar-right
               li
-                =link_to t(:nav_download), {controller: "main", action: "index", anchor: "download"}
+                =link_to t(:nav_internals), controller: "main", action: "internals"
               li
                 =link_to t(:nav_tutorial), controller: "main", action: "documentation"
-              /li
-                a href="#" =t(:nav_getinvolved)
+              li
+                =link_to t(:nav_download), controller: "main", action: "index", anchor: "download"
               li
                 / TODO Change to data-layout="button_count", once we have some likes
                 #fb-like.fb-like data-href="https://www.facebook.com/cryfs.org" data-width="200" data-layout="button" data-action="like" data-show-faces="true" data-share="true"

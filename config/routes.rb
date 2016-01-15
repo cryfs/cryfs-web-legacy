@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :contacts, only: :create
 
   get '/legal_notice' => 'main#legal_notice'
-  get '/documentation' => 'main#documentation'
+  get '/tutorial' => 'main#documentation'
+  get '/howitworks' => 'main#internals'
   get '/version_info' => 'api#version_info'
   get '/install' => 'resource#install_script'
 

@@ -12,4 +12,7 @@ class MainController < ApplicationController
 
   def documentation
   end
+
+  def internals
+  end
 end
