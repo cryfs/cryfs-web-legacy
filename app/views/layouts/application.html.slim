@@ -30,7 +30,7 @@ html
       .container
         .navbar-container
           .navbar-header
-            /button.navbar-toggle.collapsed.pull-left type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"
+            button.navbar-toggle.collapsed.pull-left type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"
               span.sr-only =t(:nav_togglenavigation)
               span.icon-bar
               span.icon-bar
@@ -38,10 +38,10 @@ html
             a.navbar-brand href="/" CryFS
           #navbar.navbar-collapse.collapse
             ul.nav.navbar-nav.navbar-right
-              /li
-                a href="#" =t(:nav_download)
-              /li
-                a href="#" =t(:nav_documentation)
+              li
+                =link_to t(:nav_download), {controller: "main", action: "index", anchor: "download"}
+              li
+                =link_to t(:nav_tutorial), controller: "main", action: "documentation"
               /li
                 a href="#" =t(:nav_getinvolved)
               li

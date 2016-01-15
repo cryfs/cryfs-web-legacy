@@ -43,6 +43,7 @@ $ ->
 
   $("#downloadModal").on 'hide.bs.modal', ->
     window.ga 'send', 'event', 'download', 'hide_download_dialog'
+    window.location.hash = ""
 
   $("#tablink-ubuntu").click ->
     window.ga 'send', 'event', 'download', 'click_ubuntu_tab'
@@ -55,3 +56,10 @@ $ ->
 
   $(".download-package-link").click ->
     window.ga 'send', 'event', 'download', 'download_package'
+
+  if (window.location.hash == "#download")
+    $("#downloadModal").modal()
+
+  $(window).on 'hashchange', ->
+    if (window.location.hash == "#download")
+      $("#downloadModal").modal()
