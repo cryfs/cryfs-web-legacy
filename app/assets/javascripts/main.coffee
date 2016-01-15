@@ -55,3 +55,8 @@ $ ->
 
   $(".download-package-link").click ->
     window.ga 'send', 'event', 'download', 'download_package'
+
+  $("#tutorial-btn").click ->
+    window.ga 'send', 'event', 'tutorial', 'click_tutorial_button',
+      hitCallback: => document.location.href = $(this).attr('href')
+    false # Don't process event further, because this would leave the page before ga returned

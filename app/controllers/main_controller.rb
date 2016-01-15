@@ -9,4 +9,7 @@ class MainController < ApplicationController
 
   def legal_notice
   end
+
+  def documentation
+  end
 end

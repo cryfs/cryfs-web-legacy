@@ -80,6 +80,10 @@ $is-lg: "(min-width: #{$screen-lg-min})";
   color: #b0b0b0;
 }
 
+#tutorial-btn {
+  margin-left: 20px;
+}
+
 .bulletpoint-icon {
   @media #{$is-min-md} {
     font-size: 200px;

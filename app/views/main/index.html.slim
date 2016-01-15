@@ -8,6 +8,7 @@ section.teaser-md.visible-md.visible-lg
         p
           =button_tag(id: "download-btn", class: "btn btn-primary btn-lg", type: "button", data: {toggle: "modal", target: "#downloadModal"})
             =t(:teaser_download_buttontext)
+          =link_to t(:teaser_tutorial), {controller: "main", action: "documentation"}, id: "tutorial-btn", class: "btn btn-info btn-lg"
 
 =render 'download_modal'
 

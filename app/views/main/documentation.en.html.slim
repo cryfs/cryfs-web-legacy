@@ -1,0 +1,98 @@
+section.section-1
+  .container
+    h1 Tutorial
+
+    h2 Install CryFS
+    p Easy Install is currently supported on Ubuntu 14.04, 15.04 and 15.10 (32bit and 64bit) and on Debian Jessie 64bit.
+    p On these systems, you can install CryFS with the following command:
+    pre wget -O - https://www.cryfs.org/install.sh | sudo bash
+    p This command installs CryFS as a debian package and sets up our apt package source for automatic updates.
+    p On other Linux operating systems, you can compile CryFS from source by following the instructions on <a href="https://github.com/cryfs/cryfs">github</a>.
+      Windows and Macintosh are currently not supported, but will be supported by future versions.
+
+    h2 Using CryFS
+    p Using CryFS is very simple and straightforward. In the following, we explain the basic commands.
+
+    h3 Setup an encrypted directory
+    p Once installed, you can create an encrypted directory by calling <kbd>cryfs basedir mountdir</kbd>.
+      You can call the directories however you like, we chose <kbd>basedir</kbd> and <kbd>mountdir</kbd> for demonstration purposes.
+    p The corresponding directories should exist beforehand, so let's do this.
+    pre mkdir basedir
+        mkdir mountdir
+        cryfs basedir mountdir
+    p This will ask you some questions about the configuration of your encrypted directory.
+      You can choose any block cipher you like. If you have problems deciding, <code>aes-256-gcm</code> is a standard choice.
+      It will also ask you for a password and then you're good to go.
+
+    h3 Using the encrypted directory
+    p You can work in <kbd>mountdir</kbd>, add files to it, modify them, add subdirectories, and do whatever you want with it.
+      Everything you store inside will be encrypted and stored in <kbd>basedir</kbd>.
+      The unencrypted content of <kbd>mountdir</kbd> will never be stored to the harddisk, so everything on your harddisk is encrypted.
+      CryFS uses an encryption scheme that doesn't only encrypt file contents, but also the file sizes, file metadata and directory structure is encrypted.
+      Let's take a look.
+    p First, we create a file in <kbd>mountdir</kbd>.
+    pre cd mountdir
+        echo "My file content" > myfile
+    p Now we check that the file exists and has the content we just added to it
+    pre ls
+        # output: myfile
+        cat myfile
+        # output: My file content
+    p If we look into the <kbd>basedir</kbd>, we see some cryptic files that contain the encrypted data of the <kbd>mountdir</kbd> directory.
+    pre ls ../basedir
+        # output: Some encrypted files
+    p Let's go back and unmount the encrypted directory
+    pre cd ..
+        fusermount -u mountdir
+    p Now, CryFS isn't running anymore, which means we cannot access our data anymore. The <kbd>mountdir</kbd> is empty:
+    pre ls mountdir
+        # output: [empty]
+    p But don't worry, if we look at the <kbd>basedir</kbd>, everything is still there, it is only encrypted.
+    pre ls basedir
+        # output: Some encrypted files
+    p When we start CryFS again, we can access our files again
+    pre cryfs basedir mountdir
+        ls mountdir
+        # output: myfile
+        cat mountdir/myfile
+        # output: My file content
+
+    h3 Using CryFS together with Dropbox
+    p Although CryFS can also be used to just encrypt files locally, for example to protect against harddrive theft,
+      its main purpose is to be used together with cloud storage providers like Dropbox.
+      It should work well together with any cloud storage provider that uses a local synchronization folder.
+    p First, setup the Dropbox client to synchronize your cloud files to a local folder.
+      In this tutorial, we'll assume that folder is called <kbd>dropbox</kbd>.
+    p Since we only want to upload the encrypted files, we have to put the <kbd>basedir</kbd> into the <kbd>dropbox</kbd> folder,
+      so Dropbox will synchronize it.
+    pre mkdir dropbox/basedir
+    p Then, we start CryFS
+    pre mkdir dropbox/basedir
+        cryfs dropbox/basedir mountdir
+    .alert.alert-warning
+      b Warning!
+      |  Take care that you don't put the <kbd>mountdir</kbd> into the <kbd>dropbox</kbd> folder,
+         because otherwise Dropbox would also upload the unencrypted files from <kbd>mountdir</kbd>.
+    p Now, everything we write to <kbd>mountdir</kbd> will be automatically encrypted,
+      the encrypted data will be written to <kbd>dropbox/basedir</kbd>, where the Dropbox client will pick it up
+      and upload it to the cloud.
+    p As before, let's add a file to it.
+    pre echo "My file content" > mountdir/myfile
+    p To check that synchronization works, we can add a second client on another computer.
+      Install CryFS and the Dropbox client and set Dropbox up to synchronize to a local folder.
+      We'll assume you called it <kbd>dropbox</kbd> again.
+    p If it is set up correctly, there should be a folder <kbd>dropbox/basedir</kbd>.
+      You might have to wait some seconds for Dropbox to finish synchronization.
+    pre ls dropbox
+        # output should contains
+    p Then, we start CryFS:
+    pre mkdir mountdir
+        cryfs dropbox/basedir mountdir
+    p If we now look into <kbd>mountdir</kbd> on the second client, we see the file we created on the first computer.
+    pre ls mountdir
+        # output: myfile
+        cat mountdir/myfile
+        # output: My file content
+    p You can play around with your setup now. As long as CryFS and Dropbox are running on both computers,
+      everything you modify in one of the <kbd>mountdir</kbd> directories will automatically synchronized to the
+      <kbd>mountdir</kbd> on the other computer, while Dropbox only sees the encrypted data.
