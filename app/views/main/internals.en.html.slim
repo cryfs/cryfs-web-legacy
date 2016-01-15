@@ -41,3 +41,12 @@ section.section-1
       that the cipher used by the filesystem is the one you actually specified.
     p Alternatively, you can store the configuration file outside of the base directory and not upload it into the cloud.
       This is possible using the <kbd>--config</kbd> parameter when calling CryFS.
+
+    h2 Security Analysis
+    p The security of CryFS has been proven in a <a href="/cryfs_mathesis.pdf">master's thesis</a> using a game-based security approach.
+      The thesis also contains a detailed description of the inner workings of CryFS.
+    p The current version meets all security goals regarding confidentiality of file contents, size, metadata and directory structure.
+      The integrity goals mentioned in the thesis are not fully implemented yet.
+      By using an authenticated encryption scheme like <code>aes-256-gcm</code>, the encrypted blocks are secure against being modified by an attacker.
+      However, in the current implementation, an attacker could for example roll back the filesystem by replacing blocks with an earlier valid version of the same block.
+      This issue will be addressed in future versions.
