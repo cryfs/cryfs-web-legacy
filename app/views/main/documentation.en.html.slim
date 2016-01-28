@@ -1,3 +1,14 @@
+- title = "CryFS: Tutorial"
+- description = "A quick and easy introduction into the basic usage of CryFS."
+-content_for :head do
+  meta property="og:title" content="#{title}"
+  meta property="og:url" content=url_for(action: 'documentation', controller: 'main', protocol: 'https', only_path: false)
+  meta property="og:type" content="article"
+  meta property="og:image" content=image_url("favicon.png")
+  meta property="og:description" content="#{description}"
+  meta name="description" content="#{description}"
+  title #{title}
+
 section.section-1
   .container
     h1 Tutorial

@@ -1,3 +1,14 @@
+- title = "CryFS: Legal notice"
+- description = "Legal notice for CryFS"
+-content_for :head do
+  meta property="og:title" content="#{title}"
+  meta property="og:url" content=url_for(action: 'legal_notice', controller: 'main', protocol: 'https', only_path: false)
+  meta property="og:type" content="website"
+  meta property="og:image" content=image_url("favicon.png")
+  meta property="og:description" content="#{description}"
+  meta name="description" content="#{description}"
+  title #{title}
+
 section.section-1
   .container
     h1 =t(:impressum)
