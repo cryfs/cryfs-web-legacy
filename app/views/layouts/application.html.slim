@@ -19,7 +19,7 @@ html
     = csrf_meta_tags
 
     meta property="og:site_name" content="CryFS"
-    meta property="og:locale" content="#{I18n.locale}"
+    meta property="og:locale" content=t(:locale_name)
     -if content_for(:head)
       =yield(:head)
   body
