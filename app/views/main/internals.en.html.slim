@@ -32,23 +32,28 @@ section.section-1
     h2 Configuration File
     p The base directory also contains a configuration file with the information CryFS needs to decrypt it.
       This configuration file is encrypted and integrity-checked using the password chosen by the user, so an attacker cannot read or modify it.
-    p The information stored in the configuration file includes the following.
-    ul
-      li The cipher used (e.g. <code>aes-256-gcm</code>)
-      li The encryption key used for encrypting blocks
-      li The block ID for the block storing the root directory (entry point for the file system)
-    p The configuration file is encrypted twice, once with <code>aes-256-gcm</code> and once with the cipher chosen by the user.
-      This way, if the user doesn't trust <code>aes-256-gcm</code> for some reason,
-      they can choose another cipher and still be secure.
-      The keys for both encryption layers are generated from the user-chosen password using <a href="https://en.wikipedia.org/wiki/Scrypt">scrypt</a>.
-    p In detail, all configuration values are encrypted with the user-chosen cipher,
-      the name of the user-chosen cipher is prepended (so CryFS knows how to decrypt it) and the result is encrypted
-      using <code>aes-256-gcm</code>. This way, an attacker cannot even see which cipher is used.
-      As a last step, the scrypt configuration parameters needed to generate the key from the user password are prepended.
-      When decrypting the configuration file, CryFS first reads the scrypt parameters
-      and generates the keys for both encryption layers using the user password.
-      Then, it decrypts the first layer and reads the cipher chosen by the user.
-      Using this cipher, it decrypts the second layer and can read the configuration values.
+    .row
+      .col-md-8
+        p The information stored in the configuration file includes the following.
+        ul
+          li <strong>&#91;Cipher&#93;</strong>: The cipher used (e.g. <code>aes-256-gcm</code>)
+          li <strong>&#91;Encryption Key&#93;</strong>: The encryption key used for encrypting blocks
+          li <strong>&#91;Root Block ID&#93;</strong>: The block ID for the block storing the root directory (entry point for the file system)
+        p The configuration file is encrypted twice, once with <code>aes-256-gcm</code> and once with the cipher chosen by the user.
+          This way, if the user doesn't trust <code>aes-256-gcm</code> for some reason,
+          they can choose another cipher and still be secure.
+          The keys for both encryption layers are generated from the user-chosen password using <a href="https://en.wikipedia.org/wiki/Scrypt">scrypt</a>.
+        p In detail, CryFS generates two keys <code>key_outer</code> and <code>key_inner</code> using scrypt and the user password.
+          It encrypts the configuration file using the user cipher and <code>key_inner</code>.
+          To the ciphertext, it prepends the name of the user cipher (so it knows how to decrypt it later) and encrypts
+          the result using <code>aes-256-gcm</code> and <code>key_outer</code>. This way, an attacker cannot see or manipulate which cipher is used.
+          As a last step, the scrypt configuration parameters are prepended, so CryFS knows how to configure scrypt when
+          decrypting the filesystem.
+          When decrypting the configuration file, CryFS first reads the scrypt parameters and regenerates both keys from the user password.
+          Then, it decrypts the first layer and reads the cipher chosen by the user.
+          Using this cipher, it decrypts the second layer and reads the configuration values.
+      .col-md-4 style="padding-top: -20px;"
+        =image_tag("configfileencryption.png", alt: "Configuration File Encryption Layers", size: "327x313")
     p The integrity of the configuration file depends on <code>aes-256-gcm</code>.
       This cipher is a standard cipher and believed to be very secure.
       If, however, you don't trust the integrity of <code>aes-256-gcm</code> and want to use another cipher instead,
