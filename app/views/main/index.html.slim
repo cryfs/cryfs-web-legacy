@@ -35,12 +35,11 @@ section.section.section-1
   .container
     .row
       .col-md-4.text-center
-        /i.fa.fa-check-circle-o.bulletpoint-icon
         i.fa.fa-lightbulb-o.bulletpoint-icon
         h2 =t(:bulletpoints_simple_title)
         p =t(:bulletpoints_simple_text)
-        /p
-          a.btn.btn-default href="#" role="button"
+        p
+          a.btn.btn-default href=url_for(action: 'documentation', controller: 'main') role="button"
             =t(:bulletpoints_view_details)
             ' &nbsp;
             i.fa.fa-angle-double-right
@@ -48,8 +47,8 @@ section.section.section-1
         i.fa.fa-lock.bulletpoint-icon
         h2 =t(:bulletpoints_secure_title)
         p =t(:bulletpoints_secure_text)
-        /p
-          a.btn.btn-default href="#" role="button"
+        p
+          a.btn.btn-default href=url_for(action: 'internals', controller: 'main') role="button"
             =t(:bulletpoints_view_details)
             ' &nbsp;
             i.fa.fa-angle-double-right
@@ -59,8 +58,8 @@ section.section.section-1
         /i.fa.fa-code.bulletpoint-icon
         h2 =t(:bulletpoints_foss_title)
         p =t(:bulletpoints_foss_text_html, github_link: link_to(t(:bulletpoints_github), "https://github.com/cryfs/cryfs"))
-        /p
-          a.btn.btn-default href="#" role="button"
+        p
+          a.btn.btn-default href="http://www.gnu.org/philosophy/free-sw.html" role="button"
             =t(:bulletpoints_view_details)
             ' &nbsp;
             i.fa.fa-angle-double-right
