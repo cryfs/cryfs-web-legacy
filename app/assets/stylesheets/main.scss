@@ -182,3 +182,66 @@ footer {
 #call-to-action {
   margin-top: 40px;
 }
+
+.comparison-table {
+  margin-left: auto;
+  margin-right: auto;
+  @media #{$is-min-md} {
+    width: 900px;
+  }
+  @media #{$is-sm} {
+    width: 600px;
+  }
+  @media #{$is-xs} {
+    width: 320px;
+  }
+}
+
+.comparison-icon {
+  text-align: center;
+  @media #{$is-min-md} {
+    width: 45px;
+    font-size: 25px;
+  }
+  @media #{$is-sm} {
+    width: 45px;
+    font-size: 15px;
+  }
+  @media #{$is-xs} {
+    width: 20px;
+    font-size: 15px;
+  }
+}
+
+.comparison-icon-yes {
+  @extend .comparison-icon;
+  @extend .success;
+  color: green;
+}
+
+.comparison-icon-yes i {
+  @extend .fa;
+  @extend .fa-check;
+}
+
+.comparison-icon-half {
+  @extend .comparison-icon;
+  @extend .warning;
+  color: orange;
+}
+
+.comparison-icon-half i {
+  @extend .fa;
+  @extend .fa-circle-o;
+}
+
+.comparison-icon-no {
+  @extend .comparison-icon;
+  @extend .danger;
+  color: red;
+}
+
+.comparison-icon-no i {
+  @extend .fa;
+  @extend .fa-times;
+}
