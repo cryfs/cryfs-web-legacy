@@ -30,6 +30,8 @@ en:
   description_internals: "A description of the CryFS internals. CryFS encrypts your files, so you can safely store them anywhere. It works well together with cloud services like Dropbox, iCloud, OneDrive and others."
   title_legalnotice: "CryFS: Legal notice"
   description_legalnotice: "Legal notice for CryFS. CryFS encrypts your files, so you can safely store them anywhere. It works well together with cloud services like Dropbox, iCloud, OneDrive and others."
+  title_comparison: "CryFS: Comparison of encrypted cloud storage solutions"
+  description_legalnotice: "There are a lot of possibilities for encrypting your Dropbox (or other cloud storage) files. Find out about the pros and cons of each."
 
   github_forkme: "Fork me on Github!"
   

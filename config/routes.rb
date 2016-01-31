@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/legal_notice' => 'main#legal_notice'
   get '/tutorial' => 'main#documentation'
   get '/howitworks' => 'main#internals'
+  get '/comparison' => 'main#comparison'
   get '/version_info' => 'api#version_info'
   get '/install' => 'resource#install_script'
 

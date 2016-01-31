@@ -15,4 +15,7 @@ class MainController < ApplicationController
 
   def internals
   end
+
+  def comparison
+  end
 end

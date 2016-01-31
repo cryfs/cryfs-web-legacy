@@ -1,0 +1,124 @@
+-content_for :head do
+  meta property="og:title" content=t(:title_comparison)
+  meta property="og:url" content=url_for(action: 'comparison', controller: 'main', protocol: 'https', only_path: false)
+  meta property="og:type" content="article"
+  meta property="article:author" content="https://www.facebook.com/sebastian.messmer"
+  meta property="og:image" content=image_url("logo.png")
+  meta property="og:description" content=t(:description_comparison)
+  meta name="description" content=t(:description_comparison)
+  title =t(:title_comparison)
+
+section.section-1
+  .container
+    h1 Encrypting your Dropbox: A Survey
+
+    p It's very convenient to have your files in a Dropbox (or with another cloud storage provider).
+      They are automatically synchronized between all your computers (and other devices).
+      In case of a disk failure, your data is not lost but still in the cloud.
+      It is also not expensive anymore.
+      Many providers offer some gigabytes free of charge and for about $10 per month you can get a whole terabyte.
+      There are more advantages, but these are the ones why all my important files are in the cloud for some time already.
+    p There are also disadvantages however.
+      Data leaks are happening from time to time and you don't want to be the one who gets blackmailed or whose private pictures get public.
+      You usually also don't want hackers to be able to modify your files and change your yearly earnings report (or whatever you're storing in the cloud).
+      Even if you trust the security measures of your cloud provider against hackers, its employees can still access your files
+      and its computer systems might use your files to create a personality profile to show you targeted advertising.
+    p All these risks can be avoided when you encrypt your files before uploading them.
+      You could add important files to a zip archive and set a password for example.
+      However, that is complicated and you would have to zip/unzip the archive each time you want to access your files.
+    p More convenient solutions offer the concept of a virtual filesystem.
+      That is, you enter your password (which is called mounting the virtual filesystem) and then get a directory
+      on your computer where you can work with your files as if it was a normal directory.
+      In reality, the directory is not stored to your harddrive however, but all contents are encrypted and stored somewhere in encrypted form.
+      All this happens in the background and you don't notice it when working with your files, so it is very convenient.
+    p In the following, I will give an overview over some of them and explain how they can be combined with cloud storage.
+
+    h2 Proprietary Solutions
+    p There are some proprietary solutions on the market, but that means you don't know what the software is doing.
+      Nobody can check it for vulnerabilities or backdoors.
+      It might be secure or it might not be.
+      The developers might have been approached by government organizations and have been forced to put backdoors into the software.
+      Or maybe hackers found a way to smuggle bad code into the software and nobody notices.
+      In short: It's a bad idea to use proprietary cryptography software.
+      For open source cryptography software, the source code is open. Everyone can see it and check it.
+      Vulnerabilities can be found and fixed, backdoors can be noticed.
+      This is why I only describe open source solutions here.
+
+    h2 TrueCrypt, VeraCrypt
+    p #{link_to 'TrueCrypt', 'http://truecrypt.sourceforge.net/'} has been #{link_to 'discontinued', 'http://truecrypt.sourceforge.net/'}
+      some time ago and contains some #{link_to 'vulnerabilities', 'http://www.pcworld.com/article/2987439/encryption/newly-found-truecrypt-flaw-allows-full-system-compromise.html'},
+      so we will focus on its (inofficial) successor #{link_to 'VeraCrypt', 'https://veracrypt.codeplex.com/'} here.
+    p VeraCrypt runs on Windows, Linux and Mac, and is believed to be a secure encryption tool to encrypt your files locally.
+      It keeps your files confidential, but does not protect the integrity (i.e. an attacker can't read your files, but they could modify them).
+      Like all solutions presented here, it offers you a virtual filesystem and the unencrypted files are never actually stored on your hard disk.
+      VeryCrypt then stores all filesystem data in one encrypted container file.
+      You could put the encrypted container file in your Dropbox (or the directory for any other cloud provider)
+      and it would get automatically synchronized to all devices connected to your Dropbox.
+      If these devices are also running VeraCrypt, they will (after you entered your password) also offer you a directory where you can work on your files.
+    p This is very convenient to use and it is secure. However, there is a problem with it.
+      VeraCrypt is not designed to be used together with cloud synchronization and a container file can get very large.
+      Say you have a big directory with many files in it, i.e. a large container file.
+      Everything is already uploaded to your cloud. Now you change a small file.
+      That is, the big container file changes. Your cloud will notice that and might try to re-upload the whole container file,
+      which can take a lot of time and will use a lot of internet bandwidth.
+      Even if you're lucky and your cloud is intelligent enough to notice that only a small part of the container file changed,
+      you will have a problem when you modify a file on another computer before synchronization finished.
+      Both computers now made different changes to the container file at the same time.
+      Because your cloud client doesn't know about the VeraCrypt file format, it doesn't have a chance of merging these changes
+      and will (in the best case) offer you two versions of your container file, i.e. you suddenly end up having two filesystems
+      and in each there is only one of the changes. Ugly.
+    p So VeraCrypt is a good choice if you are only encrypting your files locally and do not need integrity, but it is not a good idea to use it in a Dropbox.
+
+    h2 EncFS
+    p #{link_to 'EncFS', 'https://vgough.github.io/encfs/'} was my tool of choice for an encrypted Dropbox for quite some time.
+      It doesn't support Windows (only Linux and Mac), but that might be enough for some users.
+      Like VeraCrypt, it offers you a virtual filesystem, so you don't notice the encryption which is happening in the background.
+      As opposed to TrueCrypt, it doesn't store your files in one big container file, but encrypts your files individually.
+      For each of your files, there is an encrypted version of it in your Dropbox.
+      This solves the problem we described for VeraCrypt.
+      When you change a small file, only that small file has to be re-uploaded and when you modify different files on different
+      computers at the same time, they modify different encrypted files in the Dropbox and the Dropbox client is able to
+      handle that.
+    p However, that is also a disadvantage.
+      Since there is an encrypted file for each of your files, a hacker can exactly see how many files you have, how
+      large each file is and how they are structured into directories.
+      This might not be a problem for some applications, but it can be a problem faster than you would think at first.
+      Say they see that you have a lot of folders with about 20 files each and each file has about 3 megabyte,
+      then they can say with fair certainty that you are storing a music CD collection there.
+      Or say you store an illegal copy of a current Windows installation CD (not that we recommend that),
+      the police could ask your cloud provider to hand over your encrypted files and then they could analyze them.
+      When the number of files, file sizes and directory structure match the one on the CD, they know you're storing it.
+      It is also a problem for so called water marking attacks, which we will not explain in detail here.
+      There are solutions that are not vulnerable to these attacks and also hide your file sizes, metadata and directory structure.
+    p EncFS optionally offers an integrity implementation (i.e. not only tries to keep attackers from reading, but also from modifying your files),
+      but the implementation doesn't follow any standards and contains some flaws (see the #{link_to 'security audit', 'https://defuse.ca/audits/encfs.htm'} mentioned below).
+      Furthermore, the setting of whether you use this integrity feature or not is stored in the cloud as well.
+      A hacker who can modify your files could simply switch the integrity check to off and you would never notice.
+    p A probably even larger issue with EncFS is a #{link_to 'security audit', 'https://defuse.ca/audits/encfs.htm'} from 2014 that
+      found some vulnerabilities in the current EncFS implementation.
+      The developers say they're working on a 2.0 version of EncFS which should fix these issues, but as of today they are not fixed.
+      Among other vulnerabilities, the security audit found one that is especially a problem with cloud storage.
+      EncFS is not secure when an attacker gets multiple versions of the same encrypted file at different times.
+      So if you upload your files to your Dropbox and then modify them, they are not securely encrypted anymore.
+    p So the current version of EncFS can't really be recommended for any application.
+      EncFS 2.0 might be interesting again when and if it is released.
+
+    h2 eCryptFS
+    p eCryptFS is a tool for Linux, mainly known because you're already using it when you're encrypting your home directory in Ubuntu Linux.
+      Like EncFS, it doesn't encrypt file sizes or directory structure and therefore has the same problems as described above.
+    p Furthermore, eCryptFS is not designed for cloud storage.
+      It uses heavy caching and assumes that it is the only software accessing the encrypted files.
+      When it is used for home directory encryption, this assumption is correct and eCryptFS can gain a little bit of performance
+      with that.
+      However, when you synchronize your files with Dropbox, the Dropbox client will also modify the encrypted files,
+      for example when you changed them on another computer.
+      eCryptFS doesn't support that and could either crash or just overwrite your changes with old versions.
+
+    h2 CryFS
+
+    h2 Summary
+
+    #call-to-action.well.well-lg.col-md-offset-2.col-md-8
+      .text-center
+        p.lead Get started with the
+        =link_to "CryFS Tutorial", {controller: "main", action: "documentation"}, class: "btn btn-primary btn-lg"
