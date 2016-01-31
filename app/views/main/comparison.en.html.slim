@@ -313,7 +313,7 @@ section.section-1
       strong Footnotes:
       ol.footnotes
         li Will cause unresolvable conflicts when modifying the filesystem on two machines without full synchronization inbetween.
-        li Protects against introducing new changes, i.e. adding, deleting or modifying a file or directory, but does not protect against rolling back files or directories to a previous version. This is planned for future versions.
+        li Protects against a hacker introducing new changes, i.e. adding, deleting or modifying a file or directory, but does not protect against rolling back files or directories to a previous version. This is planned for future versions.
         li Only protects file contents. Does not protect against adding or deleting files or directories. Current implementation is flawed because a hacker can simply disable the integrity check.
         li Should work if you compile it yourself, but no distribution packages offered.
         li There is a third-party experimental version for Windows.
