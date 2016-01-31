@@ -105,17 +105,17 @@ section.section-1
     p So the current version of EncFS can't really be recommended for any application.
       EncFS 2.0 might be interesting again when and if it is released.
 
-    h2 eCryptFS
-    p #{link_to 'eCryptFS',' http://ecryptfs.org/'} is a tool for Linux, mainly known because you're already using it
+    h2 eCryptfs
+    p #{link_to 'eCryptfs',' http://ecryptfs.org/'} is a tool for Linux, mainly known because you're already using it
       if you're encrypting your home directory in Ubuntu Linux.
       Like EncFS, it doesn't encrypt file sizes or directory structure and therefore has the same problems as described above.
-    p Furthermore, eCryptFS is not designed for cloud storage.
+    p Furthermore, eCryptfs is not designed for cloud storage.
       It uses heavy caching and assumes that it is the only software accessing the encrypted files.
-      When it is used for home directory encryption, this assumption is correct and eCryptFS can gain a little bit of performance
+      When it is used for home directory encryption, this assumption is correct and eCryptfs can gain a little bit of performance
       with that.
       However, when you synchronize your files with Dropbox, the Dropbox client will also modify the encrypted files,
       for example when you changed them on another computer.
-      eCryptFS doesn't support that and could either crash or just overwrite your changes with old versions.
+      eCryptfs doesn't support that and could either crash or just overwrite your changes with old versions.
 
     h2 CryFS
     p Since none of the solutions above can be recommended to be used together with Dropbox,
@@ -128,7 +128,7 @@ section.section-1
     p It uses established security standards and is the only tool in this list that works well together with Dropbox
       and is secure. As opposed to VeraCrypt, it keeps its data in small encrypted blocks and changing a small file
       results in only a small amount of data to be re-uploaded.
-      As opposed to EncFS and eCryptFS, it doesn't only encrypt your file contents, but also file sizes, file metadata and
+      As opposed to EncFS and eCryptfs, it doesn't only encrypt your file contents, but also file sizes, file metadata and
       directory structure are encrypted.
       More information on how this is achieved can be found #{link_to 'here', controller: "main", action: "internals"}.
       The security of CryFS has been proven in a #{link_to 'master\'s thesis', '/cryfs_mathesis.pdf'} in 2015.
@@ -143,11 +143,11 @@ section.section-1
       However, we are already using CryFS for some time to encrypt our own Dropboxes and didn't have any problems or data losses so far.
 
     h2 Summary
-    p If you only need local encryption, eCryptFS, VeraCrypt or CryFS could be the tool of your choice - depending on your needs.
-      eCryptFS only encrypts file contents but not file sizes or directory structure.
+    p If you only need local encryption, eCryptfs, VeraCrypt or CryFS could be the tool of your choice - depending on your needs.
+      eCryptfs only encrypts file contents but not file sizes or directory structure.
       VeraCrypt needs you to set a maximal size for your data container and will use all this space, even if it is only half full.
-      It offers a concept of dynamically growing containers, but only on Windows and they don't shrink anymore if you delete files.
       For that, it has the advantage that a hacker cannot see how full the container is, i.e. much data you actually have in your container.
+      It offers a concept of dynamically growing containers, but only on Windows and they don't shrink anymore when you delete files.
       If you don't need to hide the total size of your data or you don't want to have a lot of unused space in your container file,
       you could use CryFS.
     p If you want to encrypt your Dropbox, the only tool we can recommend is CryFS.
