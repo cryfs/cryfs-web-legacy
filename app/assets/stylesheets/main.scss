@@ -198,6 +198,7 @@ footer {
 }
 
 .comparison-icon {
+  position: relative; // Needed for the footnotes to be positioned correctly
   text-align: center;
   @media #{$is-min-md} {
     width: 45px;
@@ -244,4 +245,26 @@ footer {
 .comparison-icon-no i {
   @extend .fa;
   @extend .fa-times;
+}
+
+.footnote-mark {
+  position: absolute;
+  top: 10px;
+  font-size: 10px;
+}
+
+ol.footnotes {
+  counter-reset: list;
+}
+
+ol.footnotes > li {
+  list-style: none;
+  position: relative;
+}
+
+ol.footnotes > li:before {
+  counter-increment: list;
+  content: counter(list, lower-alpha) ") ";
+  position: absolute;
+  left: -1.4em;
 }
