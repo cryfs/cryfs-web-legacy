@@ -32,6 +32,7 @@ section.section-1
       In reality, the directory is not stored to your harddrive however, but all contents are encrypted and stored somewhere in encrypted form.
       All this happens in the background and you don't notice it when working with your files, so it is very convenient.
     p In the following, I will give an overview over some of them and explain how they can be combined with cloud storage.
+      If you're just interested in the results, #{link_to 'scroll down', '#summary'}.
 
     h2 Proprietary Solutions
     p There are some proprietary solutions on the market, but that means you don't know what the software is doing.
@@ -142,7 +143,7 @@ section.section-1
       The current version is not considered stable yet by the developers and if you decide to use it, regular backups are strongly recommended.
       However, we are already using CryFS for some time to encrypt our own Dropboxes and didn't have any problems or data losses so far.
 
-    h2 Summary
+    h2#summary Summary
     p If you only need local encryption, eCryptfs, VeraCrypt or CryFS could be the tool of your choice - depending on your needs.
       eCryptfs only encrypts file contents but not file sizes or directory structure.
       VeraCrypt needs you to set a maximal size for your data container and will use all this space, even if it is only half full.
