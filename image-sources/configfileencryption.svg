@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="configfile.svg"
+   sodipodi:docname="configfileencryption.svg"
    inkscape:export-filename="/home/heinzi/cryfs_web/app/assets/images/configfileencryption.png"
    inkscape:export-xdpi="82.606995"
    inkscape:export-ydpi="82.606995">
@@ -28,9 +28,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2"
-     inkscape:cx="97.974795"
-     inkscape:cy="912.91257"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="300.35328"
+     inkscape:cy="865.78258"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -52,7 +52,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -63,20 +63,21 @@
     <rect
        style="fill:#25aae1;fill-opacity:1;stroke:none"
        id="rect3336"
-       width="354.56387"
-       height="314.86441"
-       x="50.008873"
-       y="22.367575"
+       width="357.71497"
+       height="319.673"
+       x="48.43137"
+       y="20.371481"
        ry="0" />
     <rect
-       style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.02682519;stroke-opacity:1"
+       style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.0337522;stroke-opacity:1"
        id="rect4138-0"
-       width="313.94217"
-       height="193.95247"
-       x="70.537704"
-       y="122.8981" />
+       width="314.10004"
+       height="196.47925"
+       x="70.381516"
+       y="122.88695" />
     <g
-       id="g4448">
+       id="g4448"
+       transform="translate(0,2.3125)">
       <rect
          y="157.59853"
          x="85.243935"
@@ -176,14 +177,14 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;baseline-shift:baseline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="83.337761"
-       y="143.13338"
+       x="83.290886"
+       y="146.04054"
        id="text4284"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4286"
-         x="83.337761"
-         y="143.13338"
+         x="83.290886"
+         y="146.04054"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:18.75px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff;fill-opacity:1">Encrypt<tspan
    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:64.99999762%;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';baseline-shift:sub"
    id="tspan4312">Cipher</tspan>(inner_key)</tspan></text>
