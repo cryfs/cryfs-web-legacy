@@ -10,6 +10,7 @@
 
 section.section-1
   .container
+
     h1 Encrypting your Dropbox - but securely
 
     p It's very convenient to have your files in a Dropbox (or with another cloud storage provider).
@@ -18,6 +19,8 @@ section.section-1
       It is also not expensive anymore.
       Many providers offer some gigabytes free of charge and for about $10 per month you can get a whole terabyte.
       There are more advantages, but these are the ones why all my important files are in the cloud for some time already.
+    .row
+      img.col-md-offset-2.col-md-8.article-img src=image_url("comparison_dropbox.png") alt="Encrypting your Dropbox"
     p There are also disadvantages however.
       Data leaks are happening from time to time and you don't want to be the one who gets blackmailed or whose private pictures get public.
       You usually also don't want hackers to be able to modify your files and change your yearly earnings report (or whatever you're storing in the cloud).
@@ -34,9 +37,6 @@ section.section-1
     p In the following, I will give an overview over some of them and explain how they can be combined with cloud storage.
       If you're just interested in the results, #{link_to 'scroll down', '#summary'}.
 
-    .row
-      img.col-md-offset-2.col-md-8 src=image_url("comparison_dropbox.png") alt="Encrypting your Dropbox"
-
     h2#proprietary Proprietary Solutions
     p There are some proprietary solutions on the market, but that means you don't know what the software is doing.
       Nobody can check it for vulnerabilities or backdoors.
@@ -49,6 +49,8 @@ section.section-1
       This is why I only describe open source solutions here.
 
     h2#veracrypt TrueCrypt, VeraCrypt
+    .row
+      img.col-md-offset-2.col-md-8.article-img src=image_url("veracrypt.png") alt="VeraCrypt"
     p #{link_to 'TrueCrypt', 'http://truecrypt.sourceforge.net/'} has been #{link_to 'discontinued', 'http://truecrypt.sourceforge.net/'}
       some time ago and contains some #{link_to 'vulnerabilities', 'http://www.pcworld.com/article/2987439/encryption/newly-found-truecrypt-flaw-allows-full-system-compromise.html'},
       so we will focus on its (inofficial) successor #{link_to 'VeraCrypt', 'https://veracrypt.codeplex.com/'} here.
@@ -74,6 +76,8 @@ section.section-1
     p So VeraCrypt is a good choice if you are only encrypting your files locally and do not need integrity, but it is not a good idea to use it in a Dropbox.
 
     h2#encfs EncFS
+    .row
+      img.col-md-offset-2.col-md-8.article-img src=image_url("encfs.jpg") alt="EncFS"
     p #{link_to 'EncFS', 'https://vgough.github.io/encfs/'} was my tool of choice for an encrypted Dropbox for quite some time.
       It doesn't support Windows (only Linux and Mac), but that might be enough for some users.
       Like VeraCrypt, it offers you a virtual filesystem, so you don't notice the encryption which is happening in the background.
@@ -110,6 +114,8 @@ section.section-1
       EncFS 2.0 might be interesting again when and if it is released.
 
     h2#ecryptfs eCryptfs
+    .row
+      img.col-md-offset-2.col-md-8.article-img src=image_url("ecryptfs.png") alt="eCryptfs"
     p #{link_to 'eCryptfs',' http://ecryptfs.org/'} is a tool for Linux, mainly known because you're already using it
       if you're encrypting your home directory in Ubuntu Linux.
       Like EncFS, it doesn't encrypt file sizes or directory structure and therefore has the same problems as described above.
@@ -122,6 +128,8 @@ section.section-1
       eCryptfs doesn't support that and could either crash or just overwrite your changes with old versions.
 
     h2#cryfs CryFS
+    .row
+      img.col-md-offset-2.col-md-8.article-img src=image_url("teaser.jpg") alt="CryFS"
     p Since none of the solutions above can be recommended to be used together with Dropbox,
       we developed #{link_to 'CryFS', 'https://www.cryfs.org'}.
       Like all other solutions described here, it offers a virtual filesystem and you can work with your files without thinking about the
