@@ -45,15 +45,17 @@ $is-lg: "(min-width: #{$screen-lg-min})";
 }
 .teaser-md .title-text {
   position: absolute;
-  margin-top: 220px;
+  margin-top: 210px;
   margin-left: 1080px;
   width: 600px;
 }
 .teaser-md .title-text h1 {
+  font-size: 36px;
   color: #a8a8a8;
   margin-bottom: 50px;
 }
 .teaser-md .title-text p {
+  font-size: 21px;
   margin-top: 60px;
   color: #989898;
 }
