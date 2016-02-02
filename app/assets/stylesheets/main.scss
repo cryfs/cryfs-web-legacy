@@ -45,15 +45,17 @@ $is-lg: "(min-width: #{$screen-lg-min})";
 }
 .teaser-md .title-text {
   position: absolute;
-  margin-top: 220px;
+  margin-top: 210px;
   margin-left: 1080px;
   width: 600px;
 }
 .teaser-md .title-text h1 {
+  font-size: 36px;
   color: #a8a8a8;
   margin-bottom: 50px;
 }
 .teaser-md .title-text p {
+  font-size: 21px;
   margin-top: 60px;
   color: #989898;
 }
@@ -181,4 +183,95 @@ footer {
 // This is a call-to-action section on the bottom of the internals and documentation page.
 #call-to-action {
   margin-top: 40px;
+}
+
+.comparison-table {
+  margin-left: auto;
+  margin-right: auto;
+  @media #{$is-min-md} {
+    width: 900px;
+  }
+  @media #{$is-sm} {
+    width: 600px;
+  }
+  @media #{$is-xs} {
+    width: 320px;
+  }
+}
+
+.comparison-icon {
+  position: relative; // Needed for the footnotes to be positioned correctly
+  text-align: center;
+  @media #{$is-min-md} {
+    width: 45px;
+    font-size: 25px;
+  }
+  @media #{$is-sm} {
+    width: 45px;
+    font-size: 15px;
+  }
+  @media #{$is-xs} {
+    width: 20px;
+    font-size: 15px;
+  }
+}
+
+.comparison-icon-yes {
+  @extend .comparison-icon;
+  @extend .success;
+  color: green;
+}
+
+.comparison-icon-yes i {
+  @extend .fa;
+  @extend .fa-check;
+}
+
+.comparison-icon-half {
+  @extend .comparison-icon;
+  @extend .warning;
+  color: orange;
+}
+
+.comparison-icon-half i {
+  @extend .fa;
+  @extend .fa-circle-o;
+}
+
+.comparison-icon-no {
+  @extend .comparison-icon;
+  @extend .danger;
+  color: red;
+}
+
+.comparison-icon-no i {
+  @extend .fa;
+  @extend .fa-times;
+}
+
+.footnote-mark {
+  position: absolute;
+  top: 10px;
+  font-size: 10px;
+}
+
+ol.footnotes {
+  counter-reset: list;
+}
+
+ol.footnotes > li {
+  list-style: none;
+  position: relative;
+}
+
+ol.footnotes > li:before {
+  counter-increment: list;
+  content: counter(list, lower-alpha) ") ";
+  position: absolute;
+  left: -1.4em;
+}
+
+.article-img {
+  margin-top: 5px;
+  margin-bottom: 30px;
 }

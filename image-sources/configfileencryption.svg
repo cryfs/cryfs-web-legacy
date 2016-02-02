@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="configfileencryption.svg"
+   inkscape:export-filename="/home/heinzi/cryfs_web/app/assets/images/configfileencryption.png"
+   inkscape:export-xdpi="82.606995"
+   inkscape:export-ydpi="82.606995">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="300.35328"
+     inkscape:cy="865.78258"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     showguides="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1163"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4155" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#25aae1;fill-opacity:1;stroke:none"
+       id="rect3336"
+       width="357.71497"
+       height="319.673"
+       x="48.43137"
+       y="20.371481"
+       ry="0" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.0337522;stroke-opacity:1"
+       id="rect4138-0"
+       width="314.10004"
+       height="196.47925"
+       x="70.381516"
+       y="122.88695" />
+    <g
+       id="g4448"
+       transform="translate(0,2.3125)">
+      <rect
+         y="157.59853"
+         x="85.243935"
+         height="144.78508"
+         width="284.70154"
+         id="rect4157"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-opacity:1" />
+      <g
+         id="g4400">
+        <rect
+           style="fill:#0f75bc;fill-opacity:1;stroke:#0f75bc;stroke-width:1.17630565;stroke-opacity:1"
+           id="rect4159"
+           width="263.76761"
+           height="33.835972"
+           x="95.614609"
+           y="167.94479" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:6.25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="141.56702"
+           y="193.0211"
+           id="text4161"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4163"
+             x="141.56702"
+             y="193.0211"
+             style="font-size:25px;fill:#ffffff;fill-opacity:1">[Ciphername]</tspan></text>
+      </g>
+      <g
+         id="g4415">
+        <rect
+           style="fill:#0f75bc;fill-opacity:1;stroke:#0f75bc;stroke-width:1.17630565;stroke-opacity:1"
+           id="rect4159-6"
+           width="263.76761"
+           height="33.835972"
+           x="95.614609"
+           y="212.95042" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:6.24673605px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="124.09274"
+           y="237.8226"
+           id="text4161-8"
+           sodipodi:linespacing="125%"
+           transform="scale(0.99945969,1.0005406)"><tspan
+             sodipodi:role="line"
+             id="tspan4163-8"
+             x="124.09274"
+             y="237.8226"
+             style="font-size:24.9869442px;fill:#ffffff;fill-opacity:1">[Encryption Key]</tspan></text>
+      </g>
+      <g
+         id="g4410">
+        <rect
+           style="fill:#0f75bc;fill-opacity:1;stroke:#0f75bc;stroke-width:1.17630565;stroke-opacity:1"
+           id="rect4159-0"
+           width="263.76761"
+           height="33.835972"
+           x="95.614609"
+           y="257.97513" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:6.24637318px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="134.53117"
+           y="282.77274"
+           id="text4161-8-2"
+           sodipodi:linespacing="125%"
+           transform="scale(0.99939965,1.0006007)"><tspan
+             sodipodi:role="line"
+             id="tspan4163-8-3"
+             x="134.53117"
+             y="282.77274"
+             style="font-size:24.98549271px;fill:#ffffff;fill-opacity:1">[Root Block ID]</tspan></text>
+      </g>
+    </g>
+    <rect
+       style="fill:#0f75bc;fill-opacity:1;stroke:#0f75bc;stroke-width:1.45481062;stroke-opacity:1"
+       id="rect4159-5"
+       width="313.54855"
+       height="43.537937"
+       x="70.733055"
+       y="68.09481" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.28472805px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="140.62672"
+       y="98.332634"
+       id="text4161-2"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0057501,0.99428278)"><tspan
+         sodipodi:role="line"
+         id="tspan4163-9"
+         x="140.62672"
+         y="98.332634"
+         style="font-size:25px;fill:#ffffff;fill-opacity:1">[Ciphername]</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;baseline-shift:baseline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="83.290886"
+       y="146.04054"
+       id="text4284"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4286"
+         x="83.290886"
+         y="146.04054"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:18.75px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff;fill-opacity:1">Encrypt<tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:64.99999762%;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';baseline-shift:sub"
+   id="tspan4312">Cipher</tspan>(inner_key)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;baseline-shift:baseline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="68.364594"
+       y="48.200584"
+       id="text4284-2"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4286-9"
+         x="68.364594"
+         y="48.200584"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:18.75px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff;fill-opacity:1">Encrypt<tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:64.99999762%;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';baseline-shift:sub"
+   id="tspan4310">aes-256-gcm</tspan>(outer_key)</tspan></text>
+  </g>
+</svg>
