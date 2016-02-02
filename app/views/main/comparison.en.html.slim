@@ -20,7 +20,8 @@ section.section-1
       Many providers offer some gigabytes free of charge and for about $10 per month you can get a whole terabyte.
       There are more advantages, but these are the ones why all my important files are in the cloud for some time already.
     .row
-      img.col-md-offset-2.col-md-8.article-img src=image_url("comparison_dropbox.png") alt="Encrypting your Dropbox"
+      .col-md-offset-2.col-md-8
+        img.article-img src=image_url("comparison_dropbox.png") alt="Encrypting your Dropbox"
     p There are also disadvantages however.
       Data leaks are happening from time to time and you don't want to be the one who gets blackmailed or whose private pictures get public.
       You usually also don't want hackers to be able to modify your files and change your yearly earnings report (or whatever you're storing in the cloud).
@@ -50,7 +51,8 @@ section.section-1
 
     h2#veracrypt TrueCrypt, VeraCrypt
     .row
-      img.col-md-offset-2.col-md-8.article-img src=image_url("veracrypt.png") alt="VeraCrypt"
+      .col-md-offset-2.col-md-8
+        img.article-img src=image_url("veracrypt.png") alt="VeraCrypt"
     p #{link_to 'TrueCrypt', 'http://truecrypt.sourceforge.net/'} has been #{link_to 'discontinued', 'http://truecrypt.sourceforge.net/'}
       some time ago and contains some #{link_to 'vulnerabilities', 'http://www.pcworld.com/article/2987439/encryption/newly-found-truecrypt-flaw-allows-full-system-compromise.html'},
       so we will focus on its (inofficial) successor #{link_to 'VeraCrypt', 'https://veracrypt.codeplex.com/'} here.
@@ -77,7 +79,8 @@ section.section-1
 
     h2#encfs EncFS
     .row
-      img.col-md-offset-2.col-md-8.article-img src=image_url("encfs.jpg") alt="EncFS"
+      .col-md-offset-2.col-md-8
+        img.article-img src=image_url("encfs.jpg") alt="EncFS"
     p #{link_to 'EncFS', 'https://vgough.github.io/encfs/'} was my tool of choice for an encrypted Dropbox for quite some time.
       It doesn't support Windows (only Linux and Mac), but that might be enough for some users.
       Like VeraCrypt, it offers you a virtual filesystem, so you don't notice the encryption which is happening in the background.
@@ -115,7 +118,8 @@ section.section-1
 
     h2#ecryptfs eCryptfs
     .row
-      img.col-md-offset-2.col-md-8.article-img src=image_url("ecryptfs.png") alt="eCryptfs"
+      .col-md-offset-2.col-md-8
+        img.article-img src=image_url("ecryptfs.png") alt="eCryptfs"
     p #{link_to 'eCryptfs',' http://ecryptfs.org/'} is a tool for Linux, mainly known because you're already using it
       if you're encrypting your home directory in Ubuntu Linux.
       Like EncFS, it doesn't encrypt file sizes or directory structure and therefore has the same problems as described above.
@@ -129,7 +133,8 @@ section.section-1
 
     h2#cryfs CryFS
     .row
-      img.col-md-offset-2.col-md-8.article-img src=image_url("teaser.jpg") alt="CryFS"
+      .col-md-offset-2.col-md-8
+        img.article-img src=image_url("teaser.jpg") alt="CryFS"
     p Since none of the solutions above can be recommended to be used together with Dropbox,
       we developed #{link_to 'CryFS', 'https://www.cryfs.org'}.
       Like all other solutions described here, it offers a virtual filesystem and you can work with your files without thinking about the
@@ -323,11 +328,13 @@ section.section-1
     p
       strong Footnotes:
       ol.footnotes
-        li Will cause unresolvable conflicts when modifying the filesystem on two machines without full synchronization inbetween.
-        li Protects against a hacker introducing new changes, i.e. adding, deleting or modifying a file or directory, but does not protect against rolling back files or directories to a previous version. This is planned for future versions.
-        li Only protects file contents. Does not protect against adding or deleting files or directories. Current implementation is flawed because a hacker can simply disable the integrity check.
-        li Should work if you compile it yourself, but no distribution packages offered.
-        li There is a third-party experimental version for Windows.
+        li VeraCrypt causes unresolvable conflicts when modifying the filesystem on two machines without full synchronization inbetween.
+        li CryFS protects against a hacker introducing new changes, i.e. adding, deleting or modifying a file or directory, but does not protect against rolling back files or directories to a previous version. This is planned for future versions.
+        li EncFS only protects file contents. Does not protect against adding or deleting files or directories. The current implementation is flawed because a hacker can simply disable the integrity check.
+        li CryFS should work on Mac OS X if you compile it yourself, but there are no distribution packages offered.
+        li There is a third-party experimental version of EncFS for Windows.
+
+    / TODO Share-Buttons
 
 
     #call-to-action.well.well-lg.col-md-offset-2.col-md-8
