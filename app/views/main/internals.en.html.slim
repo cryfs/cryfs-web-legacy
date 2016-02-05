@@ -26,12 +26,13 @@ section.section-1
           This tree structure has very little overhead and itself is also stored using encrypted same-size blocks.
           To hide file metadata and directory structure, they are also represented using encrypted same-size blocks.
         p Each encrypted block is stored as a file in the base directory, using a random ID as filename.
-          That is, an attacker can only see a set of same-size ciphertext files in the base directory and can't see
-          contents, file sizes, metadata or directory structure of the plaintext files.
-        p The blocks are encrypted with a key which is chosen randomly when the file system is created.
-          It is stored in a configuration file, which is then encrypted using the password chosen by the user.
-          This configuration file is encrypted with the user password and can either be stored in the cloud, which is the default,
-          or be kept locally, if you need the additional security.
+          The base directory is then usually set up to be synchronized with a cloud provider like Dropbox.
+          An attacker with access to the base directory can only see a set of same-size ciphertext blocks and can't see
+          contents, file sizes, metadata or directory structure of your data.
+        p The blocks are encrypted using a block cipher chosen by the user. A random encryption key is generated when the filesystem is created.
+          This key is stored in a configuration file, which is then encrypted using the password chosen by the user.
+          Since it is encrypted, it can be stored together with the ciphertext blocks in the cloud, which is the default.
+          If you need additional security, you can also keep the configuration file somewhere else locally.
 
     h2 Configuration File
     p The base directory also contains a configuration file with the information CryFS needs to decrypt it.
@@ -42,7 +43,7 @@ section.section-1
         ul
           li <strong>&#91;Cipher&#93;</strong>: The cipher used (e.g. <code>aes-256-gcm</code>)
           li <strong>&#91;Encryption Key&#93;</strong>: The encryption key used for encrypting blocks
-          li <strong>&#91;Root Block ID&#93;</strong>: The block ID for the block storing the root directory (entry point for the file system)
+          li <strong>&#91;Root Block ID&#93;</strong>: The block ID for the block storing the root directory (entry point for the filesystem)
         p The configuration file is encrypted twice, once with <code>aes-256-gcm</code> and once with the cipher chosen by the user.
           This way, if the user doesn't trust <code>aes-256-gcm</code> for some reason,
           they can choose another cipher and still be secure.
