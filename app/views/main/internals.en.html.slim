@@ -15,6 +15,8 @@ section.section-1
       Nevertheless, the description can be a bit technical in some points.
     p If you're rather interested in using CryFS, take a look at the #{link_to "CryFS Tutorial", {controller: "main", action: "documentation"}}.
 
+section.section-2
+  .container
     h2 Storing data
     .row
       .col-md-4
@@ -33,17 +35,18 @@ section.section-1
           This key is stored in a configuration file, which is then encrypted using the password chosen by the user.
           Since it is encrypted, it can be stored together with the ciphertext blocks in the cloud, which is the default.
           If you need additional security, you can also keep the configuration file somewhere else locally.
-
+section.section-1
+  .container
     h2 Configuration File
     p The base directory also contains a configuration file with the information CryFS needs to decrypt it.
       This configuration file is encrypted and integrity-checked using the password chosen by the user, so an attacker cannot read or modify it.
+    p The information stored in the configuration file includes the following.
+    ul
+      li <strong>&#91;Cipher&#93;</strong>: The cipher used (e.g. <code>aes-256-gcm</code>)
+      li <strong>&#91;Encryption Key&#93;</strong>: The encryption key used for encrypting blocks
+      li <strong>&#91;Root Block ID&#93;</strong>: The block ID for the block storing the root directory (entry point for the filesystem)
     .row
       .col-md-8
-        p The information stored in the configuration file includes the following.
-        ul
-          li <strong>&#91;Cipher&#93;</strong>: The cipher used (e.g. <code>aes-256-gcm</code>)
-          li <strong>&#91;Encryption Key&#93;</strong>: The encryption key used for encrypting blocks
-          li <strong>&#91;Root Block ID&#93;</strong>: The block ID for the block storing the root directory (entry point for the filesystem)
         p The configuration file is encrypted twice, once with <code>aes-256-gcm</code> and once with the cipher chosen by the user.
           This way, if the user doesn't trust <code>aes-256-gcm</code> for some reason,
           they can choose another cipher and still be secure.
@@ -57,7 +60,7 @@ section.section-1
           When decrypting the configuration file, CryFS first reads the scrypt parameters and regenerates both keys from the user password.
           Then, it decrypts the first layer and reads the cipher chosen by the user.
           Using this cipher, it decrypts the second layer and reads the configuration values.
-      .col-md-4 style="margin-top: 30px; margin-bottom: 30px;"
+      .col-md-4 style="margin-top: 20px;"
         =image_tag("configfileencryption.png", alt: "Configuration File Encryption Layers", style: "max-width: 100%;")
     p The integrity of the configuration file depends on <code>aes-256-gcm</code>.
       This cipher is a standard cipher and believed to be very secure.
@@ -67,7 +70,8 @@ section.section-1
       and you don't have to rely on the <code>aes-256-gcm</code> integrity verification step.
     p Alternatively, you can store the configuration file outside of the base directory and not upload it into the cloud.
       This is possible using the <kbd>--config</kbd> parameter when calling CryFS.
-
+section.section-2
+  .container
     h2 Security Analysis
     p The security of CryFS has been proven in a <a href="/cryfs_mathesis.pdf">master's thesis</a> using a game-based security approach.
       The thesis also contains a detailed description of the inner workings of CryFS.
@@ -76,7 +80,8 @@ section.section-1
       The current version protects the encrypted blocks from being modified by an attacker, since it uses an authenticated encryption scheme like <code>aes-256-gcm</code>.
       However, it doesn't prevent an attacker yet from rolling back the filesystem by replacing blocks with an earlier valid version of the same block.
       This issue will be addressed in future versions.
-
+section.section-1
+  .container
     #call-to-action.well.well-lg.col-md-offset-2.col-md-8
       .text-center
         p.lead Get started with the

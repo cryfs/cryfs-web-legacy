@@ -71,8 +71,8 @@ en:
   bulletpoints_simple_text: "Easy to setup and works with a lot of cloud storage providers. It runs in the background - you won't notice it when accessing your files in your daily workflow."
   bulletpoints_secure_title: "Secure"
   bulletpoints_secure_text: "Your data only leaves your computer in encrypted form. File contents, metadata and directory structure are all secure from someone who hacked your cloud."
-  bulletpoints_foss_title: "Free and Open Source"
-  bulletpoints_foss_text_html: "Released under LGPL and available on %{github_link}. This makes it free to use for everyone, the security of CryFS is verifiable and the community can work on improvements."
+  bulletpoints_foss_title: "Free & Open Source"
+  bulletpoints_foss_text_html: "Released under LGPL and available on %{github_link}. Free to use for everyone. Its security is verifiable and the community can work on improvements."
   bulletpoints_github: "github"
   bulletpoints_view_details: "Details"
 
