@@ -215,7 +215,7 @@ footer {
     width: 600px;
   }
   @media #{$is-xs} {
-    width: 320px;
+    //Don't set width - use auto scaling.
   }
 }
 
@@ -267,6 +267,39 @@ footer {
 .comparison-icon-no i {
   @extend .fa;
   @extend .fa-times;
+}
+
+.comparison-table .fs-type-header div {
+  @media #{$is-xs} {
+    transform: rotate(270deg);
+    width: 30px;
+  }
+}
+
+.comparison-table .fs-type-header span {
+  border-bottom: 1px solid #ccc;
+  padding: 5px 10px;
+}
+
+.comparison-table > tbody > tr > td {
+  @media #{$is-xs} {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+.comparison-table > thead > tr > th {
+  @media #{$is-xs} {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+.comparison-table th.fs-type-header {
+  @media #{$is-xs} {
+    height: 140px;
+    white-space: nowrap;
+  }
 }
 
 .footnote-mark {
