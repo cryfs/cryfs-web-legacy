@@ -2,7 +2,12 @@ teaser.jpg (teaser_original.jpg) : https://stocksnap.io/photo/LZABBOPC51 Creativ
 logo.png (Logo.xcf): own gimp work, combining fontawesome fa-cloud, fa-lock (http://fortawesome.github.io/Font-Awesome/icon/cloud/ http://fortawesome.github.io/Font-Awesome/icon/lock/)
 favicon.png (Favicon.xcf): own gimp work on base of fontawesome fa-lock (http://fortawesome.github.io/Font-Awesome/icon/lock/)
 other_os.png (other_os.xcf): http://fortawesome.github.io/Font-Awesome/icon/cog/
-configfileencryption.png (configfileencryption.svg): Original version created on fiverr, then re-implemented and slightly modified it myself using inkscape.
+configfileencryption.png (configfileencryption.svg): Original version created on fiverr, then re-implemented and modified it myself using inkscape.
+storingdata.png (storingdata.svg): Original version created on fiverr, then re-implemented and modified it myself using inkscape.
+ - folder icon: http://pngwebicons.com/img/windows/folders
+ - file icon: from fiverr version
+ - lock over encrypted blocks: http://www.endlessicons.com/free-icons/lock-icon/
+ - cloud: http://simpleicon.com/cloud-10.html
 comparison_dropbox.png: https://cf.dropboxstatic.com/static/images/index/animation-strips/posters/hero-poster-vfl1gZOAd.png bzw. https://www.dropbox.com/
 encfs.jpg: https://sites.google.com/a/arg0.net/www/_/rsrc/1268950925414/encfs-combo-400-full.jpg
 veracrypt.png: own screenshot
