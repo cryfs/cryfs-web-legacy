@@ -13,7 +13,7 @@
             p =t(:downloadmodal_select_os)
           .col-md-12
             ul.nav.nav-tabs role="tablist"
-              li.col-md-4.os-box role="presentation"
+              li.col-md-4.os-box.active role="presentation"
                 a#tablink-ubuntu href="#tab-ubuntu" aria-controls="tab-ubuntu" role="tab" data-toggle="tab"
                   .row
                     .col-md-12
@@ -35,7 +35,7 @@
                     .col-md-12
                       span.os-name =t(:downloadmodal_other)
         .tab-content
-          .tab-pane#tab-ubuntu role="tabpanel"
+          .tab-pane.active#tab-ubuntu role="tabpanel"
             h3 =t(:downloadmodal_easy_install)
             pre wget -O - https://www.cryfs.org/install.sh | sudo bash
             h3 =t(:downloadmodal_download_package)
