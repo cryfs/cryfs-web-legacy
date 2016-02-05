@@ -38,6 +38,7 @@ en:
   nav_togglenavigation: "Toggle Navigation"
   nav_download: "Download"
   nav_tutorial: "Tutorial"
+  nav_comparison: "Compare"
   nav_internals: "How it works"
 
   teaser_header: "Keep your data safe in the cloud"
