@@ -37,7 +37,7 @@
         .tab-content
           .tab-pane.active#tab-ubuntu role="tabpanel"
             h3 =t(:downloadmodal_easy_install)
-            pre wget -O - https://www.cryfs.org/install.sh | sudo bash
+            pre.easyinstall wget -O - https://www.cryfs.org/install.sh | sudo bash
             h3 =t(:downloadmodal_download_package)
             table.table.table-striped.distribution-table
               tr
@@ -66,7 +66,7 @@
 
           .tab-pane#tab-debian
             h3 =t(:downloadmodal_easy_install)
-            pre wget -O - https://www.cryfs.org/install.sh | sudo bash
+            pre.easyinstall wget -O - https://www.cryfs.org/install.sh | sudo bash
             h3 =t(:downloadmodal_download_package)
             table.table.table-striped.distribution-table
               tr
