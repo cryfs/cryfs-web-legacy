@@ -19,10 +19,6 @@ $is-max-md: "(max-width: #{$screen-md-max})";
 $is-md: "#{$is-min-md} and #{$is-max-md}";
 $is-lg: "(min-width: #{$screen-lg-min})";
 
-#fb-like {
-  margin-top: 15px;
-}
-
 .teaser-md {
   position: relative;
   height: $wanted_teaser_height_md;
