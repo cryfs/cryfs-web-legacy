@@ -8,17 +8,16 @@
   meta name="description" content=t(:description_comparison)
   title =t(:title_comparison)
 
-section.section-1
+section.section-2
   .container
 
-    h1 Encrypting your Dropbox - but securely
+    h1 Encrypt your Dropbox
 
-    p It's very convenient to have your files in a Dropbox (or with another cloud storage provider).
-      They are automatically synchronized between all your computers (and other devices).
-      In case of a disk failure, your data is not lost but still in the cloud.
-      It is also not expensive anymore.
-      Many providers offer some gigabytes free of charge and for about $10 per month you can get a whole terabyte.
-      There are more advantages, but these are the ones why all my important files are in the cloud for some time already.
+    p.lead There are some tools that make it quite easy to encrypt your Dropbox.<br/>
+           We give an overview and explain the advantages and disadvantages of each.
+
+section.section-1
+  .container
     .row
       .col-md-offset-2.col-md-8
         img.article-img src=image_url("comparison_dropbox.png") alt="Encrypting your Dropbox"
@@ -38,7 +37,9 @@ section.section-1
     p In the following, I will give an overview over some of them and explain how they can be combined with cloud storage.
       If you're just interested in the results, #{link_to 'scroll down', '#summary'}.
 
-    h2#proprietary Proprietary Solutions
+section.section-2#proprietary
+  .container
+    h2 Proprietary Solutions
     p There are some proprietary solutions on the market, but that means you don't know what the software is doing.
       Nobody can check it for vulnerabilities or backdoors.
       It might be secure or it might not be.
@@ -49,7 +50,9 @@ section.section-1
       Vulnerabilities can be found and fixed, backdoors can be noticed.
       This is why I only describe open source solutions here.
 
-    h2#veracrypt TrueCrypt, VeraCrypt
+section.section-1#veracrypt
+  .container
+    h2 TrueCrypt, VeraCrypt
     .row
       .col-md-offset-2.col-md-8
         img.article-img src=image_url("veracrypt.png") alt="VeraCrypt"
@@ -77,7 +80,9 @@ section.section-1
       and in each there is only one of the changes. Ugly.
     p So VeraCrypt is a good choice if you are only encrypting your files locally and do not need integrity, but it is not a good idea to use it in a Dropbox.
 
-    h2#encfs EncFS
+section.section-2#encfs
+  .container
+    h2 EncFS
     .row
       .col-md-offset-2.col-md-8
         img.article-img src=image_url("encfs.jpg") alt="EncFS"
@@ -116,7 +121,9 @@ section.section-1
     p So the current version of EncFS can't really be recommended for any application.
       EncFS 2.0 might be interesting again when and if it is released.
 
-    h2#ecryptfs eCryptfs
+section.section-1#ecryptfs
+  .container
+    h2 eCryptfs
     .row
       .col-md-offset-2.col-md-8
         img.article-img src=image_url("ecryptfs.png") alt="eCryptfs"
@@ -131,7 +138,9 @@ section.section-1
       for example when you changed them on another computer.
       eCryptfs doesn't support that and could either crash or just overwrite your changes with old versions.
 
-    h2#cryfs CryFS
+section.section-2#cryfs
+  .container
+    h2 CryFS
     .row
       .col-md-offset-2.col-md-8
         img.article-img src=image_url("teaser.jpg") alt="CryFS"
@@ -159,7 +168,9 @@ section.section-1
       The current version is not considered stable yet by the developers and if you decide to use it, regular backups are strongly recommended.
       However, we are already using CryFS for some time to encrypt our own Dropboxes and didn't have any problems or data losses so far.
 
-    h2#summary Summary
+section.section-1#summary
+  .container
+    h2 Summary
     p If you only need local encryption, eCryptfs, VeraCrypt or CryFS could be the tool of your choice - depending on your needs.
       eCryptfs only encrypts file contents but not file sizes or directory structure.
       VeraCrypt needs you to set a maximal size for your data container and will use all this space, even if it is only half full.
@@ -336,8 +347,10 @@ section.section-1
 
     / TODO Share-Buttons
 
-
-    #call-to-action.well.well-lg.col-md-offset-2.col-md-8
-      .text-center
-        p.lead Get started with the
-        =link_to "CryFS Tutorial", {controller: "main", action: "documentation"}, class: "btn btn-primary btn-lg"
+section.section-1
+  .container
+    .row
+      #call-to-action.well.well-lg.col-md-offset-2.col-md-8
+        .text-center
+          p.lead Get started with the
+          =link_to "CryFS Tutorial", {controller: "main", action: "documentation"}, class: "btn btn-primary btn-lg"

@@ -8,14 +8,13 @@
   meta name="description" content=t(:description_internals)
   title =t(:title_internals)
 
-section.section-1
+section.section-2
   .container
     h1 How it works
-    p In the following, we explain how CryFS works behind the scenes and how it achieves its security goals.
-      Nevertheless, the description can be a bit technical in some points.
-    p If you're rather interested in using CryFS, take a look at the #{link_to "CryFS Tutorial", {controller: "main", action: "documentation"}}.
+    p.lead In the following, we explain how CryFS works and how it achieves its security goals.
+    p Nevertheless, the description can be a bit technical in some points. If you're rather interested in using CryFS, take a look at the #{link_to "CryFS Tutorial", {controller: "main", action: "documentation"}}.
 
-section.section-2
+section.section-1
   .container
     h2 Storing data
     .row
@@ -35,26 +34,26 @@ section.section-2
           This key is stored in a configuration file, which is then encrypted using the password chosen by the user.
           Since it is encrypted, it can be stored together with the ciphertext blocks in the cloud, which is the default.
           If you need additional security, you can also keep the configuration file somewhere else locally.
-section.section-1
+section.section-2
   .container
     h2 Configuration File
     p The base directory also contains a configuration file with the information CryFS needs to decrypt it.
       This configuration file is encrypted and integrity-checked using the password chosen by the user, so an attacker cannot read or modify it.
     p The information stored in the configuration file includes the following.
     ul
-      li <strong>&#91;Cipher&#93;</strong>: The cipher used (e.g. <code>aes-256-gcm</code>)
+      li <strong>&#91;Cipher&#93;</strong>: The cipher used (e.g. <var>aes-256-gcm</var>)
       li <strong>&#91;Encryption Key&#93;</strong>: The encryption key used for encrypting blocks
       li <strong>&#91;Root Block ID&#93;</strong>: The block ID for the block storing the root directory (entry point for the filesystem)
     .row
       .col-md-8
-        p The configuration file is encrypted twice, once with <code>aes-256-gcm</code> and once with the cipher chosen by the user.
-          This way, if the user doesn't trust <code>aes-256-gcm</code> for some reason,
+        p The configuration file is encrypted twice, once with <var>aes-256-gcm</var> and once with the cipher chosen by the user.
+          This way, if the user doesn't trust <var>aes-256-gcm</var> for some reason,
           they can choose another cipher and still be secure.
           The keys for both encryption layers are generated from the user-chosen password using <a href="https://en.wikipedia.org/wiki/Scrypt">scrypt</a>.
-        p In detail, CryFS generates two keys <code>key_outer</code> and <code>key_inner</code> using scrypt and the user password.
-          It encrypts the configuration file using the user cipher and <code>key_inner</code>.
+        p In detail, CryFS generates two keys <var>outer_key</var> and <var>inner_key</var> using scrypt and the user password.
+          It encrypts the configuration file using the user cipher and <var>inner_key</var>.
           To the ciphertext, it prepends the name of the user cipher (so it knows how to decrypt it later) and encrypts
-          the result using <code>aes-256-gcm</code> and <code>key_outer</code>. This way, an attacker cannot see or manipulate which cipher is used.
+          the result using <var>aes-256-gcm</var> and <var>outer_key</var>. This way, an attacker cannot see or manipulate which cipher is used.
           As a last step, the scrypt configuration parameters are prepended, so CryFS knows how to configure scrypt when
           decrypting the filesystem.
           When decrypting the configuration file, CryFS first reads the scrypt parameters and regenerates both keys from the user password.
@@ -62,22 +61,22 @@ section.section-1
           Using this cipher, it decrypts the second layer and reads the configuration values.
       .col-md-4 style="margin-top: 20px;"
         =image_tag("configfileencryption.png", alt: "Configuration File Encryption Layers", style: "max-width: 100%;")
-    p The integrity of the configuration file depends on <code>aes-256-gcm</code>.
+    p The integrity of the configuration file depends on <var>aes-256-gcm</var>.
       This cipher is a standard cipher and believed to be very secure.
-      If, however, you don't trust the integrity of <code>aes-256-gcm</code> and want to use another cipher instead,
+      If, however, you don't trust the integrity of <var>aes-256-gcm</var> and want to use another cipher instead,
       we recommend adding the <kbd>--cipher xxx</kbd> parameter each time you mount the filesystem.
       This way, CryFS can check that the cipher used by the filesystem is the one you actually specified
-      and you don't have to rely on the <code>aes-256-gcm</code> integrity verification step.
+      and you don't have to rely on the <var>aes-256-gcm</var> integrity verification step.
     p Alternatively, you can store the configuration file outside of the base directory and not upload it into the cloud.
       This is possible using the <kbd>--config</kbd> parameter when calling CryFS.
-section.section-2
+section.section-1
   .container
     h2 Security Analysis
     p The security of CryFS has been proven in a <a href="/cryfs_mathesis.pdf">master's thesis</a> using a game-based security approach.
       The thesis also contains a detailed description of the inner workings of CryFS.
     p The current version meets all security goals regarding confidentiality of file contents, size, metadata and directory structure.
       The integrity goals mentioned in the thesis are not fully implemented yet.
-      The current version protects the encrypted blocks from being modified by an attacker, since it uses an authenticated encryption scheme like <code>aes-256-gcm</code>.
+      The current version protects the encrypted blocks from being modified by an attacker, since it uses an authenticated encryption scheme like <var>aes-256-gcm</var>.
       However, it doesn't prevent an attacker yet from rolling back the filesystem by replacing blocks with an earlier valid version of the same block.
       This issue will be addressed in future versions.
 section.section-1

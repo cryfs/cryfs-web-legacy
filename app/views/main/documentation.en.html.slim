@@ -8,10 +8,13 @@
   meta name="description" content=t(:description_tutorial)
   title =t(:title_tutorial)
 
-section.section-1
+section.section-2
   .container
     h1 Tutorial
+    p.lead CryFS is very easy to use. Let us show you how.
 
+section.section-1
+  .container
     h2 Install CryFS
     p Easy Install is currently supported on Ubuntu 14.04, 15.04 and 15.10 (32bit and 64bit) and on Debian Jessie 64bit.
     p On these systems, you can install CryFS with the following command.
@@ -20,10 +23,9 @@ section.section-1
     p On other Linux operating systems, you can compile CryFS from source by following the instructions on <a href="https://github.com/cryfs/cryfs">github</a>.
       Windows and Mac OS X are currently not supported, but will be in future versions.
 
-    h2 Using CryFS
-    p Using CryFS is very simple and straightforward. In the following, we explain the basic commands.
-
-    h3 Setup an encrypted directory
+section.section-2
+  .container
+    h2 Setup an encrypted directory
     p Once installed, you can create an encrypted directory by calling <kbd>cryfs basedir mountdir</kbd>.
       You can call the directories however you like, we chose <kbd>basedir</kbd> and <kbd>mountdir</kbd> for demonstration purposes.
       If the corresponding directories don't exist yet, CryFS will offer to create them for you.
@@ -38,7 +40,9 @@ section.section-1
       Whenever you access files or directories in it, CryFS handles the decryption in the background, so that you can work with <kbd>mountdir</kbd> as if it was a real directory.
       This way, even if someone steals your harddisk, your data is still secure, since they can't decrypt it.
 
-    h3 Using the encrypted directory
+section.section-1
+  .container
+    h2 Using the encrypted directory
     p You can work in <kbd>mountdir</kbd>, add files to it, modify them, add subdirectories, and do whatever you want with it.
       Everything you store inside will be encrypted and stored in <kbd>basedir</kbd>.
       The unencrypted content of <kbd>mountdir</kbd> will never be stored to the harddisk, so everything on your harddisk is encrypted.
@@ -72,7 +76,9 @@ section.section-1
         cat mountdir/myfile
         # output: My file content
 
-    h3 Using CryFS together with Dropbox
+section.section-2
+  .container
+    h2 Using CryFS together with Dropbox
     p Although CryFS can also be used to just encrypt files locally, for example to protect against harddrive theft,
       its main purpose is to be used together with cloud storage providers like Dropbox.
       It should work well together with any cloud storage provider that uses a local synchronization folder.
@@ -113,6 +119,8 @@ section.section-1
       everything you modify in one of the <kbd>mountdir</kbd> directories will automatically be synchronized to the
       <kbd>mountdir</kbd> on the other computer, while Dropbox only sees the encrypted data.
 
+section.section-1
+  .container
     #call-to-action.well.well-lg.col-md-offset-2.col-md-8
       .text-center
         p.lead Try it out and
