@@ -104,7 +104,7 @@ section.section.section-1
               =f.text_field :nickname, hint: t(:form_leaveblank)
             .form-group.col-md-8
               label.sr-only for="contact_form_email" =t(:contactform_email_label)
-              =f.email_field :email, id: 'contact_form_email', class: 'form-control', style: 'margin-top: 2px; height: 30px;', placeholder: t(:contactform_email_placeholder)
+              =f.email_field :email, id: 'contact_form_email', class: 'form-control', placeholder: t(:contactform_email_placeholder)
             .form-group.col-md-offset-1.col-md-3
               =button_tag(type: 'submit', class: 'btn btn-block btn-primary') do ||
                 =t(:contactform_send)

@@ -33,7 +33,7 @@ en:
   title_comparison: "CryFS: Comparison of encrypted cloud storage solutions"
   description_comparison: "Encrypting your Dropbox is easy. Find out about the possible solutions and their pros and cons."
 
-  github_forkme: "Fork me on Github!"
+  github_forkme: "Fork me on GitHub!"
   
   nav_togglenavigation: "Toggle Navigation"
   nav_download: "Download"
@@ -73,7 +73,7 @@ en:
   bulletpoints_secure_text: "Your data only leaves your computer in encrypted form. File contents, metadata and directory structure are all secure from someone who hacked your cloud."
   bulletpoints_foss_title: "Free & Open Source"
   bulletpoints_foss_text_html: "Released under LGPL and available on %{github_link}. Free to use for everyone. Its security is verifiable and the community can work on improvements."
-  bulletpoints_github: "github"
+  bulletpoints_github: "GitHub"
   bulletpoints_view_details: "Details"
 
   calltoaction_title: "Let us notify you when CryFS is stable!"
