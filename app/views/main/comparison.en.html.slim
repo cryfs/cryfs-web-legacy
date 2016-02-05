@@ -13,7 +13,7 @@ section.section-2
 
     h1 Encrypt your Dropbox
 
-    p.lead You want to encrypt your Dropbox, but you want to do it securely? We explain the tools.
+    p.lead You want to encrypt your Dropbox, but you want to do it securely and don't know which tool to use? Read on.
 
 section.section-1
   .container
@@ -57,10 +57,10 @@ section.section-1#veracrypt
         img.article-img src=image_url("veracrypt.png") alt="VeraCrypt" style="max-width: 100%;"
       .col-md-6
         p #{link_to 'TrueCrypt has been discontinued', 'http://truecrypt.sourceforge.net/'}
-          some time ago and #{link_to 'contains some vulnerabilities', 'http://www.pcworld.com/article/2987439/encryption/newly-found-truecrypt-flaw-allows-full-system-compromise.html'},
+          some time ago and #{link_to 'has some vulnerabilities', 'http://www.pcworld.com/article/2987439/encryption/newly-found-truecrypt-flaw-allows-full-system-compromise.html'},
           so we will focus on its (inofficial) successor #{link_to 'VeraCrypt', 'https://veracrypt.codeplex.com/'} here.
         p VeraCrypt runs on Windows, Linux and Mac, and is believed to be a secure encryption tool to encrypt your files locally.
-          It keeps your files confidential, but does not protect the integrity (i.e. an attacker can't read your files, but they could modify them).
+          It keeps your files confidential, but does not protect the integrity, i.e. a hacker can't read your files, but they could modify them without you noticing.
           Like all solutions presented here, it offers you a virtual filesystem and the unencrypted files are never actually stored on your hard disk.
           VeraCrypt then stores all filesystem data in one encrypted container file.
           If you want to use it to encrypt your Dropbox, you could put the encrypted container file in your Dropbox folder
@@ -150,19 +150,19 @@ section.section-2#cryfs
       .col-md-6
         img.article-img src=image_url("teaser.jpg") alt="CryFS" style="max-width: 100%;"
       .col-md-5
-        p Since none of the solutions above can be recommended to be used together with Dropbox,
+        p Since all of the solutions above have significant disadvantages when used with Dropbox,
           we developed #{link_to 'CryFS', 'https://www.cryfs.org'}.
           Like all other solutions described here, it offers a virtual filesystem and you can work with your files without thinking about the
           encryption that is happening in the background.
-          Although it can also be used for local encryption as an alternative to the other tools listed here,
-          it was built specifically to be used together with Dropbox (or other cloud storage providers).
-          Right now, it only works on Linux, but versions for Mac and Windows are planned.
+          While it can also be used for local encryption as an alternative to the other tools listed here,
+          it was built specifically to be used together with Dropbox or other cloud storage providers.
+          Right now, it only works on Linux, but versions for Mac and Windows are on the way.
       .col-md-12
         p CryFS follows established security standards and is the only tool in this list that works well together with Dropbox
           and is secure. As opposed to VeraCrypt, it keeps its data in small encrypted blocks and changing a small file
           results in only a small amount of data to be re-uploaded.
           As opposed to EncFS and eCryptfs, it doesn't only encrypt your file contents, but also file sizes, file metadata and
-          directory structure are encrypted.
+          directory structure.
           More information on how this is achieved can be found #{link_to 'here', controller: "main", action: "internals"}.
           The security of CryFS has been proven in a #{link_to 'master\'s thesis', '/cryfs_mathesis.pdf'} in 2015.
           As far as we know, CryFS is the only solution in this list for which this has been done.
@@ -170,25 +170,18 @@ section.section-2#cryfs
           It prevents hackers from introducing new content into your files or adding new files or deleting files,
           but it doesn't prevent attackers from rolling back your files or directories to a previous valid version.
           This is planned for future versions.
-          Given that the other solutions described here have even less support for integrity, it can't really be seen as a disadvantage though.
+          Nevertheless, even the current implementation offers better integrity than the other tools listed here.
           The main drawback of CryFS is that it is relatively new.
           The current version is not considered stable yet by the developers and if you decide to use it, regular backups are strongly recommended.
-          However, we are already using CryFS for some time to encrypt our own Dropboxes and didn't have any problems or data losses so far.
+          However, there are no reported cases of problems or data losses so far.
 
 section.section-1#summary
   .container
     h2 Summary
-    p If you only need local encryption, eCryptfs, VeraCrypt or CryFS could be the tool of your choice - depending on your needs.
-      eCryptfs only encrypts file contents but not file sizes or directory structure, but that might be enough for your use case.
-      VeraCrypt and CryFS also encrypt file metadata, file sizes and directory structure.
-      VeraCrypt needs you to set a maximal size for your data container and will use all this space, even if it is only half full.
-      For that, it has the advantage that a hacker cannot see how full the container is, i.e. much data you actually have in your container.
-      If you don't need to hide the total size of your data or you don't want to have a lot of unused space in your container file,
-      you could use CryFS.
-    p If you want to encrypt your Dropbox, the only tool we can recommend is CryFS.
-      All other tools listed here have significant shortcomings and/or security vulnerabilities.
-      Since CryFS is relatively new, regular backups are strongly recommended.
-      If you don't want that, you could use EncFS and accept the security vulnerabilities, although that's not really an option for us personally.
+    p EncFS doesn't encrypt directory structure and its current version has serious security vulnerabilities.
+      eCryptfs might cause crashes or undefined behavior if there is more than one device connected to your Dropbox.
+      VeraCrypt works, as long as your filesystem is small, i.e. you don't mind synchronizing the whole filesystem on each change, and you always let it finish synchronization before modifying the files on another computer.
+      CryFS solves all of these issues. It is a very new project and currently only available for Linux, but versions for other operating systems are on the way.
     table.table.table-striped.comparison-table
       thead
         tr
