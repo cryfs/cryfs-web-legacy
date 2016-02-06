@@ -58,7 +58,8 @@ $is-lg: "(min-width: #{$screen-lg-min})";
 
 .teaser-sm {
   margin-top: 0px;
-  background-color: #2E2F30;
+  background-color: #c2e1f2;
+  padding: 50px 0px;
 }
 .teaser-sm .teaser-content {
   margin-left: 15px;
@@ -70,12 +71,14 @@ $is-lg: "(min-width: #{$screen-lg-min})";
   color: #909090;
 }
 .teaser-sm .title-text h1 {
-  color: #bababa;
+  color: black;
+  font-size: 36px;
 }
 .teaser-sm .title-text p {
+  font-size: 21px;
   margin-top: 30px;
   margin-bottom: -20px;
-  color: #b0b0b0;
+  color: #111;
 }
 
 #tutorial-btn {
