@@ -23,7 +23,7 @@ RUN bundle install --deployment --without development test
 
 # Add source
 ADD . /source
-RUN rm /source/.git
+RUN rm -rf /source/.git /source/tmp
 
 RUN rake assets:precompile
 
