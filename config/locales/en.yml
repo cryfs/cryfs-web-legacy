@@ -23,13 +23,13 @@ en:
   locale_name: "en_US"
 
   title_main: "CryFS: A cryptographic filesystem for the cloud"
-  description_main: "CryFS encrypts your files, so you can safely store them anywhere. It works well together with cloud services like Dropbox, iCloud, OneDrive and others."
+  description_main: "CryFS encrypts your Dropbox and protects you against hackers and data leaks. It also works well together with other cloud providers."
   title_tutorial: "CryFS: Tutorial"
-  description_tutorial: "A quick and easy introduction into the basic usage of CryFS. CryFS encrypts your files, so you can safely store them anywhere. It works well together with cloud services like Dropbox, iCloud, OneDrive and others."
+  description_tutorial: "A quick and easy introduction into the basic usage of CryFS. CryFS encrypts your Dropbox and protects you against hackers and data leaks. It also works well together with other cloud providers."
   title_internals: "CryFS: How it works"
-  description_internals: "A description of the CryFS internals. CryFS encrypts your files, so you can safely store them anywhere. It works well together with cloud services like Dropbox, iCloud, OneDrive and others."
+  description_internals: "A description of the CryFS internals. CryFS encrypts your Dropbox and protects you against hackers and data leaks. It also works well together with other cloud providers."
   title_legalnotice: "CryFS: Legal notice"
-  description_legalnotice: "Legal notice for CryFS. CryFS encrypts your files, so you can safely store them anywhere. It works well together with cloud services like Dropbox, iCloud, OneDrive and others."
+  description_legalnotice: "Legal notice for CryFS. CryFS encrypts your Dropbox and protects you against hackers and data leaks. It also works well together with other cloud providers."
   title_comparison: "CryFS: Comparison of encrypted cloud storage solutions"
   description_comparison: "Encrypting your Dropbox is easy. Find out about the possible solutions and their pros and cons."
 
