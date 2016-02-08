@@ -57,6 +57,9 @@ $ ->
   $(".download-package-link").click ->
     window.ga 'send', 'event', 'download', 'download_package'
 
+  $(".easyinstall").on 'copy', ->
+    window.ga 'send', 'event', 'download', 'copy_easyinstall_cmd'
+
   if (window.location.hash == "#download")
     $("#downloadModal").modal()
 
