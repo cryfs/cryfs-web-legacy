@@ -4,7 +4,7 @@ class ResourceController < ApplicationController
   def install_script
     respond_to do |format|
       format.sh { render file: 'resource/install.sh'}
-      trackPageview('Download Install Script')
+      #trackPageview('Download Install Script')
     end
   end
 end
