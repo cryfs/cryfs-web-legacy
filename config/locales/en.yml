@@ -53,8 +53,8 @@ en:
   downloadmodal_debian: "Debian"
   downloadmodal_other: "Other"
 
-  downloadmodal_build_from_source: "Build from source"
-  downloadmodal_other_text_html: "See %{instructions_link} for instructions."
+  downloadmodal_build_from_source: "Other operating systems"
+  downloadmodal_other_text_html: "Mac OS X is coming soon, Windows a bit later. For Linux, you can follow the instructions at %{instructions_link} to build CryFS from source. Alternatively, if your distribution is based on Debian, you can try the Debian packages we offer."
   downloadmodal_easy_install: "Easy Install"
   downloadmodal_download_package: "Alternative: Download Package"
   downloadmodal_download: "Download"
