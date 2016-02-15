@@ -21,13 +21,13 @@ section.section-1
       .col-md-4
         =image_tag("storingdata.png", alt: "Your files, metadata and directory structure are stored as a set of same-size blocks, encrypted, and stored in the cloud.", style: "max-width: 100%;")
       .col-md-8
-        p The goal of CryFS is to keep not only file contents, but also file sizes, metadata and directory structure confidential.
+        p The goal of CryFS is not only to keep file contents, but also file sizes, metadata and directory structure confidential.
         p To hide file sizes, CryFS splits the content of a file into same-size blocks and encrypts these blocks individually.
           A tree structure is used to remember how the blocks belong together to form a file.
           This tree structure has very little overhead and itself is also stored using encrypted same-size blocks.
           To hide file metadata and directory structure, they are also represented using encrypted same-size blocks.
         p Each encrypted block is stored as a file in the base directory, using a random ID as filename.
-          The base directory is then usually set up to be synchronized with a cloud provider like Dropbox.
+          The base directory can then be set up to be synchronized with a cloud provider like Dropbox.
           An attacker with access to the base directory can only see a set of same-size ciphertext blocks and can't see
           contents, file sizes, metadata or directory structure of your data.
         p The blocks are encrypted using a block cipher chosen by the user. A random encryption key is generated when the filesystem is created.
