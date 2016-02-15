@@ -45,27 +45,33 @@
             table.table.table-striped.distribution-table
               tr
                 th
-                th i386
                 th amd64
+                th i386
               tr
                 th Ubuntu 15.10
                 td
                   / TODO (for all links here and also for debian links): Use https://apt.cryfs.org URLs
-                  a.download-package-link href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/ubuntu/pool/main/c/cryfs/cryfs_0.8.6_ubuntu-15.10-x32.deb" =t(:downloadmodal_download)
+                  a.download-package-link href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/ubuntu/pool/main/c/cryfs/cryfs_0.9.0_ubuntu-15.10-x64.deb" =t(:downloadmodal_download)
                 td
-                  a.download-package-link href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/ubuntu/pool/main/c/cryfs/cryfs_0.8.6_ubuntu-15.10-x64.deb" =t(:downloadmodal_download)
+                  a.download-package-link href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/ubuntu/pool/main/c/cryfs/cryfs_0.9.0_ubuntu-15.10-x32.deb" =t(:downloadmodal_download)
               tr
                 th Ubuntu 15.04
                 td
-                  a.download-package-link href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/ubuntu/pool/main/c/cryfs/cryfs_0.8.6_ubuntu-15.04-x32.deb" =t(:downloadmodal_download)
+                  a.download-package-link href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/ubuntu/pool/main/c/cryfs/cryfs_0.9.0_ubuntu-15.04-x64.deb" =t(:downloadmodal_download)
                 td
-                  a.download-package-link href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/ubuntu/pool/main/c/cryfs/cryfs_0.8.6_ubuntu-15.04-x64.deb" =t(:downloadmodal_download)
+                  a.download-package-link href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/ubuntu/pool/main/c/cryfs/cryfs_0.9.0_ubuntu-15.04-x32.deb" =t(:downloadmodal_download)
               tr
                 th Ubuntu 14.04
                 td
-                  a.download-package-link href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/ubuntu/pool/main/c/cryfs/cryfs_0.8.6_ubuntu-14.04-x32.deb" =t(:downloadmodal_download)
+                  a.download-package-link href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/ubuntu/pool/main/c/cryfs/cryfs_0.9.0_ubuntu-14.04-x64.deb" =t(:downloadmodal_download)
                 td
-                  a.download-package-link href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/ubuntu/pool/main/c/cryfs/cryfs_0.8.6_ubuntu-14.04-x64.deb" =t(:downloadmodal_download)
+                  a.download-package-link href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/ubuntu/pool/main/c/cryfs/cryfs_0.9.0_ubuntu-14.04-x32.deb" =t(:downloadmodal_download)
+              tr
+                th Ubuntu 12.04
+                td
+                  a.download-package-link href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/ubuntu/pool/main/c/cryfs/cryfs_0.9.0_ubuntu-12.04-x64.deb" =t(:downloadmodal_download)
+                td
+                  a.download-package-link href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/ubuntu/pool/main/c/cryfs/cryfs_0.9.0_ubuntu-12.04-x32.deb" =t(:downloadmodal_download)
 
           .tab-pane#tab-debian
             h3 =t(:downloadmodal_easy_install)
@@ -78,10 +84,13 @@
               tr
                 th
                 th amd64
+                th i386
               tr
                 th Debian 8
                 td
-                  a.download-package-link href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/debian/pool/main/c/cryfs/cryfs_0.8.6_debian-8-x64.deb" =t(:downloadmodal_download)
+                  a.download-package-link href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/debian/pool/main/c/cryfs/cryfs_0.9.0_debian-8-x64.deb" =t(:downloadmodal_download)
+                td
+                  a.download-package-link href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/debian/pool/main/c/cryfs/cryfs_0.9.0_debian-8-x32.deb" =t(:downloadmodal_download)
 
           .tab-pane#tab-other
             h3 =t(:downloadmodal_build_from_source)
