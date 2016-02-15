@@ -93,8 +93,12 @@
                   a.download-package-link href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/debian/pool/main/c/cryfs/cryfs_0.9.0_debian-8-x32.deb" =t(:downloadmodal_download)
 
           .tab-pane#tab-other
-            h3 =t(:downloadmodal_build_from_source)
-            p =t(:downloadmodal_other_text_html, instructions_link: link_to("https://github.com/cryfs/cryfs", "https://github.com/cryfs/cryfs"))
+            h3 =t(:downloadmodal_other_linux)
+            p =t(:downloadmodal_other_linux_text_html)
+            h3 =t(:downloadmodal_other_mac)
+            p =t(:downloadmodal_other_mac_text_html)
+            h3 =t(:downloadmodal_other_windows)
+            p =t(:downloadmodal_other_windows_text_html)
       .modal-footer
         button.btn.btn-default type="button" data-dismiss="modal"
           =t(:downloadmodal_close)

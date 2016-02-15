@@ -53,12 +53,17 @@ en:
   downloadmodal_debian: "Debian"
   downloadmodal_other: "Other"
 
-  downloadmodal_build_from_source: "Other operating systems"
-  downloadmodal_other_text_html: "Mac OS X is coming soon, Windows a bit later. For Linux, you can follow the instructions at %{instructions_link} to build CryFS from source. Alternatively, if your distribution is based on Debian, you can try the Debian packages we offer."
   downloadmodal_easy_install: "Easy Install"
   downloadmodal_download_package: "Alternative: Download Package"
   downloadmodal_download: "Download"
   downloadmodal_download_not_supported: "not supported"
+
+  downloadmodal_other_linux: "Other Linux"
+  downloadmodal_other_linux_text_html: "If your linux is based on Debian, you could try the Debian or Ubuntu packages we offer. You can also <a href=\"https://github.com/cryfs/cryfs\">build CryFS from source</a>."
+  downloadmodal_other_mac: "Mac OS X"
+  downloadmodal_other_mac_text_html: "CryFS on Mac OS X is coming soon. If you can't wait, you can try <a href=\"https://github.com/cryfs/cryfs\">building it from source</a>. Be warned, it might be unstable!"
+  downloadmodal_other_windows: "Windows"
+  downloadmodal_other_windows_text_html: "Windows support is on our agenda, but is a lot of effort and might take some time."
 
   form_leaveblank: "Leave this field blank!"
 
