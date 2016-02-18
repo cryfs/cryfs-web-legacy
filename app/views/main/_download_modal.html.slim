@@ -13,21 +13,28 @@
             p =t(:downloadmodal_select_os)
           .col-md-12
             ul.nav.nav-tabs role="tablist"
-              li.col-md-4.os-box.active role="presentation"
+              li.col-md-3.os-box.active role="presentation"
                 a#tablink-ubuntu href="#tab-ubuntu" aria-controls="tab-ubuntu" role="tab" data-toggle="tab"
                   .row
                     .col-md-12
                       =image_tag("ubuntu.png", alt: "Ubuntu", size: "61x61")
                     .col-md-12
                       span.os-name =t(:downloadmodal_ubuntu)
-              li.col-md-4.os-box role="presentation"
+              li.col-md-3.os-box role="presentation"
                 a#tablink-debian href="#tab-debian" aria-controls="tab-debian" role="tab" data-toggle="tab"
                   .row
                     .col-md-12
                       =image_tag("debian.png", alt: "Debian", size: "50x61")
                     .col-md-12
                       span.os-name =t(:downloadmodal_debian)
-              li.col-md-4.os-box role="presentation"
+              li.col-md-3.os-box role="presentation"
+                a#tablink-osx href="#tab-osx" aria-controls="tab-osx" role="tab" data-toggle="tab"
+                  .row
+                    .col-md-12
+                      =image_tag("osx.png", alt: "Mac OS X", size: "61x61")
+                    .col-md-12
+                      span.os-name =t(:downloadmodal_osx)
+              li.col-md-3.os-box role="presentation"
                 a#tablink-other href="#tab-other" aria-controls="tab-other" role="tab" data-toggle="tab"
                   .row
                     .col-md-12
@@ -92,11 +99,28 @@
                 td
                   a.download-package-link href="https://s3-eu-west-1.amazonaws.com/apt.cryfs.org/debian/pool/main/c/cryfs/cryfs_0.9.1_debian-8-x32.deb" =t(:downloadmodal_download)
 
+          .tab-pane#tab-osx
+            h3 =t(:downloadmodal_osx_homebrew)
+            ol
+              li
+                p =t(:downloadmodal_osx_osxfuse_html)
+                pre.easyinstall.console
+                  .line
+                    span.linestart $
+                    ' brew cask install osxfuse
+              li
+                p =t(:downloadmodal_osx_install)
+                pre.easyinstall.console
+                  .line
+                    span.linestart $
+                    ' brew tap cryfs/tap
+                  .line
+                    span.linestart $
+                    ' brew install cryfs
+
           .tab-pane#tab-other
             h3 =t(:downloadmodal_other_linux)
             p =t(:downloadmodal_other_linux_text_html)
-            h3 =t(:downloadmodal_other_mac)
-            p =t(:downloadmodal_other_mac_text_html)
             h3 =t(:downloadmodal_other_windows)
             p =t(:downloadmodal_other_windows_text_html)
 

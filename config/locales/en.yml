@@ -51,6 +51,7 @@ en:
   downloadmodal_select_os: "Select your operating system"
   downloadmodal_ubuntu: "Ubuntu"
   downloadmodal_debian: "Debian"
+  downloadmodal_osx: "OSX"
   downloadmodal_other: "Other"
 
   downloadmodal_easy_install: "Easy Install"
@@ -58,10 +59,12 @@ en:
   downloadmodal_download: "Download"
   downloadmodal_download_not_supported: "not supported"
 
+  downloadmodal_osx_homebrew: "Using Homebrew"
+  downloadmodal_osx_osxfuse_html: "Install <a href=\"https://osxfuse.github.io\">osxfuse</a>:"
+  downloadmodal_osx_install: "Install CryFS:"
+
   downloadmodal_other_linux: "Other Linux"
   downloadmodal_other_linux_text_html: "If your linux is based on Debian, you could try the Debian or Ubuntu packages we offer. You can also <a href=\"https://github.com/cryfs/cryfs\">build CryFS from source</a>."
-  downloadmodal_other_mac: "Mac OS X"
-  downloadmodal_other_mac_text_html: "CryFS on Mac OS X is coming soon. If you can't wait, you can try <a href=\"https://github.com/cryfs/cryfs\">building it from source</a>. Be warned, it might be unstable!"
   downloadmodal_other_windows: "Windows"
   downloadmodal_other_windows_text_html: "Windows support is on our agenda, but is a lot of effort and might take some time."
 
