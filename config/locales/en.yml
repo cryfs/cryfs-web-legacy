@@ -55,7 +55,7 @@ en:
   downloadmodal_other: "Other"
 
   downloadmodal_easy_install: "Easy Install"
-  downloadmodal_download_package: "Alternative: Download Package"
+  downloadmodal_download_package: "Alternative"
   downloadmodal_download: "Download"
   downloadmodal_download_not_supported: "not supported"
 
