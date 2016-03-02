@@ -23,6 +23,6 @@ private
   end
 
   def send_notification_mail_to_me
-    ActionMailer::Base.mail(:from => "noreply@cryfs.org", :to => "mail@smessmer.de", :subject => "New interested user enlisted", :body => "A new interested user enlisted on cryfs.org:\n#{@interested_user.email}\n").deliver
+    ActionMailer::Base.mail(:from => "noreply@cryfs.org", :to => "messmer@cryfs.org", :subject => "New interested user enlisted", :body => "A new interested user enlisted on cryfs.org:\n#{@interested_user.email}\n").deliver
   end
 end
