@@ -13,7 +13,7 @@ class Contact < MailForm::Base
     end
     {
       subject: "CryFS Contact Form (from #{from})",
-      to: "mail@smessmer.de",
+      to: "messmer@cryfs.org",
       from: %("CryFS Contact Form" <contactform@cryfs.org>),
       reply_to: email
     }
