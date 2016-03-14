@@ -12,14 +12,16 @@ setup_ajax_form = (selector) ->
     window.ga 'send', 'event', selector, 'click'
     $(selector).removeClass("has-error").removeClass("has-success")
     $(selector+' .form-success').hide()
-    $(selector+' .form-error').hide()
+    $(selector+' .form-error-400').hide()
+    $(selector+' .form-error-500').hide()
     $(selector+' .form-spinner').show()
     $(selector+' .form-notification-area').show()
   .bind "ajax:success", (data, status, xhr) ->
     window.ga 'send', 'event', selector, 'success'
     $(selector).removeClass("has-error").addClass("has-success")
     $(selector+' .form-spinner').hide()
-    $(selector+' .form-error').hide()
+    $(selector+' .form-error-400').hide()
+    $(selector+' .form-error-500').hide()
     $(selector+' .form-success').show()
     $(selector+' .form-notification-area').show()
   .bind "ajax:error", (xhr, status, error) ->
@@ -27,7 +29,12 @@ setup_ajax_form = (selector) ->
     $(selector).removeClass("has-success").addClass("has-error")
     $(selector+' .form-spinner').hide()
     $(selector+' .form-success').hide()
-    $(selector+' .form-error').show()
+    $(selector+' .form-error-400').hide()
+    $(selector+' .form-error-500').hide()
+    if (status.status >= 400 && status.status < 500)
+      $(selector+' .form-error-400').show()
+    else
+      $(selector+' .form-error-500').show()
     $(selector+' .form-notification-area').show()
 
 if window.setup_ajax_forms?

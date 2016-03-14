@@ -57,6 +57,8 @@ gem 'validates_email_format_of' , '~> 1.6.3'
 
 gem 'staccato', '~> 0.4.5'
 
+gem 'rest-client', '~> 1.8.0'
+
 group :development do
   gem 'guard-livereload', '~> 2.5', require: false
 end
