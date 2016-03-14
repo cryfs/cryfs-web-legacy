@@ -16,7 +16,7 @@ module MailchimpAPI
       else
         puts "Unknown status: #{subscription["status"]} for #{email}}."
       end
-    rescue RestClient::BadRequest
+    rescue RestClient::ResourceNotFound
       # User isn't subscribed yet. Subscribe them.
       subscribe_new(email)
     end
