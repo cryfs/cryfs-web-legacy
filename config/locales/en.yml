@@ -65,8 +65,9 @@ en:
   mailform_email_label: "Email Address:"
   mailform_email_placeholder: "Enter email"
   mailform_buttontext: "Get Notified"
-  mailform_success: "Thank you. We'll get in touch."
+  mailform_success: "Thank you. You'll get a confirmation email shortly."
   mailform_invalid_email: "Invalid email address."
+  mailform_other_error: "An error occurred. Please subscribe by sending an email to messmer@cryfs.org."
 
   bulletpoints_simple_title: "Simple"
   bulletpoints_simple_text: "Easy to setup and works with a lot of cloud storage providers. It runs in the background - you won't notice it when accessing your files in your daily workflow."

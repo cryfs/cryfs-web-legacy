@@ -1,10 +1,12 @@
 class InterestedUsersController < ApplicationController
+  include MailchimpAPI
 
   def create
     @interested_user = InterestedUser.new(interested_user_params)
     respond_to do |format|
       if @interested_user.save
         send_notification_mail_to_me()
+        add_subscriber(@interested_user.email)
         #TODO Make site work without javascript -> form will then redirect here and call this html action, we have to redirect it back to the main page
         #format.html { render json: @interested_user }
         #TODO Only render subfields of @interested_user (via jsbuilder?)
