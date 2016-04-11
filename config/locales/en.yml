@@ -72,6 +72,7 @@ en:
   mailform_buttontext: "Get Notified"
   mailform_success: "Thank you. You'll get a confirmation email shortly."
   mailform_invalid_email: "Invalid email address."
+  mailform_unsubscribed: "You unsubscribed before and we can't resubscribe you to protect against spam. Please send an email to messmer@cryfs.org."
   mailform_other_error: "An error occurred. Please subscribe by sending an email to messmer@cryfs.org."
 
   bulletpoints_simple_title: "Simple"

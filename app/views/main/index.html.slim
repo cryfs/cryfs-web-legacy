@@ -82,13 +82,11 @@ section.section.section-2
           i.fa.fa-angle-double-right
         .collapse.form-notification-area style="margin-top: 30px;"
           .form-success-small.collapse.form-success =t(:mailform_success)
-          .form-error-small.collapse.form-error-400 =t(:mailform_invalid_email)
-          .form-error-small.collapse.form-error-500 =t(:mailform_other_error)
+          .form-error-small.collapse.form-error-invalid-email =t(:mailform_invalid_email)
+          .form-error-small.collapse.form-error-unsubscribed =t(:mailform_unsubscribed)
+          .form-error-small.collapse.form-error-other =t(:mailform_other_error)
           .collapse.form-spinner.form-spinner-small
             i.fa.fa-spinner.fa-pulse
-      javascript:
-        window.setup_ajax_forms = window.setup_ajax_forms || [];
-        window.setup_ajax_forms.push("#interested_user_form");
 
 section.section.section-1
   .container.text-center
