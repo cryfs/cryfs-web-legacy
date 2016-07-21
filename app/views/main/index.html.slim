@@ -73,6 +73,7 @@ section.section.section-2
         / This is a simple bot protection mechanism - if there is data in the nickname field, we discard the form submit.
         /.hidden
           =f.text_field :nickname, hint: t(:form_leaveblank)
+        = hidden_field_tag :authenticity_token, form_authenticity_token
         .form-group
           label.sr-only for="interested_user_form-inputEmail" =t(:mailform_email_label)
           =f.email_field :email, id: 'interested_user_form-inputEmail', class: "form-control", placeholder: t(:mailform_email_placeholder), required: true
@@ -94,6 +95,7 @@ section.section.section-1
       h2 style="margin-top: 0px;" =t(:contactform_title)
       div style="margin-top: 20px;"
         =form_for Contact.new, remote: true, html: {id: "contact_form", class: 'form col-md-offset-3 col-md-6'} do |f|
+          = hidden_field_tag :authenticity_token, form_authenticity_token
           .row
             .form-group.col-md-12
               label.sr-only for="contact_form_message" =t(:contactform_message_label)

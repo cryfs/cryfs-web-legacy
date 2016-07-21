@@ -21,6 +21,9 @@ html lang=I18n.locale
     meta property="fb:app_id" content="464697373705005"
     meta property="og:site_name" content="CryFS"
     meta property="og:locale" content=t(:locale_name)
+
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+
     -if content_for(:head)
       =yield(:head)
   body
@@ -52,8 +55,6 @@ html lang=I18n.locale
       img.github-ribbon src="#{image_path('github_ribbon.png')}" alt="#{t(:github_forkme)}" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"
 
     = yield
-
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
 
     section.footer
       .container
