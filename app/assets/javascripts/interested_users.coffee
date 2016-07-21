@@ -5,8 +5,8 @@
 selector = "#interested_user_form"
 
 hideAll = ->
-  $(selector).removeClass("has-error").removeClass("has-success")
-  $(selector).removeClass("has-error").removeClass("has-error")
+  $(selector).removeClass("has-error")
+  $(selector).removeClass("has-success")
   $(selector+' .form-success').hide()
   $(selector+' .form-error-invalid-email').hide()
   $(selector+' .form-error-unsubscribed').hide()
