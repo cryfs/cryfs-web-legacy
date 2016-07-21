@@ -7,7 +7,7 @@
 set -e
 
 DEBIAN_VERSIONS="jessie"
-UBUNTU_VERSIONS="trusty vivid wily"
+UBUNTU_VERSIONS="precise trusty vivid wily xenial"
 
 DEBIAN_REPO_URL="http://apt.cryfs.org/debian"
 UBUNTU_REPO_URL="http://apt.cryfs.org/ubuntu"
@@ -36,6 +36,7 @@ get_repo_url () {
     echo $UBUNTU_REPO_URL
   else
     echo Unsupported Operating System: $DISTRIBUTION 1>&2
+    echo If your distribution is based on Debian or Ubuntu, you can try installing one of the packages from https://www.cryfs.org/#download instead. 1>&2
     exit 1
   fi
 }
