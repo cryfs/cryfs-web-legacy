@@ -15,19 +15,19 @@ hideAll = ->
   $(selector+' .form-notification-area').hide()
 
 $ ->
-  $(selector)
-  .bind "ajax:before", () -> # TODO In newer rails this is probably ajax:beforeSend
+  $(document)
+  .on "ajax:before", selector, () -> # TODO In newer rails this is probably ajax:beforeSend
     window.ga 'send', 'event', selector, 'click'
     hideAll()
     $(selector+' .form-spinner').show()
     $(selector+' .form-notification-area').show()
-  .bind "ajax:success", (data, status, xhr) ->
+  .on "ajax:success", selector, (data, status, xhr) ->
     window.ga 'send', 'event', selector, 'success'
     hideAll()
     $(selector).addClass("has-success")
     $(selector+' .form-success').show()
     $(selector+' .form-notification-area').show()
-  .bind "ajax:error", (event, xhr) ->
+  .on "ajax:error", selector, (event, xhr) ->
     window.ga 'send', 'event', selector, 'error'
     hideAll()
     $(selector).addClass("has-error")

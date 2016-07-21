@@ -18,19 +18,19 @@ hideAll = ->
   $(selector+' .form-notification-area').hide()
 
 $ ->
-  $(selector)
-  .bind "ajax:before", () -> # TODO In newer rails this is probably ajax:beforeSend
+  $(document)
+  .on "ajax:before", $selector, () -> # TODO In newer rails this is probably ajax:beforeSend
     window.ga 'send', 'event', selector, 'click'
     hideAll()
     $(selector+' .form-spinner').show()
     $(selector+' .form-notification-area').show()
-  .bind "ajax:success", (data, status, xhr) ->
+  .on "ajax:success", $selector, (data, status, xhr) ->
     window.ga 'send', 'event', selector, 'success'
     hideAll()
     $(selector).addClass("has-success")
     $(selector+' .form-success').show()
     $(selector+' .form-notification-area').show()
-  .bind "ajax:error", (event, status, error) ->
+  .on "ajax:error", $selector, (event, status, error) ->
     window.ga 'send', 'event', selector, 'error'
     hideAll()
     $(selector).addClass("has-error")
@@ -42,29 +42,29 @@ $ ->
 
 
 $ ->
-  $("#download-btn").click ->
+  $(document).on 'click', "#download-btn", ->
     window.ga 'send', 'event', 'download', 'click_download_button'
 
-  $("#downloadModal").on 'show.bs.modal', ->
+  $(document).on 'show.bs.modal', "#downloadModal", ->
     window.ga 'send', 'event', 'download', 'show_download_dialog'
 
-  $("#downloadModal").on 'hide.bs.modal', ->
+  $(document).on 'hide.bs.modal', "#downloadModal", ->
     window.ga 'send', 'event', 'download', 'hide_download_dialog'
     window.location.hash = ""
 
-  $("#tablink-ubuntu").click ->
+  $(document).on 'click', "#tablink-ubuntu", ->
     window.ga 'send', 'event', 'download', 'click_ubuntu_tab'
 
-  $("#tablink-debian").click ->
+  $(document).on 'click', "#tablink-debian", ->
     window.ga 'send', 'event', 'download', 'click_debian_tab'
 
-  $("#tablink-other").click ->
+  $(document).on 'click', "#tablink-other", ->
     window.ga 'send', 'event', 'download', 'click_other_tab'
 
-  $(".download-package-link").click ->
+  $(document).on 'click', ".download-package-link", ->
     window.ga 'send', 'event', 'download', 'download_package'
 
-  $(".easyinstall").on 'copy', ->
+  $(document).on 'copy', ".easyinstall", ->
     window.ga 'send', 'event', 'download', 'copy_easyinstall_cmd'
 
   if (window.location.hash == "#download")
