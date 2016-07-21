@@ -20,6 +20,8 @@ class InterestedUsersController < ApplicationController
           send_notification_mail_to_me("New interested user: Unsubscribed before. Not adding.")
           #format.html { render json: @interested_user.errors }
           format.json { render json: {reason: "unsubscribed"}, status: :unprocessable_entity }
+        rescue
+          format.json { render json: {reason: "internal-server-error"}, status: :internal_sever_error }
         end
       else
         #format.html { render json: @interested_user.errors }
