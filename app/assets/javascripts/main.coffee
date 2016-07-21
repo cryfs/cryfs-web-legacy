@@ -6,40 +6,40 @@ $ ->
   $.ajaxSetup
     dataType: 'json'
 
-setup_ajax_form = (selector) ->
+selector = "#contact_form"
+
+hideAll = ->
+  $(selector).removeClass("has-error")
+  $(selector).removeClass("has-success")
+  $(selector+' .form-success').hide()
+  $(selector+' .form-error-400').hide()
+  $(selector+' .form-error-500').hide()
+  $(selector+' .form-spinner').hide()
+  $(selector+' .form-notification-area').hide()
+
+$ ->
   $(selector)
   .bind "ajax:before", () -> # TODO In newer rails this is probably ajax:beforeSend
     window.ga 'send', 'event', selector, 'click'
-    $(selector).removeClass("has-error").removeClass("has-success")
-    $(selector+' .form-success').hide()
-    $(selector+' .form-error-400').hide()
-    $(selector+' .form-error-500').hide()
+    hideAll()
     $(selector+' .form-spinner').show()
     $(selector+' .form-notification-area').show()
   .bind "ajax:success", (data, status, xhr) ->
     window.ga 'send', 'event', selector, 'success'
-    $(selector).removeClass("has-error").addClass("has-success")
-    $(selector+' .form-spinner').hide()
-    $(selector+' .form-error-400').hide()
-    $(selector+' .form-error-500').hide()
+    hideAll()
+    $(selector).addClass("has-success")
     $(selector+' .form-success').show()
     $(selector+' .form-notification-area').show()
-  .bind "ajax:error", (xhr, status, error) ->
+  .bind "ajax:error", (event, status, error) ->
     window.ga 'send', 'event', selector, 'error'
-    $(selector).removeClass("has-success").addClass("has-error")
-    $(selector+' .form-spinner').hide()
-    $(selector+' .form-success').hide()
-    $(selector+' .form-error-400').hide()
-    $(selector+' .form-error-500').hide()
+    hideAll()
+    $(selector).addClass("has-error")
     if (status.status >= 400 && status.status < 500)
       $(selector+' .form-error-400').show()
     else
       $(selector+' .form-error-500').show()
     $(selector+' .form-notification-area').show()
 
-if window.setup_ajax_forms?
-  for selector in window.setup_ajax_forms
-    setup_ajax_form(selector)
 
 $ ->
   $("#download-btn").click ->
