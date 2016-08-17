@@ -33,7 +33,7 @@ section.section-1
         p The blocks are encrypted using a block cipher chosen by the user. A random encryption key is generated when the filesystem is created.
           This key is stored in a configuration file, which is then encrypted using the password chosen by the user.
           Since it is encrypted, it can be stored together with the ciphertext blocks in the cloud, which is the default.
-          If you want to use a very short password or don't trust scrypt, you can also keep the configuration file locally.
+          If you want to use an insecure (e.g. empty) password or don't trust scrypt, you can also keep the configuration file locally.
 section.section-2
   .container
     h2 Configuration File
