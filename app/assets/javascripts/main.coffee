@@ -26,6 +26,7 @@ $ ->
     $(selector+' .form-notification-area').show()
   .on "ajax:success", selector, (data, status, xhr) ->
     window.ga 'send', 'event', selector, 'success'
+    fbq 'track', 'contact_form_sent'
     hideAll()
     $(selector).addClass("has-success")
     $(selector+' .form-success').show()
@@ -63,9 +64,11 @@ $ ->
 
   $(document).on 'click', ".download-package-link", ->
     window.ga 'send', 'event', 'download', 'download_package'
+    fbq 'track', 'download_package'
 
   $(document).on 'copy', ".easyinstall", ->
     window.ga 'send', 'event', 'download', 'copy_easyinstall_cmd'
+    fbq 'track', 'copy_easyinstall_cmd'
 
   if (window.location.hash == "#download")
     $("#downloadModal").modal()
