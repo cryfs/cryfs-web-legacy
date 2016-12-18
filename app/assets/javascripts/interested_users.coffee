@@ -24,6 +24,7 @@ $ ->
   .on "ajax:success", selector, (data, status, xhr) ->
     window.ga 'send', 'event', selector, 'success'
     fbq 'track', 'interested_users_form_sent'
+    fbq 'track', 'any_conversion'
     hideAll()
     $(selector).addClass("has-success")
     $(selector+' .form-success').show()
