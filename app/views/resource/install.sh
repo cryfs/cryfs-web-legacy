@@ -7,7 +7,7 @@
 set -e
 
 DEBIAN_VERSIONS="jessie"
-UBUNTU_VERSIONS="precise trusty xenial yakkety"
+UBUNTU_VERSIONS="precise trusty xenial yakkety zesty"
 
 DEBIAN_REPO_URL="http://apt.cryfs.org/debian"
 UBUNTU_REPO_URL="http://apt.cryfs.org/ubuntu"
