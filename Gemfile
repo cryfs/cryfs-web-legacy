@@ -2,11 +2,11 @@ source 'https://rubygems.org'
 ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.1'
+gem 'rails', '5.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18.4'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '~> 5.0.6'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '~> 2.7.2'
 # Use CoffeeScript for .coffee assets and views
@@ -48,11 +48,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
-gem 'slim-rails', '~> 3.0.1'
+gem 'slim-rails', '~> 3.1.0'
 
 gem 'font-awesome-sass', '~> 4.5.0'
 
-gem 'mail_form', '~> 1.5'
+gem 'mail_form', '~> 1.6'
 gem 'validates_email_format_of' , '~> 1.6.3'
 
 gem 'staccato', '~> 0.4.5'
