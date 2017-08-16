@@ -15,14 +15,14 @@ html lang=I18n.locale
       script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"
       script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"
 
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => "reload"
     = csrf_meta_tags
 
     meta property="fb:app_id" content="464697373705005"
     meta property="og:site_name" content="CryFS"
     meta property="og:locale" content=t(:locale_name)
 
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => "reload"
 
     -if content_for(:head)
       =yield(:head)
