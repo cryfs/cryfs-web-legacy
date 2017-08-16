@@ -16,7 +16,8 @@ gem 'coffee-rails', '~> 4.2.2'
 
 # For heroku
 group :production do
-  gem 'puma', '~> 2.16.0'
+  gem 'puma', '~> 3.9.1'
+  gem 'puma-heroku', '~> 1.0.0'
   gem 'heroku-deflater', '~> 0.6.3'
   gem 'image_optim', '~> 0.25.0'
   gem 'image_optim_pack', '~> 0.5.0'
