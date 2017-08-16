@@ -19,8 +19,9 @@ group :production do
   gem 'rails_12factor', '~> 0.0.3'
   gem 'puma', '~> 2.16.0'
   gem 'heroku-deflater', '~> 0.6.2'
-  gem 'image_optim', '~> 0.22.0'
-  gem 'image_optim_pack', '~> 0.2.1'
+  gem 'image_optim', '~> 0.25.0'
+  gem 'image_optim_pack', '~> 0.5.0'
+  gem 'image_optim_rails', '~> 0.4.1'
 end
 
 # Newrelic Monitoring
