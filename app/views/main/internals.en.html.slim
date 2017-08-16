@@ -72,8 +72,10 @@ section.section-2
 section.section-1
   .container
     h2 Security Analysis
-    p The security of CryFS has been proven in a <a href="/cryfs_mathesis.pdf">master's thesis</a> using a game-based security approach.
-      The thesis also contains a detailed description of the inner workings of CryFS.
+    p The security of CryFS has been proven in a <a href="/cryfs_mathesis.pdf">master's thesis</a>
+      and in a <a href="http://dx.doi.org/10.1007/978-3-319-61176-1_23">scientific paper published at DBSec 2017</a>
+      (<a href="https://eprint.iacr.org/2017/773.pdf">PDF</a>) using a game-based security approach.
+      The works also contain a detailed description of the inner workings of CryFS.
     p The current version meets all security goals regarding confidentiality of file contents, size, metadata and directory structure.
       The integrity goals mentioned in the thesis are not fully implemented yet.
       The current version protects the encrypted blocks from being modified by an attacker, since it uses an authenticated encryption scheme like <var>aes-256-gcm</var>.
