@@ -64,6 +64,8 @@ en:
   downloadmodal_other: "Other"
 
   downloadmodal_easy_install: "Easy Install"
+  downloadmodal_easy_install_target_ubuntu: "For Ubuntu 17.04 and later"
+  downloadmodal_easy_install_target_debian: "For Debian Stretch and later"
   downloadmodal_download_package: "Alternative: Download Package"
   downloadmodal_download: "Download"
   downloadmodal_download_not_supported: "not supported"

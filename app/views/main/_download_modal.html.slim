@@ -36,11 +36,12 @@
                       span.os-name =t(:downloadmodal_other)
         .tab-content
           .tab-pane.active#tab-ubuntu role="tabpanel"
-            h3 =t(:downloadmodal_easy_install)
+            h3 = t(:downloadmodal_easy_install)
+            p = t(:downloadmodal_easy_install_target_ubuntu)
             pre.easyinstall.console
               .line
                 span.linestart $
-                ' wget -O - https://www.cryfs.org/install.sh | sudo bash
+                ' sudo apt install cryfs
             h3 =t(:downloadmodal_download_package)
             table.table.table-striped.distribution-table
               tr
@@ -81,10 +82,11 @@
 
           .tab-pane#tab-debian
             h3 =t(:downloadmodal_easy_install)
+            p = t(:downloadmodal_easy_install_target_debian)
             pre.easyinstall.console
               .line
                 span.linestart $
-                ' wget -O - https://www.cryfs.org/install.sh | sudo bash
+                ' sudo apt install cryfs
             h3 =t(:downloadmodal_download_package)
             table.table.table-striped.distribution-table
               tr
