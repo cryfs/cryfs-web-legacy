@@ -8,6 +8,8 @@
   meta name="description" content=t(:description_tutorial)
   title =t(:title_tutorial)
 
+=render 'download_modal'
+
 section.section-2
   .container
     h1 Tutorial
@@ -16,15 +18,10 @@ section.section-2
 section.section-1
   .container
     h2 Install CryFS
-    p Easy Install is currently supported on Ubuntu 17.04, 16.10, 16.04, 14.04, 12.04 (32bit and 64bit) and on Debian Jessie 64bit.
-    p On these systems, you can install CryFS with the following command.
-    pre.console
-      span.linestart $
-      span.line wget -O - https://www.cryfs.org/install.sh | sudo bash
-    p This command installs CryFS as a debian package and sets up the apt package source for automatic updates.
-    p On other Linux operating systems, you can compile CryFS from source by following the instructions on <a href="https://github.com/cryfs/cryfs">GitHub</a>.
-      Windows and Mac OS X are currently not supported, but will be in future versions.
-
+    p
+      ' See
+      a href="" data-toggle="modal" data-target="#downloadModal" Download Instructions
+      ' .
 section.section-2
   .container
     h2 Setup an encrypted directory
