@@ -203,6 +203,12 @@ footer {
   margin-top: 10px;
 }
 
+#donateModal .modal-dialog {
+  width: auto;
+  display: table;
+  background-color: white;
+}
+
 #donateModalIframe {
   height: 685px;
   width: auto;
