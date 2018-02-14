@@ -203,11 +203,16 @@ footer {
   margin-top: 10px;
 }
 
-#donateModal .modal-body {
+#donateModalIframe {
   height: 685px;
-  width: 100%;
-  min-width: 310px;
-  max-width: 500px;
+  width: auto;
+  max-width:500px;
+  @media #{$is-min-md} {
+    min-width: 375px;
+  }
+  @media #{$is-max-sm} {
+    min-width: 310px;
+  }
   max-height:none!important;
 }
 
