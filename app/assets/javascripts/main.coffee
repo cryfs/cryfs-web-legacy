@@ -54,6 +54,9 @@ $ ->
     window.ga 'send', 'event', 'download', 'hide_download_dialog'
     window.location.hash = ""
 
+  $(document).on 'hide.bs.modal', '#donateModal', ->
+    window.location.hash = ""
+
   $(document).on 'click', "#tablink-ubuntu", ->
     window.ga 'send', 'event', 'download', 'click_ubuntu_tab'
 
@@ -75,7 +78,11 @@ $ ->
 
   if (window.location.hash == "#download")
     $("#downloadModal").modal()
+  if (window.location.hash == "#donate")
+    $("#donateModal").modal()
 
   $(window).on 'hashchange', ->
     if (window.location.hash == "#download")
       $("#downloadModal").modal()
+    else if (window.location.hash == "#donate")
+      $("#donateModal").modal()
