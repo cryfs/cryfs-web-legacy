@@ -6,9 +6,9 @@ gem 'rails', '5.1.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.21.0'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0.6'
+gem 'sass-rails', '~> 5.0.7'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '~> 3.2.0'
+gem 'uglifier', '~> 4.1.6'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -16,11 +16,11 @@ gem 'coffee-rails', '~> 4.2.2'
 
 # For heroku
 group :production do
-  gem 'puma', '~> 3.9.1'
+  gem 'puma', '~> 3.11.2'
   gem 'puma-heroku', '~> 1.0.0'
   gem 'heroku-deflater', '~> 0.6.3'
-  gem 'image_optim', '~> 0.25.0'
-  gem 'image_optim_pack', '~> 0.5.0'
+  gem 'image_optim', '~> 0.26.1'
+  gem 'image_optim_pack', '~> 0.5.0.20180124'
   gem 'image_optim_rails', '~> 0.4.1'
 end
 
@@ -33,11 +33,11 @@ end
 gem 'jquery-rails', '~> 4.3.1'
 gem 'jquery-turbolinks', '~> 2.1.0'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks', '~> 5.0.1'
+gem 'turbolinks', '~> 5.1.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.2', group: :doc
+gem 'sdoc', '~> 1.0.0', group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.11'
@@ -50,11 +50,11 @@ gem 'sdoc', '~> 0.4.2', group: :doc
 
 gem 'bootstrap-sass', '~> 3.3.7'
 
-gem 'slim-rails', '~> 3.1.2'
+gem 'slim-rails', '~> 3.1.3'
 
 gem 'font-awesome-sass', '~> 4.7.0'
 
-gem 'mail_form', '~> 1.7'
+gem 'mail_form', '~> 1.7.0'
 gem 'validates_email_format_of' , '~> 1.6.3'
 
 gem 'staccato', '~> 0.5.1'
@@ -70,7 +70,7 @@ end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', '~> 9.0.6'
+  gem 'byebug', '~> 10.0.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring', '~> 2.0.2'
