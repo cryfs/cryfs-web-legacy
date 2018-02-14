@@ -24,6 +24,10 @@ html lang=I18n.locale
 
     = javascript_include_tag 'application', 'data-turbolinks-track' => "reload"
 
+    script src="https://donorbox.org/install-popup-button.js" type="text/javascript" defer="defer"
+    javascript:
+      window.DonorBox = { widgetLinkClassName: 'custom-dbox-popup' }
+
     -if content_for(:head)
       =yield(:head)
   body
@@ -50,6 +54,8 @@ html lang=I18n.locale
                 =link_to t(:nav_comparison), controller: "main", action: "comparison"
               li
                 =link_to t(:nav_download), {controller: "main", action: "index", anchor: "download"}, class: "hidden-xs"
+              li
+                =link_to t(:nav_donate), "https://donorbox.org/cryfs?amount=10&recurring=true", class: "custom-dbox-popup"
 
     a href="https://github.com/cryfs/cryfs"
       img.github-ribbon src="#{image_path('github_ribbon.png')}" alt="#{t(:github_forkme)}" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"
