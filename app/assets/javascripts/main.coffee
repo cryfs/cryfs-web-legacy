@@ -54,7 +54,11 @@ $ ->
     window.ga 'send', 'event', 'download', 'hide_download_dialog'
     window.location.hash = ""
 
+  $(document).on 'show.bs.modal', "#donateModal", ->
+    window.ga 'send', 'event', 'donate', 'show_donation_dialog'
+
   $(document).on 'hide.bs.modal', '#donateModal', ->
+    window.ga 'send', 'event', 'donate', 'hide_donation_dialog'
     window.location.hash = ""
 
   $(document).on 'click', "#tablink-ubuntu", ->
