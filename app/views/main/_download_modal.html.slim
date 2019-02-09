@@ -68,7 +68,23 @@
                 span.linestart $
                 ' brew install cryfs
             h3 =t(:downloadmodal_other_windows)
-            p =t(:downloadmodal_other_windows_text_html)
+            p =t(:downloadmodal_other_windows_text)
+            p =t(:downloadmodal_other_windows_preinstall)
+            ul
+              li
+                a href="https://github.com/dokan-dev/dokany/releases" DokanY
+                span &nbsp;
+                span =t(:downloadmodal_other_windows_dokany)
+              li
+                a href="https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads" Microsoft Visual C++ Redistributable for Visual Studio 2017
+            p =t(:downloadmodal_other_windows_install_cryfs)
+            ul
+              li
+                a href="https://github.com/cryfs/cryfs/releases/download/0.10.0/cryfs-0.10.0-win64.msi" CryFS 64bit
+                span &nbsp;
+                span =t(:downloadmodal_other_windows_or)
+              li
+                a href="https://github.com/cryfs/cryfs/releases/download/0.10.0/cryfs-0.10.0-win32.msi" CryFS 32bit
 
         p For older releases, see <a href="https://github.com/cryfs/cryfs/releases">here</a>.
 

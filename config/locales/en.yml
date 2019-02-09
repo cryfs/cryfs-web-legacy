@@ -68,14 +68,18 @@ en:
   downloadmodal_easy_install_target_ubuntu: "For Ubuntu 17.04 and later"
   downloadmodal_easy_install_target_debian: "For Debian Stretch and later"
   downloadmodal_buildfromsource: "Alternative: Build from source"
-  downloadmodal_buildfromsource_description_html: "Follow the instructions <a href=\"https://github.com/cryfs/cryfs\">here</a> for building CryFS from source."
+  downloadmodal_buildfromsource_description_html: "Follow the instructions <a href=\"https://github.com/cryfs/cryfs\">here</a> for building CryFS from source. You can for example choose this path if you want a version that is newer than the one in the software repositories of your operating system."
 
   downloadmodal_other_linux: "Other Linux"
   downloadmodal_other_linux_text_html: "If your linux is based on Debian, you could try the Debian or Ubuntu packages from their software repositories. You can also <a href=\"https://github.com/cryfs/cryfs\">build CryFS from source</a>."
   downloadmodal_other_mac: "Mac OS X"
   downloadmodal_other_mac_text_html: "You can install CryFS using Homebrew. Try:"
   downloadmodal_other_windows: "Windows"
-  downloadmodal_other_windows_text_html: "Windows support is on our agenda, but is a lot of effort and might take some time."
+  downloadmodal_other_windows_text: "Windows support is highly experimental. Please take caution and make regular backups."
+  downloadmodal_other_windows_preinstall: "First install:"
+  downloadmodal_other_windows_dokany: "(use newest Dokan_x64.msi or Dokan_x86.msi) and"
+  downloadmodal_other_windows_install_cryfs: "And then install CryFS:"
+  downloadmodal_other_windows_or: "or"
 
   form_leaveblank: "Leave this field blank!"
 
