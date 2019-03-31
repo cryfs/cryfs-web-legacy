@@ -84,7 +84,17 @@ section.section-1
         ' cd ..
       .line
         span.linestart $
-        ' fusermount -u mountdir
+        ' cryfs-unmount mountdir
+    .alert.alert-info
+      b Note:
+      |  On CryFS versions 0.9.x, use this command instead:
+      pre.console
+        .line
+           span.linestart $
+           ' cd ..
+        .line
+           span.linestart $
+           ' fusermount -u mountdir
     p Now, CryFS isn't running anymore, which means we cannot access our data anymore. The <var>mountdir</var> is empty.
     pre.console
       .line
