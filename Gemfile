@@ -18,7 +18,7 @@ gem 'bootsnap', require: false
 
 # For heroku
 group :production do
-  gem 'puma', '~> 3.12.0'
+  gem 'puma', '~> 3.12.6'
   gem 'puma-heroku', '~> 1.0.0'
   gem 'heroku-deflater', '~> 0.6.3'
   gem 'image_optim', '~> 0.26.3'
